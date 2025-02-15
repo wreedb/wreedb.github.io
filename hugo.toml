@@ -1,0 +1,33 @@
+baseURL = "https://wreedb.github.io"
+languageCode = "en-us"
+title = "github/wreedb"
+theme = "hugo-theme-m10c"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+[params]
+  author = "Will Reed"
+  description = "My github-pages site"
+  avatar = "avatar.jpg"
+  menu_item_separator = " - "
+  [[params.social]]
+    icon = "brand-github"
+    name = "Github"
+    url = "https://github.com/wreedb"
+
+  [params.style]
+    darkestColor = "#14161E"
+    darkColor = "#1A1D27"
+    lightColor = "#494C59"
+    lightestColor = "#D7D7D7"
+    primaryColor = "#76C5A4"
