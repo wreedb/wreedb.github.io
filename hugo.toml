@@ -5,14 +5,14 @@ theme = "hugo-theme-m10c"
 
 [menu]
   [[menu.main]]
-    identifier = "home"
+    identifier = "about"
     name = "Home"
     url = "/"
     weight = 1
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
     weight = 2
 
 [params]
@@ -28,6 +28,6 @@ theme = "hugo-theme-m10c"
   [params.style]
     darkestColor = "#14161E"
     darkColor = "#1A1D27"
-    lightColor = "#494C59"
-    lightestColor = "#D7D7D7"
+    lightColor = "#D7D7D7"
+    lightestColor = "#EBEBEB"
     primaryColor = "#76C5A4"
