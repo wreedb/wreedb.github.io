@@ -1,12 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About me on github/wreedb</title>
-    <link>https://wreedb.github.io/</link>
-    <description>Recent content in About me on github/wreedb</description>
-    <generator>Hugo</generator>
+    <title>Welcome on Will Reed: Developer</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Welcome on Will Reed: Developer</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://wreedb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Jun 2025 16:04:08 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shepherd</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Mon, 09 Jun 2025 16:04:08 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      
+      <description>&lt;h1 id=&#34;i-replaced-my-init-system-with-gnu-shepherd&#34;&gt;I replaced my init system with GNU Shepherd&lt;/h1&gt;
+&lt;p&gt;Why? For fun of course.&lt;/p&gt;
+&lt;h2 id=&#34;how-it-started&#34;&gt;How it started&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;I&amp;rsquo;ve tried GNU Guix a few times, and I&amp;rsquo;ve always found it to be a very
+interesting project. For those who aren&amp;rsquo;t familiar, Guix is similar to Nix;
+It is a package manager and operating system (built on top of the package manager).
+It&amp;rsquo;s declaratively configured similar to Nix, module based, and offers similar
+reproducibility that Nix does. However the community is much smaller by comparison
+for a number of reasons (such as being terminally afraid of freedom and&amp;hellip; &amp;lt;&lt;em&gt;clutches pearls&lt;/em&gt;&amp;gt;
+copyleft licenses!).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
+&lt;p&gt;I&amp;rsquo;m a 26 year old &lt;em&gt;mostly&lt;/em&gt; self-taught programmer.
+Here are some of my software projects:&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;god&#34;&gt;&lt;a href=&#34;https://github.com/wreedb/god&#34;&gt;God&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;The specification for a data serialization format I created,
+which is a subset of the &lt;a href=&#34;https://nixos.org&#34;&gt;Nix&lt;/a&gt; programming language.
+It omits all of the programming features of Nix in favor of
+representing static data.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;guile-god&#34;&gt;&lt;a href=&#34;https://github.com/wreedb/guile-god&#34;&gt;Guile-god&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;The reference implementation parsing library for &lt;strong&gt;God&lt;/strong&gt;,
+written in &lt;a href=&#34;https://gnu.org/software/guile&#34;&gt;Guile Scheme&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;guile-ninja&#34;&gt;&lt;a href=&#34;https://github.com/wreedb/guile-ninja&#34;&gt;Guile-ninja&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;A &lt;a href=&#34;https://gnu.org/software/guile&#34;&gt;Guile&lt;/a&gt; module for generating &lt;a href=&#34;https://ninja-build.org&#34;&gt;Ninja&lt;/a&gt; files.
+It is similar in functionality to the upstream &lt;code&gt;ninja_syntax.py&lt;/code&gt; file that the project provides for
+generating simple &lt;code&gt;build.ninja&lt;/code&gt; files.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>PGP</title>
+      <link>http://localhost:1313/pgp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/pgp/</guid>
+      
+      <description>&lt;h1 id=&#34;fingerprint&#34;&gt;Fingerprint&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;AD581CBB27D1243832274EE7FA1DF3805D65AE54&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You can find my key on:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://keys.openpgp.org/search?q=wreed%40disroot.org&#34;&gt;keys.openpgp.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://keyserver.ubuntu.com/pks/lookup?search=wreed%40disroot.org&amp;amp;fingerprint=on&amp;amp;op=index&#34;&gt;keyserver.ubuntu.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;key-information&#34;&gt;Key Information&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ID&lt;/strong&gt;: FA1DF3805D65AE54&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ALGO&lt;/strong&gt;: RSA 4096&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Created&lt;/strong&gt;: 2025-03-13&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Expires&lt;/strong&gt;: N/a&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;importing&#34;&gt;Importing&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg --keyserver hkps://keys.openpgp.org --recv-keys FA1DF3805D65AE54
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# or&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -s https://keys.openpgp.org/vks/v1/by-fingerprint/AD581CBB27D1243832274EE7FA1DF3805D65AE54 | gpg --import
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      
+    </item>
+    
   </channel>
 </rss>

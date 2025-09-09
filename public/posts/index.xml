@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Will Reed: Developer</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Will Reed: Developer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Jun 2025 16:04:08 -0500</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shepherd</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Mon, 09 Jun 2025 16:04:08 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      
+      <description>&lt;h1 id=&#34;i-replaced-my-init-system-with-gnu-shepherd&#34;&gt;I replaced my init system with GNU Shepherd&lt;/h1&gt;
+&lt;p&gt;Why? For fun of course.&lt;/p&gt;
+&lt;h2 id=&#34;how-it-started&#34;&gt;How it started&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;I&amp;rsquo;ve tried GNU Guix a few times, and I&amp;rsquo;ve always found it to be a very
+interesting project. For those who aren&amp;rsquo;t familiar, Guix is similar to Nix;
+It is a package manager and operating system (built on top of the package manager).
+It&amp;rsquo;s declaratively configured similar to Nix, module based, and offers similar
+reproducibility that Nix does. However the community is much smaller by comparison
+for a number of reasons (such as being terminally afraid of freedom and&amp;hellip; &amp;lt;&lt;em&gt;clutches pearls&lt;/em&gt;&amp;gt;
+copyleft licenses!).&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

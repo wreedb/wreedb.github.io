@@ -1,33 +1,58 @@
-baseURL = "https://wreedb.github.io"
+baseURL = "https://wreedb.github.io/"
 languageCode = "en-us"
-title = "github/wreedb"
-theme = "hugo-theme-m10c"
+title = "Will Reed: Developer"
+defaultContentLanguage = "en-us"
+enableEmoji = true
+theme = "hugo-blog-awesome"
+
+[params]
+  sitename = "Will Reed: Developer"
+  defaultColor = "dark"
+  description = "A blog for my thoughts"
+  mainSections = ['posts']
+  toc = false
+  goToTop = true
+
+[params.author]
+  avatar = "avatar.jpg"
+  name = "Will Reed"
+  intro = "Welcome to my blog"
+  description = "A developer, GNU enthusiast, libre software advocate, init system surgeon and loser"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/wreedb"
+
+[[params.socialIcons]]
+name = "bluesky"
+url = "https://bsky.app/profile/wreedb.bsky.social"
+
+[[params.socialIcons]]
+name = "youtube"
+url = "https://youtube.com/@wreedb"
+
+[[params.socialIcons]]
+name = "discord"
+url = "https://discord.com/users/586754734476623904"
+
+[[params.socialIcons]]
+name = "codeberg"
+url = "https://codeberg.org/wreedb"
 
 [menu]
   [[menu.main]]
-    identifier = "about"
-    name = "Home"
-    url = "/"
-    weight = 1
+    name = 'Home'
+    url = '/'
+    weight = 10
   [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 2
-
-[params]
-  author = "Will Reed"
-  description = "My github-pages site"
-  avatar = "avatar.jpg"
-  menu_item_separator = " - "
-  [[params.social]]
-    icon = "brand-github"
-    name = "Github"
-    url = "https://github.com/wreedb"
-
-  [params.style]
-    darkestColor = "#14161E"
-    darkColor = "#1A1D27"
-    lightColor = "#D7D7D7"
-    lightestColor = "#EBEBEB"
-    primaryColor = "#76C5A4"
+    name = 'Posts'
+    url = '/posts/'
+    weight = 20
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 30
+  [[menu.main]]
+    name = 'PGP'
+    url = '/pgp/'
+    weight = 40

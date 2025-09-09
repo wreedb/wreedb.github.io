@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome on Will Reed: Developer</title>
+    <link>http://localhost:1313/en/</link>
+    <description>Recent content in Welcome on Will Reed: Developer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Sep 2025 11:32:44 -0500</lastBuildDate><atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/en/posts/hello-world/</link>
+      <pubDate>Tue, 09 Sep 2025 11:32:44 -0500</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/hello-world/</guid>
+      
+      <description>&lt;h1 id=&#34;hello-world&#34;&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;This is my first blog post using Hugo! Pretty cool, right?&lt;/p&gt;
+&lt;h2 id=&#34;some-features&#34;&gt;Some features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fast static site generation&lt;/li&gt;
+&lt;li&gt;Markdown support&lt;/li&gt;
+&lt;li&gt;Dark/light theme&lt;/li&gt;
+&lt;li&gt;Responsive design&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Lorem ipsum sugma ligma bofa saw con sugandese candice&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/en/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/about/</guid>
+      
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
+&lt;p&gt;Hi! I&amp;rsquo;m a blogger who loves sharing thoughts and ideas.&lt;/p&gt;
+&lt;p&gt;This site is built with Hugo and the hugo-blog-awesome theme.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
