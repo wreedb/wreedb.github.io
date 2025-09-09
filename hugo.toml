@@ -5,6 +5,10 @@ defaultContentLanguage = "en-us"
 enableEmoji = true
 theme = "hugo-blog-awesome"
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [params]
   sitename = "Will Reed: Developer"
   defaultColor = "dark"
