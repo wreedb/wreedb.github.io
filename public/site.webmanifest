@@ -1,7 +1,7 @@
 {
     "name": "Will Reed: Developer",
     "short_name": "Will Reed: Developer",
-    "start_url": "http://localhost:1313/",
+    "start_url": "https://wreedb.github.io/",
     "theme_color": "#434648",
     "background_color": "#131418",
     "display": "standalone",

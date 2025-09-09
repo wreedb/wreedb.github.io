@@ -2,21 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://wreedb.github.io/posts/lfs/</loc>
+    <lastmod>2025-09-09T14:51:55-05:00</lastmod>
+  </url><url>
+    <loc>https://wreedb.github.io/posts/</loc>
+    <lastmod>2025-09-09T14:51:55-05:00</lastmod>
+  </url><url>
+    <loc>https://wreedb.github.io/</loc>
+    <lastmod>2025-09-09T14:51:55-05:00</lastmod>
+  </url><url>
+    <loc>https://wreedb.github.io/posts/hello-world/</loc>
     <lastmod>2025-06-09T16:04:08-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hello-world/</loc>
-    <lastmod>2025-06-09T16:04:08-05:00</lastmod>
+    <loc>https://wreedb.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-06-09T16:04:08-05:00</lastmod>
+    <loc>https://wreedb.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://wreedb.github.io/pgp/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/pgp/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://wreedb.github.io/tags/</loc>
   </url>
 </urlset>

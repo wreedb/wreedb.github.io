@@ -2,17 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Will Reed: Developer</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://wreedb.github.io/posts/</link>
     <description>Recent content in Posts on Will Reed: Developer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jun 2025 16:04:08 -0500</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Sep 2025 14:51:55 -0500</lastBuildDate><atom:link href="https://wreedb.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My LFS journey</title>
+      <link>https://wreedb.github.io/posts/lfs/</link>
+      <pubDate>Tue, 09 Sep 2025 14:51:55 -0500</pubDate>
+      
+      <guid>https://wreedb.github.io/posts/lfs/</guid>
+      
+      <description>&lt;h1 id=&#34;daily-driving-linux-from-scratch&#34;&gt;Daily Driving Linux From Scratch&lt;/h1&gt;
+&lt;p&gt;For about a month now, I&amp;rsquo;ve been using a fully custom version of Linux
+that I built using the instructions from &lt;a href=&#34;https://linuxfromscratch.org&#34;&gt;LFS&lt;/a&gt;.
+I don&amp;rsquo;t feel it&amp;rsquo;s right to call it &lt;em&gt;LFS&lt;/em&gt;, since it deviates quite heavily from
+the instructions provided by the LFS authors. However, the guidance of their writings
+is immensely valuable.&lt;/p&gt;
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;My reason for setting out to create this system was born from the fact that the system I
+was looking for did not exist. This is surprising given the comically high number of different
+Linux distributions there are to choose from. For one reason or another, nothing seemed to fit
+the description of what I wanted.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Shepherd</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
+      <link>https://wreedb.github.io/posts/hello-world/</link>
       <pubDate>Mon, 09 Jun 2025 16:04:08 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <guid>https://wreedb.github.io/posts/hello-world/</guid>
       
       <description>&lt;h1 id=&#34;i-replaced-my-init-system-with-gnu-shepherd&#34;&gt;I replaced my init system with GNU Shepherd&lt;/h1&gt;
 &lt;p&gt;Why? For fun of course.&lt;/p&gt;
