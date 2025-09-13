@@ -2,17 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome on Will Reed: Developer</title>
-    <link>https://wreedb.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Welcome on Will Reed: Developer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Sep 2025 14:51:55 -0500</lastBuildDate><atom:link href="https://wreedb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Sep 2025 17:43:12 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>You shouldn&#39;t use software from the UUtils project</title>
+      <link>http://localhost:1313/posts/uutils/</link>
+      <pubDate>Fri, 12 Sep 2025 17:43:12 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/uutils/</guid>
+      
+      <description>&lt;h1 id=&#34;why-you-shouldnt-use-software-from-the-uutils-project&#34;&gt;Why you shouldn&amp;rsquo;t use software from the &lt;strong&gt;uutils&lt;/strong&gt; project&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/uutils&#34;&gt;Uutils&lt;/a&gt; is a &lt;a href=&#34;https://rust-lang.org&#34;&gt;Rust&lt;/a&gt;-oriented software development project
+who are responsible for the popular &lt;a href=&#34;https://github.com/uutils/coreutils&#34;&gt;coreutils&lt;/a&gt; reimplementation. For those who are
+unaware, &lt;em&gt;Coreutils&lt;/em&gt; is a GNU project which contains programs such as &lt;em&gt;ls&lt;/em&gt;, &lt;em&gt;cp&lt;/em&gt;, &lt;em&gt;mv&lt;/em&gt;, &lt;em&gt;rm&lt;/em&gt;, &lt;em&gt;dd&lt;/em&gt;, &lt;em&gt;wc&lt;/em&gt; along with many
+others. There are a number of implementations of this group of utilities, such as (but not limited to):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://busybox.net&#34;&gt;BusyBox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://landley.net/toybox&#34;&gt;Toybox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tools.suckless.org/9base&#34;&gt;9base&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codeberg.org/dcantrell/bsdutils&#34;&gt;BSDUtils&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chimera-linux/chimerautils&#34;&gt;ChimeraUtils&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A set of software analogous to these is essential on any Unix or Unix-adjacent system. They provide the
+most basic level of system control and manipulation which one would expect to have available. The most
+common implementations of these tool are the &lt;a href=&#34;https://gnu.org/software/coreutils&#34;&gt;GNU Coreutils&lt;/a&gt; and &lt;em&gt;BusyBox&lt;/em&gt; implementations.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>My LFS journey</title>
-      <link>https://wreedb.github.io/posts/lfs/</link>
+      <link>http://localhost:1313/posts/lfs/</link>
       <pubDate>Tue, 09 Sep 2025 14:51:55 -0500</pubDate>
       
-      <guid>https://wreedb.github.io/posts/lfs/</guid>
+      <guid>http://localhost:1313/posts/lfs/</guid>
       
       <description>&lt;h1 id=&#34;daily-driving-linux-from-scratch&#34;&gt;Daily Driving Linux From Scratch&lt;/h1&gt;
 &lt;p&gt;For about a month now, I&amp;rsquo;ve been using a fully custom version of Linux
@@ -30,10 +55,10 @@ the description of what I wanted.&lt;/p&gt;</description>
     
     <item>
       <title>Shepherd</title>
-      <link>https://wreedb.github.io/posts/hello-world/</link>
+      <link>http://localhost:1313/posts/shepherd/</link>
       <pubDate>Mon, 09 Jun 2025 16:04:08 -0500</pubDate>
       
-      <guid>https://wreedb.github.io/posts/hello-world/</guid>
+      <guid>http://localhost:1313/posts/shepherd/</guid>
       
       <description>&lt;h1 id=&#34;i-replaced-my-init-system-with-gnu-shepherd&#34;&gt;I replaced my init system with GNU Shepherd&lt;/h1&gt;
 &lt;p&gt;Why? For fun of course.&lt;/p&gt;
@@ -51,10 +76,10 @@ copyleft licenses!).&lt;/p&gt;</description>
     
     <item>
       <title>About</title>
-      <link>https://wreedb.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wreedb.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       
       <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
 &lt;p&gt;I&amp;rsquo;m a 26 year old &lt;em&gt;mostly&lt;/em&gt; self-taught programmer.
@@ -79,10 +104,10 @@ generating simple &lt;code&gt;build.ninja&lt;/code&gt; files.&lt;/p&gt;</descrip
     
     <item>
       <title>PGP</title>
-      <link>https://wreedb.github.io/pgp/</link>
+      <link>http://localhost:1313/pgp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wreedb.github.io/pgp/</guid>
+      <guid>http://localhost:1313/pgp/</guid>
       
       <description>&lt;h1 id=&#34;fingerprint&#34;&gt;Fingerprint&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;AD581CBB27D1243832274EE7FA1DF3805D65AE54&lt;/code&gt;&lt;/p&gt;
