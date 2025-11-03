@@ -8,11 +8,17 @@ I'm a 26 year old *mostly* self-taught programmer.
 Here are some of my software projects:
 
 ---
-#### [God](https://github.com/wreedb/god)
+#### [God](https://wreedb.github.io/god)
 The specification for a data serialization format I created, 
 which is a subset of the [Nix](https://nixos.org) programming language. 
 It omits all of the programming features of Nix in favor of 
 representing static data.
+
+---
+#### [Vendr](https://github.com/wreedb/vendr)
+A tool for vendoring your projects' dependencies. Declare HTTP links and Git 
+repository url's tagged at specific releases and bring them into your project 
+on demand.
 
 ---
 #### [Guile-god](https://github.com/wreedb/guile-god)

@@ -85,20 +85,16 @@ copyleft licenses!).&lt;/p&gt;</description>
 &lt;p&gt;I&amp;rsquo;m a 26 year old &lt;em&gt;mostly&lt;/em&gt; self-taught programmer.
 Here are some of my software projects:&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;god&#34;&gt;&lt;a href=&#34;https://github.com/wreedb/god&#34;&gt;God&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;god&#34;&gt;&lt;a href=&#34;https://wreedb.github.io/god&#34;&gt;God&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;The specification for a data serialization format I created,
 which is a subset of the &lt;a href=&#34;https://nixos.org&#34;&gt;Nix&lt;/a&gt; programming language.
 It omits all of the programming features of Nix in favor of
 representing static data.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;guile-god&#34;&gt;&lt;a href=&#34;https://github.com/wreedb/guile-god&#34;&gt;Guile-god&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;The reference implementation parsing library for &lt;strong&gt;God&lt;/strong&gt;,
-written in &lt;a href=&#34;https://gnu.org/software/guile&#34;&gt;Guile Scheme&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;guile-ninja&#34;&gt;&lt;a href=&#34;https://github.com/wreedb/guile-ninja&#34;&gt;Guile-ninja&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;A &lt;a href=&#34;https://gnu.org/software/guile&#34;&gt;Guile&lt;/a&gt; module for generating &lt;a href=&#34;https://ninja-build.org&#34;&gt;Ninja&lt;/a&gt; files.
-It is similar in functionality to the upstream &lt;code&gt;ninja_syntax.py&lt;/code&gt; file that the project provides for
-generating simple &lt;code&gt;build.ninja&lt;/code&gt; files.&lt;/p&gt;</description>
+&lt;h4 id=&#34;vendr&#34;&gt;&lt;a href=&#34;https://github.com/wreedb/vendr&#34;&gt;Vendr&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;A tool for vendoring your projects&amp;rsquo; dependencies. Declare HTTP links and Git
+repository url&amp;rsquo;s tagged at specific releases and bring them into your project
+on demand.&lt;/p&gt;</description>
       
     </item>
     

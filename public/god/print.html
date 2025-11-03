@@ -1,0 +1,1064 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>God Specification</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/admonish.css">
+        <link rel="stylesheet" href="theme/custom.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">God Specification</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><img src="assets/favicon.png" alt="God Logo" /></p>
+<h1 id="god-a-language-for-good-ol-data"><a class="header" href="#god-a-language-for-good-ol-data">God, a language for <em>good ol' data</em></a></h1>
+<p>Data serialization can be better, without being too much.</p>
+<pre><code class="language-god">{
+  name = "Will";
+  age = 26;
+  married = false;
+
+  favorite-movies = [
+    {
+      title = "Interstellar";
+      starring = [
+        "Matthew McConaughey"
+        "Jessica Chastain"
+        "Anne Hathaway"
+      ];
+      director = "Christopher Nolan";
+      year = 2014;
+    }
+    {
+      title = "Kill Bill: Volume 1";
+      director = "Quinten Tarantino";
+      starring = [
+        { actor = "Uma Thurman"; character = "The Bride"; }
+        { actor = "Lucy Liu"; character = "O-Ren Ishii"; }
+        { actor = "David Carradine"; character = "Bill"; }
+      ];
+      year = 2003;
+    }
+    {
+      title = "The Witch";
+      director = "Robert Eggers";
+      starring = [ "Anya Taylor-Joy" "Ralph Ineson" ];
+      year = 2015;
+    }
+  ];
+
+  friends = [
+    {
+      name = "Floyd";
+      age = 29;
+      married = true;
+      favorite-movies = [
+        {
+          title = "The Departed";
+          starring = [ "Leonardo DiCaprio" "Vera Farmiga" "Matt Daemon" ];
+          director = "Martin Scorsese";
+          year = 2006;
+        }
+        {
+          title = "Shutter Island";
+          starring = [ "Leonardo DiCaprio" "Mark Ruffalo" ];
+          director = "Martin Scorsese";
+          year = 2010;
+        }
+      ];
+      friends = [];
+    }
+  ];
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="why"><a class="header" href="#why">Why?</a></h2>
+<p>As someone who has found themself needing to manually write and programatically
+work with data serialization formats, I wanted a better way. I tried many
+formats: JSON, YAML, TOML, CSV, XML, KDL, Lua tables, Java properties, and
+others. You name it, I tried it. Many of them had enough nagging issues to
+cause motivation in me to find a better format, which never arose.</p>
+<h3 id="but-json-works-fine"><a class="header" href="#but-json-works-fine"><em>"But JSON works fine"</em></a></h3>
+<p>Have you ever been in the position of <em>writing</em> JSON, rather than just having a
+library parse it? If you haven't; then yes that's a logical conclusion. Personally,
+I find myself in a position where I need to write data manually, and many of the
+popular formats make that experience have more friction than it should.
+For those that may need a data serialization format, but never (or rarely) have
+to deal directly with the data in its storage format, it may seems like nit-picking;
+however it becomes different when you find yourself manually writing in these formats.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="background"><a class="header" href="#background">Background</a></h1>
+<p>If you feel that <strong>God</strong> syntax is familiar, that's probably because <em>it is</em>. <strong>God</strong>
+isn't a new syntax; it is derived directly from the <a href="https://nixos.org">Nix</a> programming language.
+Any valid <strong>God</strong> code can be validated directly by Nix, with <code>nix eval -f file.god</code>. I saw no need
+to create a new language when I realized Nix had exactly the <em>bones</em> needed to derive a flexible
+(and easy to understand) data serialization format. <strong>God</strong> is a subset of Nix which omits it's
+programming syntax and features in favor of static data representation.</p>
+<p>Some of the benefits include:</p>
+<ul>
+<li>It can be validated by <code>nix</code></li>
+<li>Conversion from <em>GOD</em> to <a href="https://json.org">JSON</a> with <code>nix eval -f file.god --json</code></li>
+<li>A number of existing tools for working with Nix code can be used
+<ul>
+<li>linters and formatters such as <a href="https://git.peppe.rs/languages/statix">statix</a> and <a href="https://github.com/nixos/nixfmt">nixfmt</a></li>
+<li>language servers such as <a href="https://github.com/nix-community/nixd">nixd</a>, <a href="https://github.com/oxalica/nil">nil</a> and <a href="https://github.com/nix-community/rnix-lsp">rnix-lsp</a></li>
+<li>A very thoroughly written <a href="https://github.com/nixos/nix-mode">Emacs mode</a></li>
+</ul>
+</li>
+</ul>
+<p>If you would like to see some sample document files, see the <a href="examples.html">examples</a> page.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="examples"><a class="header" href="#examples">Examples</a></h1>
+<p>These can all be found in the <code>example/</code> directory of the project's <a href="https://github.com/wreedb/god">Git repository</a>.</p>
+<hr />
+<p><code>simple.god</code></p>
+<pre><code class="language-god">{
+    name = "Will";
+    age = 26;
+    numbers = [ 9 -45 3.14 ];
+    special = {
+        yes = true;
+        no = false;
+        none = null;
+    };
+    
+    long-string = ''
+        Hello
+        there!
+    '';
+}
+</code></pre>
+<hr />
+<p><code>package.god</code></p>
+<pre><code class="language-god">{
+    name = "shepherd";
+    version = "1.0.5";
+    licensing = [ "GPL-3.0-or-later" ];
+    
+    links = {
+        home = "https://gnu.org/software/shepherd";
+        repo = "https://codeberg.org/shepherd/shepherd.git";
+    };
+    
+    tag = {
+        release = true;
+        name = "v1.0.5";
+    };
+
+    foreign = [
+        "usr/share/doc/shepherd-1.0.5"
+        "usr/share/guile/site/3.0/shepherd"
+        "usr/lib/guile/3.0/site-ccache/shepherd"
+        "usr/libexec/shepherd"
+    ];
+}
+</code></pre>
+<hr />
+<p><code>types.god</code></p>
+<pre><code class="language-god">{
+    name = "Will";
+    nums = [ 1 2 3 true false null "string" ];
+
+    mapping = { age = 26; };
+
+    yes = true;
+    no = false;
+    nothing = null;
+
+    things = {
+        one = true;
+        zero = false;
+        nada = null;
+        list = [ true false null "string" 1 2 3 { map = "self"; catch = 22; lie = true; } ];
+    };
+
+    list-of-maps = [
+        {
+            string-with-escapes = "\"\\there should be a single slash at the beginning when interpreted and this would be entirely quoted and\r\n\tindented on a new line here as well.\"";
+            list-within-map-within-list = [ 1 2 3 true false null "\"escaped quotes\"" ];
+        }
+        {
+            more = "less";
+        }
+    ];
+
+}
+</code></pre>
+<hr />
+<p><code>directions.god</code></p>
+<pre><code class="language-god">{
+    directions = [
+        {
+            name = "north";
+            cardinal = true;
+        }
+        {
+            name = "east";
+            cardinal = true;
+        }
+        {
+            name = "west";
+            cardinal = true;
+        }
+        {
+            name = "south";
+            cardinal = true;
+        }
+        {
+            name = "down";
+            cardinal = false;
+        }
+    ];
+}
+</code></pre>
+<hr />
+<p><code>deep.god</code></p>
+<pre><code class="language-god">{
+    user = {
+        name = "Will";
+        age = 26;
+        married = false;
+        friends = [
+            {
+                name = "Floyd";
+                age = 29;
+                married = true;
+                favorite-numbers = [ 1 2 -3.14 false null true "Hello!" 69 ];
+                qualities = {
+                    emotional = [ "patient" 1 "nice" null ];
+                };
+            }
+        ];
+    };
+}
+</code></pre>
+<hr />
+<p><code>complex.god</code></p>
+<pre><code class="language-god">{
+    name = "Will";
+    age = 26;
+    married = false;
+    favorite-movies = [
+        {
+            title = "Interstellar";
+            director = "Christopher Nolan";
+        }
+        {
+            title = "Kill Bill Volume 1";
+            director = "Quinten Tarantino";
+        }
+    ];
+    friends = [
+        {
+            name = "Floyd";
+            age = 29;
+            married = false;
+            favorite-movies = [
+                {
+                    title = "Training Day";
+                    director = null;
+                }
+                {
+                    title = "The Departed";
+                    director = "Martin Scorcese";
+                }
+            ];
+            friends = [];
+        }
+    ];
+}
+</code></pre>
+<hr />
+<p><code>string-escapes.god</code></p>
+<pre><code class="language-god">{
+    string = "normal string";
+    special-strings = [
+        "\"\\entirely quoted with a single slash at the start and\r\n\tnewline + indent here.\""
+        "\" \\ this should quoted with slashes on both sides \\ \""
+        "\\tabs\t\\and\t\\slashes\t\\with\t\\every\t\\word."
+        "\nline-feeds above and below\n"
+        "\r\ncarriage-return/line-feeds above and below\r\n"
+        "\rcarriage-returns on both sides\r"
+    ];
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="implementations"><a class="header" href="#implementations">Implementations</a></h1>
+<ul>
+<li>Guile Scheme: <a href="https://github.com/wreedb/guile-god">wreedb/guile-god</a></li>
+<li>Tree-Sitter Grammar: <a href="https://github.com/wreedb/tree-sitter-god">wreedb/tree-sitter-god</a></li>
+</ul>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="implementations.html#admonition-note"></a>
+</div>
+<div>
+<p>If you have decided to implement the language, please <a href="mailto:wreed@disroot.org">contact me</a>!</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="value-types"><a class="header" href="#value-types">Value Types</a></h1>
+<ul>
+<li><a href="spec/values/strings.html">Strings</a></li>
+<li><a href="spec/values/numbers.html">Numbers</a></li>
+<li><a href="spec/values/bools.html">Booleans</a></li>
+<li><a href="spec/values/null.html">Null</a></li>
+<li><a href="spec/values/maps.html">Maps</a></li>
+<li><a href="spec/values/lists.html">Lists</a></li>
+</ul>
+<h1 id="file-structure"><a class="header" href="#file-structure">File Structure</a></h1>
+<ul>
+<li><a href="spec/structure/document.html">Document</a></li>
+<li><a href="spec/structure/operators.html">Operators</a></li>
+<li><a href="spec/structure/identifiers.html">Identifiers</a></li>
+<li><a href="spec/structure/fields.html">Fields</a></li>
+<li><a href="spec/structure/whitespace.html">Whitespace</a></li>
+<li><a href="spec/structure/comments.html">Comments</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="values"><a class="header" href="#values">Values</a></h1>
+<p>The value types in <em>GOD</em> are intentionally <a href="https://www.dictionary.com/browse/rudimentary">rudimentary</a>,
+with the goal of being useful to almost any programming language. They are flexible and have few restrictions.</p>
+<h2 id="index"><a class="header" href="#index">Index</a></h2>
+<ul>
+<li><a href="spec/values/strings.html">Strings</a></li>
+<li><a href="spec/values/numbers.html">Numbers</a></li>
+<li><a href="spec/values/bools.html">Booleans</a></li>
+<li><a href="spec/values/null.html">Null</a></li>
+<li><a href="spec/values/maps.html">Maps</a></li>
+<li><a href="spec/values/lists.html">Lists</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="strings"><a class="header" href="#strings">Strings</a></h1>
+<h2 id="regular"><a class="header" href="#regular">Regular</a></h2>
+<p>A standard or regular string is represented by a pair of double quotes with any amount of text inside it.</p>
+<pre><code class="language-god">greeting = "Hello, how are you?";
+</code></pre>
+<h2 id="multi-line"><a class="header" href="#multi-line">Multi-line</a></h2>
+<p>Strings that span across multiple lines are supported. They are define using
+two sets of single quotes; one at the beginning and one at the end.</p>
+<pre><code class="language-god">about-me = ''
+  Let me tell you
+  about myself!
+'';
+</code></pre>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="spec/values/strings.html#admonition-note"></a>
+</div>
+<div>
+<p>Multi-line string are also indentation aware; The indentation of the contained
+string is calculated relative to the <em>furthest left</em> column which contains
+meaningful (non-whitespace) text.</p>
+<pre><code class="language-god">my-string = ''
+    There are four spaces before this,
+      but the they will not be preserved.
+'';
+# produces:
+# "There are four spaces before this,\n  but they will not be preserved.\n"
+</code></pre>
+</div>
+</div>
+<h3 id="escaping"><a class="header" href="#escaping">Escaping</a></h3>
+<p>Yog can escape (double) quotes in a regular string using a backslash (<code>\</code>) before it. This is the same
+for line-feeds, carriage returns and tab characters (<code>\n</code>,<code>\r</code>,<code>\t</code>).
+To escape <strong>any</strong> character, prefix it with <code>''\</code></p>
+<pre><code class="language-god">height = "6'2\"\n";
+# produces:
+# 6'2"\n
+greeting = ''
+  I said ''\'Hello!''\'
+    to them.
+'';
+# produces:
+# "I said 'Hello!'"\n  to them."
+</code></pre>
+<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
+<div class="admonition-title">
+<div id="admonition-warning-title">
+<p>Warning</p>
+</div>
+<a class="admonition-anchor-link" href="spec/values/strings.html#admonition-warning"></a>
+</div>
+<div>
+<p>The whitespace and newline on the opening line after <code>''</code> are ignored if there
+is no meaningful (non-whitespace) text or characters on said initial line.
+Also, leading tab (<code>\t</code>) characters are not stripped from the beginning of the
+line, so it is best practice to use spaces within multiline strings unless
+this is desired.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="numbers"><a class="header" href="#numbers">Numbers</a></h1>
+<p>Numbers in <strong>God</strong> are neither specifically intergers, doubles nor floats.
+They can be any of them; In <em>Nix</em>, integers have an upper and lower boundary
+of <code>9223372036854775807</code> and <code>-9223372036854775807</code> respectively, as they are
+<a href="https://en.wikipedia.org/wiki/Two%27s_complement">two's complement</a> signed integers. <strong>God</strong> mimics this behavior, albeit
+slightly simpler due to all data here being completely static.</p>
+<pre><code class="language-god">age = 26;
+age-negative = -26;
+pi = 3.14;
+pi-negative = -3.14;
+exp = 0.27e13;
+</code></pre>
+<p>In practice, a <em>number</em> is a sequence of one or many numeric digits, it may
+be used with a leading negation operator, and may use lower and upper-case
+exponent notation.</p>
+<pre><code class="language-god">decimal-exp = -.5e10;
+decimal-negative-exp = -.123E-5;
+</code></pre>
+<div id="admonition-important" class="admonition admonish-tip" role="note" aria-labelledby="admonition-important-title">
+<div class="admonition-title">
+<div id="admonition-important-title">
+<p>Important</p>
+</div>
+<a class="admonition-anchor-link" href="spec/values/numbers.html#admonition-important"></a>
+</div>
+<div>
+<p>Not all programming languages can represent these limits effectively; therefore
+the implementer should document any deviations from these limits clearly for
+their users.</p>
+<p>If the technical details needed for proper usage are not documented by the
+implementation, the implementation <strong>MAY NOT</strong> claim to be compliant with
+this specification.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="booleans"><a class="header" href="#booleans">Booleans</a></h1>
+<p>Boolean values in <strong>God</strong> are written as the unquoted text <code>true</code> and <code>false</code>.
+As in almost any context related to computer science, booleans are a data type
+used to describe something that has one of two possible values; most commonly
+<code>true</code>/<code>false</code> and <code>1</code>/<code>0</code>.</p>
+<pre><code class="language-god">yes = true;
+no = false;
+</code></pre>
+<p>Some languages may have unconventional boolean data types, and therefore the
+implementer may want to use the closest analogue in their language, for example, in Emacs Lisp:</p>
+<pre><code class="language-lisp">(setq foo t)
+(setq bar nil)
+</code></pre>
+<p>There is not <code>false</code> boolean type in the language. There is <code>t</code> to represent a
+<em>truthy</em> value, and the <code>nil</code> keyword is often used in place of a <em>falsy</em>
+value.</p>
+<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
+<div class="admonition-title">
+<div id="admonition-warning-title">
+<p>Warning</p>
+</div>
+<a class="admonition-anchor-link" href="spec/values/bools.html#admonition-warning"></a>
+</div>
+<div>
+<p>Due to the permissiveness of <a href="spec/values/../structure/identifiers.html">identifiers</a> in <strong>God</strong> (as well as in <strong>Nix</strong>), it
+is completely valid to use <code>true</code>, <code>false</code> and even <code>null</code> as identifiers.</p>
+<pre><code class="language-god">true = false;
+false = null;
+</code></pre>
+<p>Using identifiers that use the same name as built-in language types is
+highly discouraged for obvious reasons, however they are documented here
+for the purposes of completeness.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="null"><a class="header" href="#null">Null</a></h1>
+<p>Written as the unquoted text <code>null</code>, this value represents nothing.</p>
+<p>This may correlate to a languages' <code>null</code> value, or represent the absence of a
+value in languages which do not have a <code>null</code> type. In some languages this may
+be best represented by <code>0</code> or an empty list (<code>'()</code>) as in some lisp style languages.</p>
+<pre><code class="language-god">nothing = null;
+</code></pre>
+<p>It is at the discretion of the implementer to decide what makes the most sense
+for their use case and the capabilities of their language.</p>
+<p>As described in <a href="spec/values/bools.html#admonition-warning">booleans</a>, <code>null</code> is able to be used as an identifier,
+though highly discouraged.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="maps"><a class="header" href="#maps">Maps</a></h1>
+<p>A map in <strong>God</strong> is a data structure that has an analogue in practically every programming language;
+Lua <a href="https://www.lua.org/pil/2.5.html"><em>tables</em></a>,
+Python <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries"><em>dictionaries</em></a>,
+Perl <a href="https://perldoc.perl.org/perldata#Key/Value-Hash-Slices"><em>hash slices</em></a>,
+(Type/Java)script <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"><em>objects</em></a>,
+<a href="https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node153.html">Lisp</a> and
+<a href="https://standards.scheme.org/corrected-r7rs/r7rs-Z-H-8.html#TAG:__tex2page_sec_6.4">Scheme</a> <em>association lists</em>,
+and Java <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html">HashMaps</a> just to name a few.</p>
+<p>The commonality is the structure of an <em>identifier</em> which is <em>assigned</em> a group of <em>fields</em>. Fields can be seen as
+key-value pairs in an abstract sense.</p>
+<p>In <strong>God</strong> specifically, they are delimited by opening and closing "curly"
+braces (<code>{  }</code>). When they are used as just a field, they must be use a
+<a href="spec/values/../structure/operators.html#termination">termination operator</a>; when used as an element, only any fields within it will
+require termination.</p>
+<pre><code class="language-god">me = {
+    name = "Will";
+    age = 26;
+    married = false;
+    favorite-songs = [
+        { artist = "Slint"; title = "Nosferatu Man"; }
+        { artist = "OutKast"; title = "Hey Ya!"; }
+    ];
+    best-friend = {
+        name = "Floyd";
+        age = 29;
+        married = true;
+        favorite-songs = [
+            { artist = "Tool"; title = "Lateralus"; }
+            { artist = "Deafheaven"; title = "Dream House"; }
+        ];
+    };
+};
+</code></pre>
+<p>Any type of field is allowed within a map, so long as it follows any necessary rules of field termination.</p>
+<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
+<div class="admonition-title">
+<div id="admonition-warning-title">
+<p>Warning</p>
+</div>
+<a class="admonition-anchor-link" href="spec/values/maps.html#admonition-warning"></a>
+</div>
+<div>
+<p>Some languages allow identifiers to be used more than once within a map
+or similar data structure, with the last occurrence determining its value.
+This is not valid in <strong>God</strong>.</p>
+<pre><code class="language-god">me = {
+    name =  "Will";
+    age = 26;
+    age = 25; # this is an ERROR
+};
+</code></pre>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lists"><a class="header" href="#lists">Lists</a></h1>
+<p>These are a grouping of any number of <a href="spec/values/elements.html">elements</a>. They may be the
+element assigned to a field, or nested within another list as one of its'
+elements. They are delimited by opening and closing "square" brackets (<code>[ ]</code>).
+The elements contained are separated by <a href="spec/values/../structure/whitespace.html">whitespace</a>.</p>
+<p>They have no strict type requirements for their elements, meaning it can hold
+numbers, strings, maps and other lists.</p>
+<pre><code class="language-god">favorite-movies = [
+    "Interstellar"
+    "The Witch"
+    "Kill Bill Vol. 1"
+];
+
+list-of-lists = [
+    [ 1 2 3 ]
+    [ true false null ]
+    [ "foo" "bar" ]
+    [
+        { name = "Will"; age = 26; }
+        { name = "Floyd"; age = 29; }
+    ]
+];
+</code></pre>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="spec/values/lists.html#admonition-note"></a>
+</div>
+<div>
+<p>As you can see in the above examples, field termination is required when
+within the fourth <code>list-of-list</code> element, since <em>maps contain fields</em>; but
+the maps themselves are only elements, meaning they do not require field
+termination. For more clarification, see <a href="spec/values/maps.html">maps</a> and <a href="spec/values/../structure/fields.html">fields</a>.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="structure"><a class="header" href="#structure">Structure</a></h1>
+<ul>
+<li><a href="spec/structure/document.html">Document</a></li>
+<li><a href="spec/structure/operators.html">Operators</a></li>
+<li><a href="spec/structure/identifiers.html">Identifiers</a></li>
+<li><a href="spec/structure/fields.html">Fields</a></li>
+<li><a href="spec/structure/whitespace.html">Whitespace</a></li>
+<li><a href="spec/structure/comments.html">Comments</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="document"><a class="header" href="#document">Document</a></h1>
+<p>The <em>document</em> is used to describe the starting and ending boundaries of data
+in a <strong>God</strong> file. It is delimited by opening and closing "curly" braces
+(<code>{ }</code>). There can only be one set of document-level delimiters in a God file.</p>
+<pre><code class="language-god">{ # document begins here
+    name = "Will";
+    hobbies = [ "Programming" "Watching Movies" "Playing Video Games" ];
+} # document ends here
+</code></pre>
+<p>Within a <em>document</em>, any number of <a href="spec/structure/fields.html">fields</a> are allowed in any order at any
+level of depth.</p>
+<div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="spec/structure/document.html#admonition-note"></a>
+</div>
+<div>
+<p>The <em>document</em> is not a field, therefore it <strong>does not</strong> use a <a href="spec/structure/operators.html#termination">field termination operator</a>.</p>
+</div>
+</div>
+<p>As stated above, only one document-level set of delimiters are allowed, meaning
+the following example is <strong>invalid</strong>:</p>
+<pre><code class="language-god">{
+    name = "Will";
+}
+{
+    age = 26;
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="operators"><a class="header" href="#operators">Operators</a></h1>
+<p>The following symbols are <em>operators</em> in God:</p>
+<h2 id="assignment"><a class="header" href="#assignment">Assignment</a></h2>
+<p>This is the operator that denotes an <a href="spec/structure/identifiers.html">identifier</a> being <strong>assigned</strong> a value.
+It is written as an equal sign.</p>
+<pre><code class="language-god">thing = "value";
+</code></pre>
+<h2 id="termination"><a class="header" href="#termination">Termination</a></h2>
+<p>These are the integral final part of a field; distinguishing where a given field ends.
+They are are required to terminate <strong>all</strong> fields. They are written as a semi-colon.</p>
+<pre><code class="language-god">numbers = { one = 1; two = 2; three = 3; };
+</code></pre>
+<h2 id="negation"><a class="header" href="#negation">Negation</a></h2>
+<p>These are used as a prefix to number values; denoting the negativity of the number in question.</p>
+<pre><code class="language-god">negative-numbers = [ -1 -2 -3 -3.14 ];
+positive-numbers = [ 1 2 3 3.14 ];
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="elements"><a class="header" href="#elements">Elements</a></h1>
+<p>An element is a raw <a href="spec/structure/../values-index.html">value</a>, either as a the assigned value of a
+<a href="spec/structure/fields.html">field</a>, or an item in a <a href="spec/structure/../values/lists.html">list</a>. They can be any of the
+fundamental data types.</p>
+<pre><code class="language-god">things = [ 
+    "string"
+    1
+    null
+    false
+    ''
+      Multi-line
+      string
+    ''
+    [ "another" "list" ]
+    { text = "another map"; }
+];
+</code></pre>
+<p>In this example, the following parts are <em>elements</em>:</p>
+<ul>
+<li><code>"string"</code></li>
+<li><code>1</code></li>
+<li><code>null</code></li>
+<li><code>'' ... Multi-line string ... ''</code> (abbreviated)</li>
+<li><code>[ "another" "list" ]</code>
+<ul>
+<li><code>"another"</code></li>
+<li><code>"list"</code></li>
+</ul>
+</li>
+<li><code>{ text  = "a map"; }</code>
+<ul>
+<li><code>"a map"</code></li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="identifiers"><a class="header" href="#identifiers">Identifiers</a></h1>
+<p>These are unquoted text denoting the name or <em>identity</em> of a field.</p>
+<p>Identifiers may not contain any of the following standard symbols:</p>
+<ul>
+<li><code>.</code>: period</li>
+<li><code>%</code>: percent sign</li>
+<li><code>$</code>: dollar sign, as well as other localized currency symbols</li>
+<li><code>@</code>: at sign</li>
+<li><code>!</code>: exclamation point</li>
+<li><code>^</code>: caret</li>
+<li><code>&amp;</code>: ampersand</li>
+<li><code>*</code>: asterisk</li>
+<li><code>"</code>: double-quote</li>
+<li><code>`</code>: backtick/grave</li>
+<li><code>~</code>: tilde</li>
+<li><code>[]</code>: opening and closing square brackets</li>
+<li><code>{}</code>: opening and closing curly braces</li>
+<li><code>()</code>: opening and closing parenthesis</li>
+<li><code>,</code>: comma</li>
+<li><code>+</code>: plus/addition sign</li>
+<li><code>=</code>: equal sign</li>
+<li><code>&gt;&lt;</code>: angle brackets (greater/lesser than signs)</li>
+<li><code>?</code>: question mark</li>
+<li><code>\/</code>: back and forward slashes</li>
+<li><code>;</code>: semi-colon</li>
+</ul>
+<p>Identifiers <strong>may not</strong> begin with:</p>
+<ul>
+<li><code>-</code>: hypen</li>
+<li><code>'</code>: single-quote</li>
+<li><code>0-9</code>: numeric digits</li>
+</ul>
+<p>They however, may <em>contain</em> and be <em>suffixed</em> by:</p>
+<ul>
+<li><code>-</code>: hyphen</li>
+<li><code>'</code>: <strong>unpaired</strong> single-quote</li>
+<li><code>_</code>: underscore</li>
+</ul>
+<p>Outside of these limits, any amount of digits (0-9), and letters (A-Z, a-z) are allowed.</p>
+<pre><code class="language-god"># containing hyphens/underscores
+abc-123 = "fa so la ti do";
+abc_123 = null;
+    
+# suffixed by hyphens/underscores
+abc-123- = "fa so la ti do";
+abc_123_ = null;
+
+# highly impractical, but valid
+a'b'c'1'2'3 = "do re mi";
+a_-_b-'_'-c'1_2-'3' = { crazy = true; };
+</code></pre>
+<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
+<div class="admonition-title">
+<div id="admonition-warning-title">
+<p>Warning</p>
+</div>
+<a class="admonition-anchor-link" href="spec/structure/identifiers.html#admonition-warning"></a>
+</div>
+<div>
+<p>The use of non-ASCII Unicode characters (emojis, non-Latin characters,
+accented characters, etc.) in identifiers is <strong>invalid</strong>. While support for
+non-English languages would be desirable, implementation difficulty,
+security concerns, and lack of expertise with non-Latin scripts make
+this a strict limitation for the foreseeable future.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fields"><a class="header" href="#fields">Fields</a></h1>
+<p>These are the most common and fundamental pieces of data in the language.</p>
+<p>They are a combination of four parts:</p>
+<ul>
+<li><a href="spec/structure/identifier.html">identifier</a>: the name of the field</li>
+<li><a href="spec/structure/operators.html#assignment">assignment</a> operator: to assign the name to a value</li>
+<li><a href="spec/structure/elements.html">element</a>: the fields' <em>assigned value</em></li>
+<li><a href="spec/structure/operators.html#termination">termination</a>: to end the field declaration</li>
+</ul>
+<pre><code class="language-god">name = "Will";
+favorite-things = [ "Movies" "Programming" ];
+favorite-movie = {
+    title = "Interstellar";
+    director = "Christopher Nolan";
+    release-year = 2014;
+    leading-roles = [
+        {
+            character = "Joseph Cooper";
+            actor = "Matthew McConaughey";
+        }
+        {
+            character = "Dr. Amelia Brand";
+            actor = "Anne Hathaway";
+        }
+    ];
+};
+</code></pre>
+<p>In this example, there are 11 fields in total. Let's break down the biggest one:</p>
+<pre><code class="language-god">favorite-movie = {
+    title = "Interstellar";
+    director = "Christopher Nolan";
+    release-year = 2014;
+    leading-roles = [
+        {
+            character = "Joseph Cooper";
+            actor = "Matthew McConaughey";
+        }
+        {
+            character = "Dr. Amelia Brand";
+            actor = "Anne Hathaway";
+        }
+    ];
+};
+</code></pre>
+<p>Here, there are nine total fields including the <code>favorite-movies</code> map.
+Within it, there are eight fields:</p>
+<div class="table-wrapper"><table><thead><tr><th>identifier</th><th>assigned value</th></tr></thead><tbody>
+<tr><td>title</td><td>string <code>"Interstellar"</code></td></tr>
+<tr><td>director</td><td>string <code>"Christopher Nolan"</code></td></tr>
+<tr><td>release-year</td><td>number <code>2014</code></td></tr>
+<tr><td>leading-roles</td><td>an list containing two maps as elements</td></tr>
+</tbody></table>
+</div>
+<p>The first element of <code>leading-roles</code>:</p>
+<div class="table-wrapper"><table><thead><tr><th>identifier</th><th>assigned value</th></tr></thead><tbody>
+<tr><td>character</td><td>string <code>"Joseph Cooper"</code></td></tr>
+<tr><td>actor</td><td>string <code>"Matthew McConaughey"</code></td></tr>
+</tbody></table>
+</div>
+<p>The second element of <code>leading-roles</code></p>
+<div class="table-wrapper"><table><thead><tr><th>identifier</th><th>assigned value</th></tr></thead><tbody>
+<tr><td>character</td><td>string <code>"Dr. Amelia Brand"</code></td></tr>
+<tr><td>actor</td><td>string <code>"Anne Hathaway"</code></td></tr>
+</tbody></table>
+</div><div id="admonition-important" class="admonition admonish-tip" role="note" aria-labelledby="admonition-important-title">
+<div class="admonition-title">
+<div id="admonition-important-title">
+<p>Important</p>
+</div>
+<a class="admonition-anchor-link" href="spec/structure/fields.html#admonition-important"></a>
+</div>
+<div>
+<p>It is an important distiction that the two elements within the <code>leading-roles</code> list are <strong>NOT</strong> fields; they are elements that <em>contain fields</em>.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="whitespace"><a class="header" href="#whitespace">Whitespace</a></h1>
+<p>The following are considered <em>whitespace</em> in <strong>God</strong>:</p>
+<div class="table-wrapper"><table><thead><tr><th>name</th><th>value</th></tr></thead><tbody>
+<tr><td>space characters</td><td><code>\x20</code></td></tr>
+<tr><td>tab characters</td><td><code>\t</code></td></tr>
+<tr><td>line-feed (LF)</td><td><code>\n</code></td></tr>
+<tr><td>carriage-return (CR)</td><td><code>\r</code></td></tr>
+<tr><td><a href="spec/structure/comments.html">comments</a></td><td>Varied</td></tr>
+</tbody></table>
+</div><div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
+<div class="admonition-title">
+<div id="admonition-note-title">
+<p>Note</p>
+</div>
+<a class="admonition-anchor-link" href="spec/structure/whitespace.html#admonition-note"></a>
+</div>
+<div>
+<p>These characters will not be considered whitespace when used within <a href="spec/structure/../values/strings.html">strings</a>.
+See the <a href="spec/structure/../values/strings.html#admonition-warning">warning</a> for specific details related to the handling
+of multi-line strings.</p>
+</div>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="comments"><a class="header" href="#comments">Comments</a></h1>
+<p>Comments in God only come in one variety, line comments:</p>
+<pre><code class="language-god"># this is a line comment, occupying an entire line.
+name = "Will"; # this is another line comment, occupying only the end of the line
+</code></pre>
+<p>Despite <strong>Nix</strong> supporting multi-line and mid-statement comments, <strong>God</strong> does
+not. In practice, any meaning that can be conveyed through comments can be
+conveyed well enough by line comments (whether they occupy a full line or
+only the end of one), making the other types unnecessary.</p>
+<h2 id="terminology-explanation"><a class="header" href="#terminology-explanation">Terminology explanation</a></h2>
+<p>Terminology regarding comments has garnered a lot of misconception; so in an
+effort to make it perfectly clear, here are the different types of comments,
+using <code>C</code> as the language to demonstrate.</p>
+<p>Multi-line "Block" comments:</p>
+<pre><code class="language-c">int main() {
+    /* this is foo
+     * it equals two
+     * */
+    int foo = 2;
+    return 0;
+}
+</code></pre>
+<p>Line comments:</p>
+<pre><code class="language-c">int main() {
+    // this is foo
+    int foo = 2; // it equals two
+    return 0;
+}
+</code></pre>
+<p>Mid-statement comments:</p>
+<pre><code class="language-c">int main() {
+    int /* this is foo, it equals two */ foo = 2;
+    return 0;
+}
+</code></pre>
+<p>As stated above, <strong>God</strong> only supports <em>line comments</em>, the other types are invalid.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
