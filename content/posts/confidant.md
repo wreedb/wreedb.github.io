@@ -42,5 +42,5 @@ If you prefer to build things manually like myself, you can see the [INSTALL.md]
 document in the source repository for specific build instructions and requirements.
 
 After that, if you have questions about how to use it, you should go to the 
-[website](https://wreedb.github.io), where everything you need to know is 
+[website](https://wreedb.github.io/confidant), where everything you need to know is 
 documented.
