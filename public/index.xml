@@ -2,17 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome on Will Reed: Developer</title>
-    <link>http://localhost:1313/</link>
+    <link>https://wreedb.github.io/</link>
     <description>Recent content in Welcome on Will Reed: Developer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Sep 2025 17:43:12 -0500</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Nov 2025 12:15:32 -0600</lastBuildDate><atom:link href="https://wreedb.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Confidant: Your configuration pal</title>
+      <link>https://wreedb.github.io/posts/confidant/</link>
+      <pubDate>Wed, 19 Nov 2025 12:15:32 -0600</pubDate>
+      
+      <guid>https://wreedb.github.io/posts/confidant/</guid>
+      
+      <description>&lt;p&gt;The past few weeks, I&amp;rsquo;ve been working diligently on a program called
+&lt;em&gt;Confidant&lt;/em&gt;. I started writing it due to being unsatisfied with the options
+available for dotfile management. I&amp;rsquo;ve tried a number of solutions, &lt;a href=&#34;https://gnu.org/software/stow&#34;&gt;GNU Stow&lt;/a&gt;,
+&lt;a href=&#34;https://redhat.com/en/ansible-collaborative&#34;&gt;Ansible&lt;/a&gt;, &lt;a href=&#34;https://chezmoi.io&#34;&gt;Chezmoi&lt;/a&gt; and &lt;a href=&#34;https://yadm.io&#34;&gt;Yadm&lt;/a&gt; just to name a few. All of these left me
+wanting for one reason or another, whether it be a lack of features or an
+over-abundance of them.&lt;/p&gt;
+&lt;h2 id=&#34;what-does-it-do&#34;&gt;What does it do?&lt;/h2&gt;
+&lt;p&gt;It combines the practical symlink-based approach of GNU Stow with simple (but
+powerful) templating syntax inspired by Ansible to provide a focused, fast and
+easy to use solution.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>You shouldn&#39;t use software from the UUtils project</title>
-      <link>http://localhost:1313/posts/uutils/</link>
+      <link>https://wreedb.github.io/posts/uutils/</link>
       <pubDate>Fri, 12 Sep 2025 17:43:12 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/uutils/</guid>
+      <guid>https://wreedb.github.io/posts/uutils/</guid>
       
       <description>&lt;h1 id=&#34;why-you-shouldnt-use-software-from-the-uutils-project&#34;&gt;Why you shouldn&amp;rsquo;t use software from the &lt;strong&gt;uutils&lt;/strong&gt; project&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/uutils&#34;&gt;Uutils&lt;/a&gt; is a &lt;a href=&#34;https://rust-lang.org&#34;&gt;Rust&lt;/a&gt;-oriented software development project
@@ -34,10 +54,10 @@ common implementations of these tool are the &lt;a href=&#34;https://gnu.org/sof
     
     <item>
       <title>My LFS journey</title>
-      <link>http://localhost:1313/posts/lfs/</link>
+      <link>https://wreedb.github.io/posts/lfs/</link>
       <pubDate>Tue, 09 Sep 2025 14:51:55 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/lfs/</guid>
+      <guid>https://wreedb.github.io/posts/lfs/</guid>
       
       <description>&lt;h1 id=&#34;daily-driving-linux-from-scratch&#34;&gt;Daily Driving Linux From Scratch&lt;/h1&gt;
 &lt;p&gt;For about a month now, I&amp;rsquo;ve been using a fully custom version of Linux
@@ -55,10 +75,10 @@ the description of what I wanted.&lt;/p&gt;</description>
     
     <item>
       <title>Shepherd</title>
-      <link>http://localhost:1313/posts/shepherd/</link>
+      <link>https://wreedb.github.io/posts/shepherd/</link>
       <pubDate>Mon, 09 Jun 2025 16:04:08 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/shepherd/</guid>
+      <guid>https://wreedb.github.io/posts/shepherd/</guid>
       
       <description>&lt;h1 id=&#34;i-replaced-my-init-system-with-gnu-shepherd&#34;&gt;I replaced my init system with GNU Shepherd&lt;/h1&gt;
 &lt;p&gt;Why? For fun of course.&lt;/p&gt;
@@ -76,10 +96,10 @@ copyleft licenses!).&lt;/p&gt;</description>
     
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://wreedb.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://wreedb.github.io/about/</guid>
       
       <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;
 &lt;p&gt;I&amp;rsquo;m a 26 year old &lt;em&gt;mostly&lt;/em&gt; self-taught programmer.
@@ -100,10 +120,10 @@ on demand.&lt;/p&gt;</description>
     
     <item>
       <title>PGP</title>
-      <link>http://localhost:1313/pgp/</link>
+      <link>https://wreedb.github.io/pgp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/pgp/</guid>
+      <guid>https://wreedb.github.io/pgp/</guid>
       
       <description>&lt;h1 id=&#34;fingerprint&#34;&gt;Fingerprint&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;AD581CBB27D1243832274EE7FA1DF3805D65AE54&lt;/code&gt;&lt;/p&gt;
