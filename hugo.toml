@@ -56,6 +56,9 @@ url = "https://codeberg.org/wreedb"
     name = 'God'
     url = '/god/'
   [[menu.main]]
+    name = 'Confidant'
+    url = '/confidant/'
+  [[menu.main]]
     name = 'Posts'
     url = '/posts/'
     weight = 20
