@@ -687,6 +687,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      tags
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#since-030" class="md-nav__link">
+    <span class="md-ellipsis">
+      (since 0.3.0)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -916,6 +940,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      tags
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="tags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#since-030" class="md-nav__link">
+    <span class="md-ellipsis">
+      (since 0.3.0)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1027,7 +1075,7 @@ to determine the symlink path.</p>
 </code></pre>
 <p>In this example, the symlink will be placed at <code>${HOME}/.config/emacs/init.el</code>.</p>
 <div class="admonition warning">
-<p class="admonition-title">conflict</p>
+<p class="admonition-title">Conflict</p>
 <p><code>dest</code> and <code>destdir</code> are mutually exclusive; meaning in any one <code>links</code> node,
 you must use at least one, but never both.</p>
 </div>
@@ -1110,6 +1158,48 @@ ${repo}/.config/fish/config.fish -&gt; ${XDG_CONFIG_HOME}/fish/config.fish
 <p>Template node items are automatically inferred as a <code>directory</code> or <code>file</code> 
 based on the type of file the item would point to after being substituted 
 into the <code>source</code> path.</p>
+</div>
+<h2 id="tags">tags</h2>
+<h4 id="since-030">(since 0.3.0)</h4>
+<p>Both <code>templates</code> and <code>links</code> nodes may optionally contain a <code>tag</code> field. The value 
+specified for a tag is a simple string name, such as <code>desktop</code> or <code>work</code>. These 
+entries are skipped when running <code>confidant link</code>, and are only used when you
+provide the <code>-t,--tags</code> argument, specifying them by name.</p>
+<p>Tags are particularly useful when you have multiple versions of a file, which 
+would all occupy the same destination, but in different contexts or on different
+machines. Here is a quick example:</p>
+<pre><code>links: {
+    wireplumber-laptop: {
+        source: ${repo}/.config/wireplumber/wireplumber.conf.d/51-local.conf.laptop
+        dest: ${xdg_config_home}/.config/wireplumber/wireplumber.conf.d/51-local.conf
+        tag: laptop
+    };
+
+    wireplumber-desktop: {
+        source: ${repo}/.config/wireplumber/wireplumber.conf.d/51-local.conf.desktop
+        dest: ${xdg_config_home}/.config/wireplumber/wireplumber.conf.d/51-local.conf
+        tag: desktop
+    };
+};
+</code></pre>
+<p>My desktop and laptop have different audio hardware configurations, and thus I 
+use two different wireplumber configuration files. Given that my local 
+configuration contains the above snippet, I would run:</p>
+<pre><code class="language-sh">confidant link -t desktop
+</code></pre>
+<p>on my desktop computer, and:</p>
+<pre><code class="language-sh">confidant link -t laptop
+</code></pre>
+<p>on my laptop. The two files can coexist peacefully in my repository and be 
+properly managed on a contextual basis.</p>
+<div class="admonition warning">
+<p class="admonition-title">Conflicting Tags</p>
+<p>Since <strong>Confidant</strong> does no state management, this means that it is 
+possible to specify two tags which would place different files in the 
+same destination, which will result in an error. Since tags are never 
+utilized without explicitly passing them on the command-line; this is 
+expected behavior, as this action would be attempting to overwrite an 
+existing link.</p>
 </div>
 
 

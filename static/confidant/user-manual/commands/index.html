@@ -1083,6 +1083,15 @@ configuration and applying the links you've declared. If you are unsure
 about the correctness of your declarations, pass the <code>-d,--dry-run</code> flag
 alongside the command to simulate the actions that <em>would</em> be taken before 
 really applying them.</p>
+<p>For use of tags, pass the <code>-t,--tags</code> option with a tag name or comma 
+separated list of names, such as:</p>
+<pre><code>confidant link -t desktop,work
+</code></pre>
+<p>This will include links and templates containing the <code>desktop</code> or <code>work</code> tag.
+This is particularly useful for situations where you have multiple files that 
+would occupy the same destination, but are meant to be used on different 
+machines or contexts, see <a href="../configuration/local/#tags">tags</a> for more 
+information and examples of tag usage.</p>
 <h3 id="config"><code>config</code></h3>
 <p>Allows you to display your configuration and get a <em>birds-eye</em> view of 
 your settings</p>
@@ -1096,6 +1105,7 @@ by separating the section names with periods; for example:</p>
 <pre><code class="language-sh">confidant config get repository.url
 confidant config get templates.config.items
 </code></pre>
+<p>To query your global configuration settings, pass <code>-g,--global</code></p>
 <h3 id="help-command"><code>help &lt;command&gt;</code></h3>
 <p>Display help information about sub-commands, supported arguments include:
 <code>init</code>, <code>config</code>, <code>config dump</code>, <code>config get</code> and <code>link</code>.</p>
