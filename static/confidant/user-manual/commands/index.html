@@ -521,7 +521,7 @@
           <li class="md-nav__item">
   <a href="#-h-help" class="md-nav__link">
     <span class="md-ellipsis">
-      -h,--help
+      -?,-h,--help
     </span>
   </a>
   
@@ -932,7 +932,7 @@
           <li class="md-nav__item">
   <a href="#-h-help" class="md-nav__link">
     <span class="md-ellipsis">
-      -h,--help
+      -?,-h,--help
     </span>
   </a>
   
@@ -1065,7 +1065,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <p>Silence most (non-fatal) message output.</p>
 <h3 id="-v-verbose"><code>-v,--verbose</code></h3>
 <p>Immediately sets <code>log-level</code> to <code>trace</code>, producing all possible output.</p>
-<h3 id="-h-help"><code>-h,--help</code></h3>
+<h3 id="-h-help"><code>-?,-h,--help</code></h3>
 <p>Display help information for <strong>Confidant</strong> or one of its' subcommands.</p>
 <h2 id="commands">Commands</h2>
 <p>The command-line interface was crafted manually and meticulously to provide 
@@ -1076,7 +1076,8 @@ available.</p>
 <p>Will provide you a sample (local) configuration file in your current directory, 
 or a directory you specify at the end of the command. The sample is documented 
 with comments explaining how the different parts work, though if you need 
-further guidance, see the <a href="../configuration/global/">global</a> and <a href="../configuration/local/">local</a> configuration pages.</p>
+further guidance, see the <a href="../configuration/global/">global</a> and <a href="../configuration/local/">local</a> configuration pages.
+May be passed <code>-d,--dry-run</code> to simulate actions.</p>
 <h3 id="link"><code>link</code></h3>
 <p>Performs the main symlinking action of <strong>Confidant</strong>, reading your local 
 configuration and applying the links you've declared. If you are unsure 
@@ -1097,7 +1098,9 @@ information and examples of tag usage.</p>
 your settings</p>
 <h4 id="dump"><code>dump</code></h4>
 <p>Pretty-prints your local configuration settings, though you may also pass
-<code>-g,--global</code> to display the settings of your global configuration instead.</p>
+<code>-g,--global</code> to display the settings of your global configuration instead.
+(since 0.4.0) You may pass the <code>-j,--json</code> option to output either configuration
+in <a href="https://json.org">JSON</a> format.</p>
 <h4 id="get"><code>get</code></h4>
 <p>Queries your configuration settings given the name of a section, such as 
 <code>repository</code>, <code>links</code> or <code>templates</code>. Also allows you to query nested sections 
