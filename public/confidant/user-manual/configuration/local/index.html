@@ -694,21 +694,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="tags">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#since-030" class="md-nav__link">
-    <span class="md-ellipsis">
-      (since 0.3.0)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -947,21 +932,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="tags">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#since-030" class="md-nav__link">
-    <span class="md-ellipsis">
-      (since 0.3.0)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -989,6 +959,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <h1 id="local-configuration">Local Configuration</h1>
 <p><strong>Local</strong> (meaning they work on local basis; the directory they reside 
 in) configuration files are where you declare your <em>dotfile</em> symlink paths.
+For a quick look at <strong>Confidant</strong> in action, see the <a href="#a-real-world-example">example</a>!
 They offer three <code>node</code> types, <code>repostiory</code>, <code>links</code> and <code>templates</code>.</p>
 <h2 id="repository"><code>repository</code></h2>
 <p>Holds metadata about your repository.</p>
@@ -1160,11 +1131,11 @@ based on the type of file the item would point to after being substituted
 into the <code>source</code> path.</p>
 </div>
 <h2 id="tags">tags</h2>
-<h4 id="since-030">(since 0.3.0)</h4>
-<p>Both <code>templates</code> and <code>links</code> nodes may optionally contain a <code>tag</code> field. The value 
-specified for a tag is a simple string name, such as <code>desktop</code> or <code>work</code>. These 
-entries are skipped when running <code>confidant link</code>, and are only used when you
-provide the <code>-t,--tags</code> argument, specifying them by name.</p>
+<p>(since 0.3.0) Both <code>templates</code> and <code>links</code> nodes may optionally contain a 
+<code>tag</code> field. The value specified for a tag is a simple string name, such as 
+<code>desktop</code> or <code>work</code>. These entries are skipped when running <code>confidant link</code>, 
+and are only used when you provide the <code>-t,--tags</code> argument, specifying them 
+by name.</p>
 <p>Tags are particularly useful when you have multiple versions of a file, which 
 would all occupy the same destination, but in different contexts or on different
 machines. Here is a quick example:</p>
@@ -1201,6 +1172,9 @@ utilized without explicitly passing them on the command-line; this is
 expected behavior, as this action would be attempting to overwrite an 
 existing link.</p>
 </div>
+<h1 id="a-real-world-example">A real-world example</h1>
+<p>If you learn better by example, you can inspect my <a href="https://codeberg.org/wreedb/config.git">personal dotfiles repository</a>
+for a look at how <strong>Confidant</strong> can be used.</p>
 
 
 
