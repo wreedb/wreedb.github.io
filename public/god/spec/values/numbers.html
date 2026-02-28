@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
@@ -29,16 +28,16 @@
         <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../../theme/admonish.css">
         <link rel="stylesheet" href="../../theme/custom.css">
+        <link rel="stylesheet" href="../../theme/admonish.css">
+        <link rel="stylesheet" href="../../theme/highlight.css">
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
             const path_to_root = "../../";
             const default_light_theme = "light";
-            const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex.js";
+            const default_dark_theme = "coal";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc.js"></script>
@@ -95,13 +94,10 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
-                sidebar_toggle.checked = false;
             }
-            if (sidebar === 'visible') {
-                sidebar_toggle.checked = true;
-            } else {
-                html.classList.remove('sidebar-visible');
-            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -152,12 +148,7 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                            <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
-                            </div>
-                        </div>
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -187,13 +178,6 @@ slightly simpler due to all data here being completely static.</p>
 age-negative = -26;
 pi = 3.14;
 pi-negative = -3.14;
-exp = 0.27e13;
-</code></pre>
-<p>In practice, a <em>number</em> is a sequence of one or many numeric digits, it may
-be used with a leading negation operator, and may use lower and upper-case
-exponent notation.</p>
-<pre><code class="language-god">decimal-exp = -.5e10;
-decimal-negative-exp = -.123E-5;
 </code></pre>
 <div id="admonition-important" class="admonition admonish-tip" role="note" aria-labelledby="admonition-important-title">
 <div class="admonition-title">
@@ -211,6 +195,15 @@ implementation, the implementation <strong>MAY NOT</strong> claim to be complian
 this specification.</p>
 </div>
 </div>
+<p>In practice, a <em>number</em> is a sequence of one or many numeric digits, it may
+be used with a leading negation operator for negative numbers.</p>
+<pre><code class="language-god">my-numbers = [ 1 2 3 -4 -516.8 ];
+</code></pre>
+<p>Note that unlike in <em>Nix</em>, exponent notation is not valid; <strong>God</strong> is intended
+to be a completely static format. For exponential numeric values to be useful,
+they would need to be computed by the parser, which is not something <strong>God</strong>
+intends to do. If exponent notation is needed, it should be written as a
+string value and computed by other means.</p>
 
                     </main>
 
@@ -258,7 +251,6 @@ this specification.</p>
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
-
 
 
     </div>

@@ -9,9 +9,9 @@ theme = "hugo-blog-awesome"
   name = "Will Reed"
   email = "wreedb@disroot.org"
 
-[module]
-  [[module.imports]]
-    path = 'github.com/hugo-sid/hugo-blog-awesome'
+# [module]
+#   [[module.imports]]
+#     path = 'github.com/hugo-sid/hugo-blog-awesome'
 
 [caches]
   [caches.images]

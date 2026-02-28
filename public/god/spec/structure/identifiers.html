@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
@@ -29,16 +28,16 @@
         <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../../theme/admonish.css">
         <link rel="stylesheet" href="../../theme/custom.css">
+        <link rel="stylesheet" href="../../theme/admonish.css">
+        <link rel="stylesheet" href="../../theme/highlight.css">
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
             const path_to_root = "../../";
             const default_light_theme = "light";
-            const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex.js";
+            const default_dark_theme = "coal";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc.js"></script>
@@ -95,13 +94,10 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
-                sidebar_toggle.checked = false;
             }
-            if (sidebar === 'visible') {
-                sidebar_toggle.checked = true;
-            } else {
-                html.classList.remove('sidebar-visible');
-            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -152,12 +148,7 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                            <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
-                            </div>
-                        </div>
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -178,55 +169,33 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="identifiers"><a class="header" href="#identifiers">Identifiers</a></h1>
-<p>These are unquoted text denoting the name or <em>identity</em> of a field.</p>
-<p>Identifiers may not contain any of the following standard symbols:</p>
+<p>Identifiers are unquoted text denoting the name or <em>identity</em> of a field.
+The rules governing what an identifier is allowed to be are as follows:</p>
+<p>They may consist solely of:</p>
 <ul>
-<li><code>.</code>: period</li>
-<li><code>%</code>: percent sign</li>
-<li><code>$</code>: dollar sign, as well as other localized currency symbols</li>
-<li><code>@</code>: at sign</li>
-<li><code>!</code>: exclamation point</li>
-<li><code>^</code>: caret</li>
-<li><code>&amp;</code>: ampersand</li>
-<li><code>*</code>: asterisk</li>
-<li><code>"</code>: double-quote</li>
-<li><code>`</code>: backtick/grave</li>
-<li><code>~</code>: tilde</li>
-<li><code>[]</code>: opening and closing square brackets</li>
-<li><code>{}</code>: opening and closing curly braces</li>
-<li><code>()</code>: opening and closing parenthesis</li>
-<li><code>,</code>: comma</li>
-<li><code>+</code>: plus/addition sign</li>
-<li><code>=</code>: equal sign</li>
-<li><code>&gt;&lt;</code>: angle brackets (greater/lesser than signs)</li>
-<li><code>?</code>: question mark</li>
-<li><code>\/</code>: back and forward slashes</li>
-<li><code>;</code>: semi-colon</li>
+<li>Letters: <code>A-Z a-z</code></li>
+<li>Numbers: <code>0-9</code></li>
+<li>Underscores: <code>_</code></li>
+<li>Hyphens: <code>-</code></li>
+<li>Single quotes: <code>'</code></li>
 </ul>
-<p>Identifiers <strong>may not</strong> begin with:</p>
-<ul>
-<li><code>-</code>: hypen</li>
-<li><code>'</code>: single-quote</li>
-<li><code>0-9</code>: numeric digits</li>
-</ul>
-<p>They however, may <em>contain</em> and be <em>suffixed</em> by:</p>
-<ul>
-<li><code>-</code>: hyphen</li>
-<li><code>'</code>: <strong>unpaired</strong> single-quote</li>
-<li><code>_</code>: underscore</li>
-</ul>
-<p>Outside of these limits, any amount of digits (0-9), and letters (A-Z, a-z) are allowed.</p>
-<pre><code class="language-god"># containing hyphens/underscores
-abc-123 = "fa so la ti do";
-abc_123 = null;
-    
-# suffixed by hyphens/underscores
-abc-123- = "fa so la ti do";
-abc_123_ = null;
-
-# highly impractical, but valid
-a'b'c'1'2'3 = "do re mi";
-a_-_b-'_'-c'1_2-'3' = { crazy = true; };
+<p>However, the first character of an identifier must be a letter or underscore.
+No other characters are permitted.</p>
+<h4 id="examples-of-valid-identifiers"><a class="header" href="#examples-of-valid-identifiers">Examples of VALID identifiers</a></h4>
+<pre><code class="language-god">{
+    my-list = [];
+    my_list = [];
+    _my_list_ = [];
+    my-list- = [];
+    my'list' = [];
+}
+</code></pre>
+<h4 id="examples-of-invalid-identifiers"><a class="header" href="#examples-of-invalid-identifiers">Examples of INVALID identifiers</a></h4>
+<pre><code class="language-god">{
+    'my-list = [];
+    -my-list = [];
+    1my-list = [];
+}
 </code></pre>
 <div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
 <div class="admonition-title">
@@ -237,10 +206,7 @@ a_-_b-'_'-c'1_2-'3' = { crazy = true; };
 </div>
 <div>
 <p>The use of non-ASCII Unicode characters (emojis, non-Latin characters,
-accented characters, etc.) in identifiers is <strong>invalid</strong>. While support for
-non-English languages would be desirable, implementation difficulty,
-security concerns, and lack of expertise with non-Latin scripts make
-this a strict limitation for the foreseeable future.</p>
+accented characters, etc.) in identifiers is <strong>invalid</strong>.</p>
 </div>
 </div>
 
@@ -290,7 +256,6 @@ this a strict limitation for the foreseeable future.</p>
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
-
 
 
     </div>
