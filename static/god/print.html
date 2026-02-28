@@ -13,7 +13,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -30,16 +29,16 @@
         <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="theme/admonish.css">
         <link rel="stylesheet" href="theme/custom.css">
+        <link rel="stylesheet" href="theme/admonish.css">
+        <link rel="stylesheet" href="theme/highlight.css">
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
             const path_to_root = "";
             const default_light_theme = "light";
-            const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex.js";
+            const default_dark_theme = "coal";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -96,13 +95,10 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
-                sidebar_toggle.checked = false;
             }
-            if (sidebar === 'visible') {
-                sidebar_toggle.checked = true;
-            } else {
-                html.classList.remove('sidebar-visible');
-            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -153,12 +149,7 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                            <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
-                            </div>
-                        </div>
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -254,24 +245,24 @@ For those that may need a data serialization format, but never (or rarely) have
 to deal directly with the data in its storage format, it may seems like nit-picking;
 however it becomes different when you find yourself manually writing in these formats.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="background"><a class="header" href="#background">Background</a></h1>
-<p>If you feel that <strong>God</strong> syntax is familiar, that's probably because <em>it is</em>. <strong>God</strong>
-isn't a new syntax; it is derived directly from the <a href="https://nixos.org">Nix</a> programming language.
-Any valid <strong>God</strong> code can be validated directly by Nix, with <code>nix eval -f file.god</code>. I saw no need
-to create a new language when I realized Nix had exactly the <em>bones</em> needed to derive a flexible
-(and easy to understand) data serialization format. <strong>God</strong> is a subset of Nix which omits it's
-programming syntax and features in favor of static data representation.</p>
-<p>Some of the benefits include:</p>
+<p>If you feel that <strong>God</strong> syntax is familiar, that's probably because <em>it is</em>.<br />
+<strong>God</strong> isn't a new syntax; it is derived directly from the <a href="https://nixos.org">Nix</a> programming<br />
+language. Any valid <strong>God</strong> code can be validated directly by Nix, with<br />
+<code>nix eval -f file.god</code>. It is a subset of Nix which omits it's programming<br />
+syntax and dynamic features in favor of static data representation.</p>
+<h2 id="benefits"><a class="header" href="#benefits">Benefits</a></h2>
 <ul>
-<li>It can be validated by <code>nix</code></li>
-<li>Conversion from <em>GOD</em> to <a href="https://json.org">JSON</a> with <code>nix eval -f file.god --json</code></li>
-<li>A number of existing tools for working with Nix code can be used
-<ul>
-<li>linters and formatters such as <a href="https://git.peppe.rs/languages/statix">statix</a> and <a href="https://github.com/nixos/nixfmt">nixfmt</a></li>
-<li>language servers such as <a href="https://github.com/nix-community/nixd">nixd</a>, <a href="https://github.com/oxalica/nil">nil</a> and <a href="https://github.com/nix-community/rnix-lsp">rnix-lsp</a></li>
-<li>A very thoroughly written <a href="https://github.com/nixos/nix-mode">Emacs mode</a></li>
+<li>Validation and JSON conversion with the <code>nix eval</code></li>
+<li>A number of existing tools for working with Nix code</li>
+<li>A thorough <a href="https://github.com/nixos/nix-mode">Emacs mode</a></li>
+<li>Static analyzers and linters such as <a href="https://git.peppe.rs/languages/static">statix</a></li>
+<li>Language servers such as <a href="https://github.com/nix-community/nixd">nixd</a> and <a href="https://github.com/oxalica/nil">nil</a></li>
 </ul>
-</li>
-</ul>
+<h2 id="purpose"><a class="header" href="#purpose">Purpose</a></h2>
+<p>I'd say that God has about the same purpose as other serialization formats,<br />
+though we take a different approach to specification than most. The main goal<br />
+is to be <em>as useful as possible</em> to <em>as many languages as possible</em>, which is<br />
+not a goal you obtain by making an overly-complicated and restrictive spec.</p>
 <p>If you would like to see some sample document files, see the <a href="examples.html">examples</a> page.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="examples"><a class="header" href="#examples">Examples</a></h1>
 <p>These can all be found in the <code>example/</code> directory of the project's <a href="https://github.com/wreedb/god">Git repository</a>.</p>
@@ -448,10 +439,11 @@ programming syntax and features in favor of static data representation.</p>
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="implementations"><a class="header" href="#implementations">Implementations</a></h1>
-<ul>
-<li>Guile Scheme: <a href="https://github.com/wreedb/guile-god">wreedb/guile-god</a></li>
-<li>Tree-Sitter Grammar: <a href="https://github.com/wreedb/tree-sitter-god">wreedb/tree-sitter-god</a></li>
-</ul>
+<h1 id="libgod-the-official-implementation"><a class="header" href="#libgod-the-official-implementation">Libgod, the official implementation</a></h1>
+<p>Written in C++, it can be found at <a href="https://codeberg.org/wreedb/libgod">wreedb/libgod</a>.</p>
+<h1 id="tree-sitter-grammar"><a class="header" href="#tree-sitter-grammar">Tree-sitter Grammar</a></h1>
+<p>With a bit of configuration, it can be used within both Neovim and Emacs for<br />
+syntax highlighting and indentation! <a href="https://github.com/wreedb/tree-sitter-god">wreedb/tree-sitter-god</a>.</p>
 <div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
 <div class="admonition-title">
 <div id="admonition-note-title">
@@ -463,7 +455,10 @@ programming syntax and features in favor of static data representation.</p>
 <p>If you have decided to implement the language, please <a href="mailto:wreed@disroot.org">contact me</a>!</p>
 </div>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="value-types"><a class="header" href="#value-types">Value Types</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-specification"><a class="header" href="#the-specification">The Specification</a></h1>
+<p>Below you can navigate and learn about the various components that comprise<br />
+the language.</p>
+<h2 id="value-types"><a class="header" href="#value-types"><a href="spec/values-index.html">Value Types</a></a></h2>
 <ul>
 <li><a href="spec/values/strings.html">Strings</a></li>
 <li><a href="spec/values/numbers.html">Numbers</a></li>
@@ -472,7 +467,7 @@ programming syntax and features in favor of static data representation.</p>
 <li><a href="spec/values/maps.html">Maps</a></li>
 <li><a href="spec/values/lists.html">Lists</a></li>
 </ul>
-<h1 id="file-structure"><a class="header" href="#file-structure">File Structure</a></h1>
+<h2 id="file-structure"><a class="header" href="#file-structure"><a href="spec/structure-index.html">File Structure</a></a></h2>
 <ul>
 <li><a href="spec/structure/document.html">Document</a></li>
 <li><a href="spec/structure/operators.html">Operators</a></li>
@@ -494,12 +489,14 @@ with the goal of being useful to almost any programming language. They are flexi
 <li><a href="spec/values/lists.html">Lists</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="strings"><a class="header" href="#strings">Strings</a></h1>
-<h2 id="regular"><a class="header" href="#regular">Regular</a></h2>
-<p>A standard or regular string is represented by a pair of double quotes with any amount of text inside it.</p>
+<p>Strings in <strong>God</strong> must be valid UTF-8, and this validation should be done<br />
+by the implementer, or documented where/when validation is not enforced.</p>
+<h2 id="standard-strings"><a class="header" href="#standard-strings">Standard Strings</a></h2>
+<p>Represented by a pair of double quotes with any amount of (valid UTF-8) text inside it.</p>
 <pre><code class="language-god">greeting = "Hello, how are you?";
 </code></pre>
 <h2 id="multi-line"><a class="header" href="#multi-line">Multi-line</a></h2>
-<p>Strings that span across multiple lines are supported. They are define using
+<p>Strings that span across multiple lines are supported. They are declared using<br />
 two sets of single quotes; one at the beginning and one at the end.</p>
 <pre><code class="language-god">about-me = ''
   Let me tell you
@@ -540,21 +537,10 @@ greeting = ''
 # produces:
 # "I said 'Hello!'"\n  to them."
 </code></pre>
-<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
-<div class="admonition-title">
-<div id="admonition-warning-title">
-<p>Warning</p>
-</div>
-<a class="admonition-anchor-link" href="spec/values/strings.html#admonition-warning"></a>
-</div>
-<div>
-<p>The whitespace and newline on the opening line after <code>''</code> are ignored if there
-is no meaningful (non-whitespace) text or characters on said initial line.
-Also, leading tab (<code>\t</code>) characters are not stripped from the beginning of the
-line, so it is best practice to use spaces within multiline strings unless
-this is desired.</p>
-</div>
-</div>
+<h3 id="additional-notes"><a class="header" href="#additional-notes">Additional notes</a></h3>
+<p>Unlike in Nix, there is no string interpolation here. The data represented<br />
+is purely static, and the implementater should have to do no computation<br />
+or transformation of values.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="numbers"><a class="header" href="#numbers">Numbers</a></h1>
 <p>Numbers in <strong>God</strong> are neither specifically intergers, doubles nor floats.
 They can be any of them; In <em>Nix</em>, integers have an upper and lower boundary
@@ -565,13 +551,6 @@ slightly simpler due to all data here being completely static.</p>
 age-negative = -26;
 pi = 3.14;
 pi-negative = -3.14;
-exp = 0.27e13;
-</code></pre>
-<p>In practice, a <em>number</em> is a sequence of one or many numeric digits, it may
-be used with a leading negation operator, and may use lower and upper-case
-exponent notation.</p>
-<pre><code class="language-god">decimal-exp = -.5e10;
-decimal-negative-exp = -.123E-5;
 </code></pre>
 <div id="admonition-important" class="admonition admonish-tip" role="note" aria-labelledby="admonition-important-title">
 <div class="admonition-title">
@@ -589,6 +568,15 @@ implementation, the implementation <strong>MAY NOT</strong> claim to be complian
 this specification.</p>
 </div>
 </div>
+<p>In practice, a <em>number</em> is a sequence of one or many numeric digits, it may
+be used with a leading negation operator for negative numbers.</p>
+<pre><code class="language-god">my-numbers = [ 1 2 3 -4 -516.8 ];
+</code></pre>
+<p>Note that unlike in <em>Nix</em>, exponent notation is not valid; <strong>God</strong> is intended
+to be a completely static format. For exponential numeric values to be useful,
+they would need to be computed by the parser, which is not something <strong>God</strong>
+intends to do. If exponent notation is needed, it should be written as a
+string value and computed by other means.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="booleans"><a class="header" href="#booleans">Booleans</a></h1>
 <p>Boolean values in <strong>God</strong> are written as the unquoted text <code>true</code> and <code>false</code>.
 As in almost any context related to computer science, booleans are a data type
@@ -677,13 +665,12 @@ require termination.</p>
 <a class="admonition-anchor-link" href="spec/values/maps.html#admonition-warning"></a>
 </div>
 <div>
-<p>Some languages allow identifiers to be used more than once within a map
-or similar data structure, with the last occurrence determining its value.
-This is not valid in <strong>God</strong>.</p>
+<p>Repeated use of the same identifier name in the same scope will result
+in the last occurrence determining its' value.</p>
 <pre><code class="language-god">me = {
-    name =  "Will";
+    name = "Will";
     age = 26;
-    age = 25; # this is an ERROR
+    age = 27; # 27 will 'overwrite' the previous value
 };
 </code></pre>
 </div>
@@ -799,74 +786,38 @@ fundamental data types.</p>
     { text = "another map"; }
 ];
 </code></pre>
-<p>In this example, the following parts are <em>elements</em>:</p>
-<ul>
-<li><code>"string"</code></li>
-<li><code>1</code></li>
-<li><code>null</code></li>
-<li><code>'' ... Multi-line string ... ''</code> (abbreviated)</li>
-<li><code>[ "another" "list" ]</code>
-<ul>
-<li><code>"another"</code></li>
-<li><code>"list"</code></li>
-</ul>
-</li>
-<li><code>{ text  = "a map"; }</code>
-<ul>
-<li><code>"a map"</code></li>
-</ul>
-</li>
-</ul>
+<p>In the above example, the only parts which are not elements are the two
+identifiers <code>things</code> and <code>text</code>, everything else is an element, including
+the map that contains the <code>text</code> identifier and the list that the <code>things</code>
+identifier is assigned to.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="identifiers"><a class="header" href="#identifiers">Identifiers</a></h1>
-<p>These are unquoted text denoting the name or <em>identity</em> of a field.</p>
-<p>Identifiers may not contain any of the following standard symbols:</p>
+<p>Identifiers are unquoted text denoting the name or <em>identity</em> of a field.
+The rules governing what an identifier is allowed to be are as follows:</p>
+<p>They may consist solely of:</p>
 <ul>
-<li><code>.</code>: period</li>
-<li><code>%</code>: percent sign</li>
-<li><code>$</code>: dollar sign, as well as other localized currency symbols</li>
-<li><code>@</code>: at sign</li>
-<li><code>!</code>: exclamation point</li>
-<li><code>^</code>: caret</li>
-<li><code>&amp;</code>: ampersand</li>
-<li><code>*</code>: asterisk</li>
-<li><code>"</code>: double-quote</li>
-<li><code>`</code>: backtick/grave</li>
-<li><code>~</code>: tilde</li>
-<li><code>[]</code>: opening and closing square brackets</li>
-<li><code>{}</code>: opening and closing curly braces</li>
-<li><code>()</code>: opening and closing parenthesis</li>
-<li><code>,</code>: comma</li>
-<li><code>+</code>: plus/addition sign</li>
-<li><code>=</code>: equal sign</li>
-<li><code>&gt;&lt;</code>: angle brackets (greater/lesser than signs)</li>
-<li><code>?</code>: question mark</li>
-<li><code>\/</code>: back and forward slashes</li>
-<li><code>;</code>: semi-colon</li>
+<li>Letters: <code>A-Z a-z</code></li>
+<li>Numbers: <code>0-9</code></li>
+<li>Underscores: <code>_</code></li>
+<li>Hyphens: <code>-</code></li>
+<li>Single quotes: <code>'</code></li>
 </ul>
-<p>Identifiers <strong>may not</strong> begin with:</p>
-<ul>
-<li><code>-</code>: hypen</li>
-<li><code>'</code>: single-quote</li>
-<li><code>0-9</code>: numeric digits</li>
-</ul>
-<p>They however, may <em>contain</em> and be <em>suffixed</em> by:</p>
-<ul>
-<li><code>-</code>: hyphen</li>
-<li><code>'</code>: <strong>unpaired</strong> single-quote</li>
-<li><code>_</code>: underscore</li>
-</ul>
-<p>Outside of these limits, any amount of digits (0-9), and letters (A-Z, a-z) are allowed.</p>
-<pre><code class="language-god"># containing hyphens/underscores
-abc-123 = "fa so la ti do";
-abc_123 = null;
-    
-# suffixed by hyphens/underscores
-abc-123- = "fa so la ti do";
-abc_123_ = null;
-
-# highly impractical, but valid
-a'b'c'1'2'3 = "do re mi";
-a_-_b-'_'-c'1_2-'3' = { crazy = true; };
+<p>However, the first character of an identifier must be a letter or underscore.
+No other characters are permitted.</p>
+<h4 id="examples-of-valid-identifiers"><a class="header" href="#examples-of-valid-identifiers">Examples of VALID identifiers</a></h4>
+<pre><code class="language-god">{
+    my-list = [];
+    my_list = [];
+    _my_list_ = [];
+    my-list- = [];
+    my'list' = [];
+}
+</code></pre>
+<h4 id="examples-of-invalid-identifiers"><a class="header" href="#examples-of-invalid-identifiers">Examples of INVALID identifiers</a></h4>
+<pre><code class="language-god">{
+    'my-list = [];
+    -my-list = [];
+    1my-list = [];
+}
 </code></pre>
 <div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
 <div class="admonition-title">
@@ -877,10 +828,7 @@ a_-_b-'_'-c'1_2-'3' = { crazy = true; };
 </div>
 <div>
 <p>The use of non-ASCII Unicode characters (emojis, non-Latin characters,
-accented characters, etc.) in identifiers is <strong>invalid</strong>. While support for
-non-English languages would be desirable, implementation difficulty,
-security concerns, and lack of expertise with non-Latin scripts make
-this a strict limitation for the foreseeable future.</p>
+accented characters, etc.) in identifiers is <strong>invalid</strong>.</p>
 </div>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fields"><a class="header" href="#fields">Fields</a></h1>
@@ -967,19 +915,9 @@ Within it, there are eight fields:</p>
 <tr><td>carriage-return (CR)</td><td><code>\r</code></td></tr>
 <tr><td><a href="spec/structure/comments.html">comments</a></td><td>Varied</td></tr>
 </tbody></table>
-</div><div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
-<div class="admonition-title">
-<div id="admonition-note-title">
-<p>Note</p>
 </div>
-<a class="admonition-anchor-link" href="spec/structure/whitespace.html#admonition-note"></a>
-</div>
-<div>
-<p>These characters will not be considered whitespace when used within <a href="spec/structure/../values/strings.html">strings</a>.
-See the <a href="spec/structure/../values/strings.html#admonition-warning">warning</a> for specific details related to the handling
-of multi-line strings.</p>
-</div>
-</div>
+<p>The only context in which whitespace is meaningful is within <a href="spec/structure/../values/lists.html">lists</a>,<br />
+where it is used to separate elements.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="comments"><a class="header" href="#comments">Comments</a></h1>
 <p>Comments in God only come in one variety, line comments:</p>
 <pre><code class="language-god"># this is a line comment, occupying an entire line.
@@ -1016,6 +954,46 @@ using <code>C</code> as the language to demonstrate.</p>
 }
 </code></pre>
 <p>As stated above, <strong>God</strong> only supports <em>line comments</em>, the other types are invalid.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gotchas"><a class="header" href="#gotchas">Gotchas</a></h1>
+<p>Some specific things are not easy to describe in just text with a couple
+examples; therefore this section is for such topics that I feel could
+use a more thorough or visual discussion.</p>
+<h1 id="field-termination-within-lists"><a class="header" href="#field-termination-within-lists">Field termination within lists</a></h1>
+<p>In a list, there are only elements, however, due to the fact that a map
+is an element, and can <em>contain</em> fields, this leads to:</p>
+<pre><code class="language-god">{
+    my-list = [
+        {
+            something = "foo";
+        }
+    ]
+}
+</code></pre>
+<p>As you can see in the above example, the context is important. <code>my-list</code>
+has only one element, being a map. As noted in the specification, a map
+is a container for fields, so any fields within that map need field
+terminators.</p>
+<p>However as you may also notice, the map itself is not terminated, due to
+it being only an element! It may be useful to think of it as:</p>
+<blockquote>
+<p>Does this value have an identifier (name)?</p>
+</blockquote>
+<p>If it does, it's part of a field; if not, it is an element.</p>
+<h1 id="the-document"><a class="header" href="#the-document">The 'document'</a></h1>
+<p>The document is the outer enclosing braces, one at the beginning denotes the
+start, and the other denotes the end. Strictly speaking, this language could
+have dropped these from the spec, given that unlike in Nix, they aren't actually
+necessary here. They have however been kept as part of God for a few reasons:</p>
+<ul>
+<li>They help simplify the creation of parsers, offering an unambiguous
+beginning and end</li>
+<li>JSON data often is also enclosed within an outer set of braces, so it may
+familiar to those who are used to JSON.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contact"><a class="header" href="#contact">Contact</a></h1>
+<p>If you have any questions about the spec, implementing it or otherwise,
+you can contact me by email at <a href="mailto:wreed@disroot.org">wreed@disroot.org</a>.</p>
+<p>You may also find me on BlueSky at <a href="https://bsky.app/profile/wreedb.bsky.social">wreedb.bsky.social</a></p>
 
                     </main>
 
@@ -1057,7 +1035,6 @@ using <code>C</code> as the language to demonstrate.</p>
             window.setTimeout(window.print, 100);
         });
         </script>
-
 
     </div>
     </body>

@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -29,16 +28,16 @@
         <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="theme/admonish.css">
         <link rel="stylesheet" href="theme/custom.css">
+        <link rel="stylesheet" href="theme/admonish.css">
+        <link rel="stylesheet" href="theme/highlight.css">
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
             const path_to_root = "";
             const default_light_theme = "light";
-            const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex.js";
+            const default_dark_theme = "coal";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -95,13 +94,10 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
-                sidebar_toggle.checked = false;
             }
-            if (sidebar === 'visible') {
-                sidebar_toggle.checked = true;
-            } else {
-                html.classList.remove('sidebar-visible');
-            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -152,12 +148,7 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                            <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
-                            </div>
-                        </div>
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -178,10 +169,11 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="implementations"><a class="header" href="#implementations">Implementations</a></h1>
-<ul>
-<li>Guile Scheme: <a href="https://github.com/wreedb/guile-god">wreedb/guile-god</a></li>
-<li>Tree-Sitter Grammar: <a href="https://github.com/wreedb/tree-sitter-god">wreedb/tree-sitter-god</a></li>
-</ul>
+<h1 id="libgod-the-official-implementation"><a class="header" href="#libgod-the-official-implementation">Libgod, the official implementation</a></h1>
+<p>Written in C++, it can be found at <a href="https://codeberg.org/wreedb/libgod">wreedb/libgod</a>.</p>
+<h1 id="tree-sitter-grammar"><a class="header" href="#tree-sitter-grammar">Tree-sitter Grammar</a></h1>
+<p>With a bit of configuration, it can be used within both Neovim and Emacs for<br />
+syntax highlighting and indentation! <a href="https://github.com/wreedb/tree-sitter-god">wreedb/tree-sitter-god</a>.</p>
 <div id="admonition-note" class="admonition admonish-note" role="note" aria-labelledby="admonition-note-title">
 <div class="admonition-title">
 <div id="admonition-note-title">
@@ -240,7 +232,6 @@
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-
 
 
     </div>

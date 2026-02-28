@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
@@ -29,16 +28,16 @@
         <link rel="stylesheet" id="ayu-highlight-css" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../../theme/admonish.css">
         <link rel="stylesheet" href="../../theme/custom.css">
+        <link rel="stylesheet" href="../../theme/admonish.css">
+        <link rel="stylesheet" href="../../theme/highlight.css">
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
             const path_to_root = "../../";
             const default_light_theme = "light";
-            const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex.js";
+            const default_dark_theme = "coal";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc.js"></script>
@@ -95,13 +94,10 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
-                sidebar_toggle.checked = false;
             }
-            if (sidebar === 'visible') {
-                sidebar_toggle.checked = true;
-            } else {
-                html.classList.remove('sidebar-visible');
-            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -152,12 +148,7 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                            <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
-                            </div>
-                        </div>
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -178,12 +169,14 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="strings"><a class="header" href="#strings">Strings</a></h1>
-<h2 id="regular"><a class="header" href="#regular">Regular</a></h2>
-<p>A standard or regular string is represented by a pair of double quotes with any amount of text inside it.</p>
+<p>Strings in <strong>God</strong> must be valid UTF-8, and this validation should be done<br />
+by the implementer, or documented where/when validation is not enforced.</p>
+<h2 id="standard-strings"><a class="header" href="#standard-strings">Standard Strings</a></h2>
+<p>Represented by a pair of double quotes with any amount of (valid UTF-8) text inside it.</p>
 <pre><code class="language-god">greeting = "Hello, how are you?";
 </code></pre>
 <h2 id="multi-line"><a class="header" href="#multi-line">Multi-line</a></h2>
-<p>Strings that span across multiple lines are supported. They are define using
+<p>Strings that span across multiple lines are supported. They are declared using<br />
 two sets of single quotes; one at the beginning and one at the end.</p>
 <pre><code class="language-god">about-me = ''
   Let me tell you
@@ -224,21 +217,10 @@ greeting = ''
 # produces:
 # "I said 'Hello!'"\n  to them."
 </code></pre>
-<div id="admonition-warning" class="admonition admonish-warning" role="note" aria-labelledby="admonition-warning-title">
-<div class="admonition-title">
-<div id="admonition-warning-title">
-<p>Warning</p>
-</div>
-<a class="admonition-anchor-link" href="#admonition-warning"></a>
-</div>
-<div>
-<p>The whitespace and newline on the opening line after <code>''</code> are ignored if there
-is no meaningful (non-whitespace) text or characters on said initial line.
-Also, leading tab (<code>\t</code>) characters are not stripped from the beginning of the
-line, so it is best practice to use spaces within multiline strings unless
-this is desired.</p>
-</div>
-</div>
+<h3 id="additional-notes"><a class="header" href="#additional-notes">Additional notes</a></h3>
+<p>Unlike in Nix, there is no string interpolation here. The data represented<br />
+is purely static, and the implementater should have to do no computation<br />
+or transformation of values.</p>
 
                     </main>
 
@@ -286,7 +268,6 @@ this is desired.</p>
         <script src="../../book.js"></script>
 
         <!-- Custom JS scripts -->
-
 
 
     </div>
