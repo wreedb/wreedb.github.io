@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://wreedb.github.io/posts/confidant/</loc>
+    <loc>http://localhost:1313/posts/confidant/</loc>
     <lastmod>2025-11-19T12:15:32-06:00</lastmod>
   </url><url>
-    <loc>https://wreedb.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-11-19T12:15:32-06:00</lastmod>
   </url><url>
-    <loc>https://wreedb.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-11-19T12:15:32-06:00</lastmod>
   </url><url>
-    <loc>https://wreedb.github.io/posts/uutils/</loc>
+    <loc>http://localhost:1313/posts/uutils/</loc>
     <lastmod>2025-09-12T17:43:12-05:00</lastmod>
   </url><url>
-    <loc>https://wreedb.github.io/posts/lfs/</loc>
+    <loc>http://localhost:1313/posts/lfs/</loc>
     <lastmod>2025-09-09T14:51:55-05:00</lastmod>
   </url><url>
-    <loc>https://wreedb.github.io/posts/shepherd/</loc>
+    <loc>http://localhost:1313/posts/shepherd/</loc>
     <lastmod>2025-06-09T16:04:08-05:00</lastmod>
   </url><url>
-    <loc>https://wreedb.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://wreedb.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://wreedb.github.io/pgp/</loc>
+    <loc>http://localhost:1313/pgp/</loc>
   </url><url>
-    <loc>https://wreedb.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

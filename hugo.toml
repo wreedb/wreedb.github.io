@@ -3,7 +3,11 @@ languageCode = "en-us"
 title = "Will Reed: Developer"
 defaultContentLanguage = "en-us"
 enableEmoji = true
-# theme = "hugo-blog-awesome"
+theme = "hugo-blog-awesome"
+
+[author]
+  name = "Will Reed"
+  email = "wreedb@disroot.org"
 
 [module]
   [[module.imports]]
@@ -24,6 +28,7 @@ enableEmoji = true
 [params.author]
   avatar = "avatar.jpg"
   name = "Will Reed"
+  email = "wreedb@disroot.org"
   intro = "Welcome to my blog"
   description = "A developer, GNU enthusiast, libre software advocate, init system surgeon and loser"
 
