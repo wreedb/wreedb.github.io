@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Gotchas - God Specification</title>
+        <title>ABNF Format - God Specification</title>
 
 
         <!-- Custom HTML head -->
@@ -12,35 +12,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="../highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="../tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="theme/custom.css">
-        <link rel="stylesheet" href="theme/admonish.css">
-        <link rel="stylesheet" href="theme/highlight.css">
+        <link rel="stylesheet" href="../theme/custom.css">
+        <link rel="stylesheet" href="../theme/admonish.css">
+        <link rel="stylesheet" href="../theme/highlight.css">
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
-            const path_to_root = "";
+            const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "coal";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script src="../toc.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -104,7 +104,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -139,7 +139,7 @@
                     <h1 class="menu-title">God Specification</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -168,52 +168,107 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="gotchas"><a class="header" href="#gotchas">Gotchas</a></h1>
-<p>Some specific things are not easy to describe in just text with a couple
-examples; therefore this section is for such topics that I feel could
-use a more thorough or visual discussion.</p>
-<h1 id="field-termination-within-lists"><a class="header" href="#field-termination-within-lists">Field termination within lists</a></h1>
-<p>In a list, there are only elements, however, due to the fact that a map
-is an element, and can <em>contain</em> fields, this leads to:</p>
-<pre><code class="language-god">{
-    my-list = [
-        {
-            something = "foo";
-        }
-    ]
-}
+                        <h1 id="formal-abnf-augmented-backus-naur-form-grammar"><a class="header" href="#formal-abnf-augmented-backus-naur-form-grammar">Formal ABNF (Augmented Backus-Naur Form) Grammar</a></h1>
+<pre><code>ALPHA  = %x41-5A / %x61-7A
+DIGIT  = %x30-39
+DQUOTE = %x22
+SP     = %x20
+TAB    = %x09
+CR     = %x0D
+LF     = %x0A
+
+; whitespace
+WSP      = SP / TAB
+line-end = CRLF / LF
+blank    = WSP / line-end
+comment  = "#" *(%x09 / %x20 / %x21-7E) line-end
+ws       = *(blank / comment)  ; optional
+mws      = 1*(blank / comment) ; mandatory
+
+; the document
+document = ws "{" ws *field ws "}" ws
+
+; identifiers
+identifier = identifier-begin *identifier-contents
+identifier-begin = ALPHA / "_"
+identifier-contents = ALPHA / DIGIT / "_" / "-" / "'"
+
+; Field: { ident -&gt; assign -&gt; element -&gt; termination }
+field = identifier ws "=" ws element ws ";" ws
+
+; Element: one of [string|multi-line string|list|map|number|boolean|null]
+element = string / multiline-string / list / map / number / boolean / null
+
+; Map: sequence of zero to any number of fields
+map = "{" ws *field ws "}"
+
+; List: sequence of zero to any number of elements
+list = "[" ws [list-items] ws "]"
+list-items = element *(mws element)
+
+; String: Any valid UTF-8 text content enclosed within
+;         double quotes, can span multiple lines, but are
+;         not indentation aware like multi-line strins are.
+string = DQUOTE *chars DQUOTE
+chars = string-escape / string-literal
+string-escape = "\" (DQUOTE / "\")
+string-literal = %x09 / %x0A / %x0D / %x20-21 / %x23-5B / %x5D-7E / %x80-10FFFF
+
+;; NOTES {multi-line string}:
+;;   Escape sequences are initiated by the sequence `''\`, followed by
+;;   any (single) valid UTF-8 character, sequences that are otherwise
+;;   transformed include only the following:
+;; ______________________________
+;; | sequence | result          |
+;; |__________|_________________|
+;; | `''\n`   | line feed       |
+;; | `''\r`   | carriage return |
+;; | `''\t`   | tab character   |
+;; |____________________________|
+;;
+;; Other than those displayed in this table are treated generically as
+;; the raw character alone.
+
+multiline-string  = "''" *multiline-chars "''"
+multiline-chars   = multiline-escape / multiline-literal
+multiline-escape  = "''" "\" UTF8-char
+multiline-literal = %x09 / %x0A / %x0D / %x20-7E / %x80-10FFFF
+
+UTF8-char = %x09 / %x0A / %x0D / %x20-7E    ; ASCII printable + whitespace
+          / %xC2-DF %x80-BF                 ; 2-byte UTF-8
+          / %xE0    %xA0-BF %x80-BF         ; 3-byte UTF-8 (E0)
+          / %xE1-EC %x80-BF %x80-BF         ; 3-byte UTF-8 (E1–EC)
+          / %xED    %x80-9F %x80-BF         ; 3-byte UTF-8 (ED, excl. surrogates)
+          / %xEE-EF %x80-BF %x80-BF         ; 3-byte UTF-8 (EE–EF)
+          / %xF0    %x90-BF %x80-BF %x80-BF ; 4-byte UTF-8 (F0)
+          / %xF1-F3 %x80-BF %x80-BF %x80-BF ; 4-byte UTF-8 (F1–F3)
+          / %xF4    %x80-8F %x80-BF %x80-BF ; 4-byte UTF-8 (F4, up to U+10FFFF)
+
+; Numbers:
+;; integers: optionally negated digit sequence
+;; decimals: optionally negated digit sequence with one decimal point
+number = ["-"] (decimal / integer)
+integer = "0" / (non-zero *DIGIT)
+decimal = [integer] "." 1*DIGIT
+non-zero = %x31-39
+
+;; NOTES {Boolean/Null}:
+;;   It is not possible to clearly define (in a context-free grammar)
+;;   that these are also valid when used as identifiers. This is highly
+;;   discouraged in practice but should be noted.
+boolean = "true" / "false"
+null = "null"
 </code></pre>
-<p>As you can see in the above example, the context is important. <code>my-list</code>
-has only one element, being a map. As noted in the specification, a map
-is a container for fields, so any fields within that map need field
-terminators.</p>
-<p>However as you may also notice, the map itself is not terminated, due to
-it being only an element! It may be useful to think of it as:</p>
-<blockquote>
-<p>Does this value have an identifier (name)?</p>
-</blockquote>
-<p>If it does, it's part of a field; if not, it is an element.</p>
-<h1 id="the-document"><a class="header" href="#the-document">The 'document'</a></h1>
-<p>The document is the outer enclosing braces, one at the beginning denotes the
-start, and the other denotes the end. Strictly speaking, this language could
-have dropped these from the spec, given that unlike in Nix, they aren't actually
-necessary here. They have however been kept as part of God for a few reasons:</p>
-<ul>
-<li>They help simplify the creation of parsers, offering an unambiguous
-beginning and end</li>
-<li>JSON data often is also enclosed within an outer set of braces, so it may
-familiar to those who are used to JSON.</li>
-</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="formal-grammars/EBNF.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../formal-grammars.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="examples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../formal-grammars/EBNF.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -223,11 +278,11 @@ familiar to those who are used to JSON.</li>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="formal-grammars/EBNF.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../formal-grammars.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="examples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../formal-grammars/EBNF.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -242,13 +297,13 @@ familiar to those who are used to JSON.</li>
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
 

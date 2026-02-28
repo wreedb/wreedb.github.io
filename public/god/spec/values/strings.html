@@ -169,8 +169,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="strings"><a class="header" href="#strings">Strings</a></h1>
-<p>Strings in <strong>God</strong> must be valid UTF-8, and this validation should be done<br />
-by the implementer, or documented where/when validation is not enforced.</p>
+<p>Strings in <strong>God</strong> must be valid UTF-8, and this validation <em>should</em> be done
+by the implementer. For compliance with this specification, a lack of this behavior
+for any reason (technical limitation or otherwise) <strong>MUST</strong> be documented.</p>
 <h2 id="standard-strings"><a class="header" href="#standard-strings">Standard Strings</a></h2>
 <p>Represented by a pair of double quotes with any amount of (valid UTF-8) text inside it.</p>
 <pre><code class="language-god">greeting = "Hello, how are you?";
