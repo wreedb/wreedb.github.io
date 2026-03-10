@@ -2,7 +2,7 @@
 directory = sqlite-3.52.0
 source_url = https://wreedb.github.io/sqlite-3.52.0.tar.xz
 source_filename = sqlite-3.52.0.tar.xz
-source_hash = 762319629b6cb154d35b6317cfd195ae848c2bfad350005fcbce32a08090c74c
+source_hash = a316f618203f083f47301259d384c6a83b9c0b47d3715741c6ebce2fe9bdfeb0
 
 [provide]
 dependency_names = sqlite
