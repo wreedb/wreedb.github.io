@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>god::tokenstream &#8212; libgod 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'classes/tokenstream';</script>
+    <link rel="canonical" href="https://wreedb.github.io/projects/libgod/classes/tokenstream.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Errors" href="errors.html" />
+    <link rel="prev" title="god::token" href="token.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">libgod 0.1.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../classes.html">
+    Classes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../types.html">
+    Types
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../namespaces.html">
+    Namespaces
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../constants.html">
+    Constants
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../quick-start.html">
+    Quick Start
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../classes.html">
+    Classes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../types.html">
+    Types
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../namespaces.html">
+    Namespaces
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../constants.html">
+    Constants
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="position.html">god::position</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordinates.html">god::coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scanner.html">god::scanner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="token.html">god::token</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">god::tokenstream</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="errors.html">Errors</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="errors/error.html">god::error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors/token_error.html">god::token_error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors/scan_error.html">god::scan_error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors/parse_error.html">god::parse_error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors/encoding_error.html">god::encoding_error</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../classes.html" class="nav-link">Classes</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">god::tokenstream</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="god-tokenstream">
+<h1>god::tokenstream<a class="headerlink" href="#god-tokenstream" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Declared in <code class="docutils literal notranslate"><span class="pre">&lt;god/token.hpp&gt;</span></code></p>
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstreamE">
+<span id="_CPPv3N3god11tokenstreamE"></span><span id="_CPPv2N3god11tokenstreamE"></span><span id="god::tokenstream"></span><span class="target" id="classgod_1_1tokenstream"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tokenstream</span></span></span><a class="headerlink" href="#_CPPv4N3god11tokenstreamE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A set of tokens prepared for parsing </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-members">Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream7membersE">
+<span id="_CPPv3N3god11tokenstream7membersE"></span><span id="_CPPv2N3god11tokenstream7membersE"></span><span id="god::tokenstream::members__std::deque:token:"></span><span class="target" id="classgod_1_1tokenstream_1ac9fcb84dd637e81d1e3e5768822a65c6"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="token.html#_CPPv4N3god5tokenE" title="god::token"><span class="n"><span class="pre">token</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">members</span></span></span><a class="headerlink" href="#_CPPv4N3god11tokenstream7membersE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The underlying container holding the tokens. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream3posE">
+<span id="_CPPv3N3god11tokenstream3posE"></span><span id="_CPPv2N3god11tokenstream3posE"></span><span id="god::tokenstream::pos__std::s"></span><span class="target" id="classgod_1_1tokenstream_1a1010d3859c436848d9b1ccd819b15ad9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pos</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N3god11tokenstream3posE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The current parsing position in the stream. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-constructors">Constructors</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream11tokenstreamENSt5dequeI5tokenEE">
+<span id="_CPPv3N3god11tokenstream11tokenstreamENSt5dequeI5tokenEE"></span><span id="_CPPv2N3god11tokenstream11tokenstreamENSt5dequeI5tokenEE"></span><span id="god::tokenstream::tokenstream__std::deque:token:"></span><span class="target" id="classgod_1_1tokenstream_1a0a2e98e78558a9667e2ff445f68ec2b1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tokenstream</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">deque</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="token.html#_CPPv4N3god5tokenE" title="god::token"><span class="n"><span class="pre">token</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ms</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3god11tokenstream11tokenstreamENSt5dequeI5tokenEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Main constructor for the tokenstream class. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-methods">Methods</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3god11tokenstream2atENSt6size_tE">
+<span id="_CPPv3NK3god11tokenstream2atENSt6size_tE"></span><span id="_CPPv2NK3god11tokenstream2atENSt6size_tE"></span><span id="god::tokenstream::at__std::sC"></span><span class="target" id="classgod_1_1tokenstream_1aa2ba7fb9f104181193e9c1bacfa5f93c"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">expected</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="token.html#_CPPv4N3god5tokenE" title="god::token"><span class="n"><span class="pre">token</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="errors/error.html#_CPPv4N3god5errorE" title="god::error"><span class="n"><span class="pre">error</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">at</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3god11tokenstream2atENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Retrieve a member from the tokenstream at a specific index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – The index of the desired member </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A constant pointer to the desired token or an error </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream4nextEv">
+<span id="_CPPv3N3god11tokenstream4nextEv"></span><span id="_CPPv2N3god11tokenstream4nextEv"></span><span id="god::tokenstream::next"></span><span class="target" id="classgod_1_1tokenstream_1a915ef2a51e3508f5c0758df1f9628808"></span><a class="reference internal" href="token.html#_CPPv4N3god5tokenE" title="god::token"><span class="n"><span class="pre">token</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">next</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3god11tokenstream4nextEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the next token in the stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a mutable reference to the token </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream3nowEv">
+<span id="_CPPv3N3god11tokenstream3nowEv"></span><span id="_CPPv2N3god11tokenstream3nowEv"></span><span id="god::tokenstream::now"></span><span class="target" id="classgod_1_1tokenstream_1aac34c45b9ba2340761e67ad8e68bacc7"></span><a class="reference internal" href="token.html#_CPPv4N3god5tokenE" title="god::token"><span class="n"><span class="pre">token</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">now</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3god11tokenstream3nowEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current token in the stream (the one matching <code class="docutils literal notranslate"><a class="reference internal" href="#classgod_1_1tokenstream_1a1010d3859c436848d9b1ccd819b15ad9"><span class="std std-ref"><span class="pre">pos</span></span></a></code>). </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a mutable reference to the token </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3god11tokenstream4doneEv">
+<span id="_CPPv3NK3god11tokenstream4doneEv"></span><span id="_CPPv2NK3god11tokenstream4doneEv"></span><span id="god::tokenstream::doneC"></span><span class="target" id="classgod_1_1tokenstream_1ab0e102b93106243b36031075a3e3f65e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">done</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3god11tokenstream4doneEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if we are finished with the token stream. </p>
+<p>Note that this checks the <code class="docutils literal notranslate"><a class="reference internal" href="#classgod_1_1tokenstream_1a1010d3859c436848d9b1ccd819b15ad9"><span class="std std-ref"><span class="pre">pos</span></span></a></code> against the deque size, NOT whether the deque has any tokens remaining</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if <code class="docutils literal notranslate"><a class="reference internal" href="#classgod_1_1tokenstream_1a1010d3859c436848d9b1ccd819b15ad9"><span class="std std-ref"><span class="pre">pos</span></span></a></code> is at the end of the deque, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3god11tokenstream5emptyEv">
+<span id="_CPPv3NK3god11tokenstream5emptyEv"></span><span id="_CPPv2NK3god11tokenstream5emptyEv"></span><span id="god::tokenstream::emptyC"></span><span class="target" id="classgod_1_1tokenstream_1ab42c23e6e439c64c4bfa452e7a0e8766"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">empty</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3god11tokenstream5emptyEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the members deque is empty. </p>
+<p>This is essentially just a shortcut to calling .<a class="reference internal" href="#classgod_1_1tokenstream_1ab42c23e6e439c64c4bfa452e7a0e8766"><span class="std std-ref">empty()</span></a> on the members container itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if members is empty, false otherwise </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK3god11tokenstream5countEv">
+<span id="_CPPv3NK3god11tokenstream5countEv"></span><span id="_CPPv2NK3god11tokenstream5countEv"></span><span id="god::tokenstream::countC"></span><span class="target" id="classgod_1_1tokenstream_1a87446b506d451fa8078d9f21d0bc5874"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">count</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK3god11tokenstream5countEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check the amount of members. </p>
+<p>This is essentially just a shortcut to calling .size() on the ‘members’ container itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The amount of remaining members </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream7consumeEv">
+<span id="_CPPv3N3god11tokenstream7consumeEv"></span><span id="_CPPv2N3god11tokenstream7consumeEv"></span><span id="god::tokenstream::consume"></span><span class="target" id="classgod_1_1tokenstream_1a5893e2b2561d70b98f095271fd3d946b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">consume</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3god11tokenstream7consumeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Consume the token at the index of ‘pos’. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream7consumeENSt6size_tE">
+<span id="_CPPv3N3god11tokenstream7consumeENSt6size_tE"></span><span id="_CPPv2N3god11tokenstream7consumeENSt6size_tE"></span><span id="god::tokenstream::consume__std::s"></span><span class="target" id="classgod_1_1tokenstream_1ad2b6227fbfa484e284c90f20d5a3fd6a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">consume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3god11tokenstream7consumeENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Consume a token at a specific index. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – The index to consume </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream7consumeENSt6size_tENSt6size_tE">
+<span id="_CPPv3N3god11tokenstream7consumeENSt6size_tENSt6size_tE"></span><span id="_CPPv2N3god11tokenstream7consumeENSt6size_tENSt6size_tE"></span><span id="god::tokenstream::consume__std::s.std::s"></span><span class="target" id="classgod_1_1tokenstream_1a02e230decd6002cb5cca577d79bc605e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">consume</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">y</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3god11tokenstream7consumeENSt6size_tENSt6size_tE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Consume a range of tokens. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> – the beginning index of the range </p></li>
+<li><p><strong>y</strong> – the ending index of the range </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream4lastEv">
+<span id="_CPPv3N3god11tokenstream4lastEv"></span><span id="_CPPv2N3god11tokenstream4lastEv"></span><span id="god::tokenstream::last"></span><span class="target" id="classgod_1_1tokenstream_1aab61acf02b9c4c4f3b4a9011363a3423"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">expected</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="token.html#_CPPv4N3god5tokenE" title="god::token"><span class="n"><span class="pre">token</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="errors/error.html#_CPPv4N3god5errorE" title="god::error"><span class="n"><span class="pre">error</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">last</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3god11tokenstream4lastEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the last member of the tokenstream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A pointer to the last token or a <a class="reference internal" href="errors/error.html#classgod_1_1error"><span class="std std-ref">god::error</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3god11tokenstream5firstEv">
+<span id="_CPPv3N3god11tokenstream5firstEv"></span><span id="_CPPv2N3god11tokenstream5firstEv"></span><span id="god::tokenstream::first"></span><span class="target" id="classgod_1_1tokenstream_1a7bf175c11b2ed695c2b1e97be1bc5dfa"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">expected</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="token.html#_CPPv4N3god5tokenE" title="god::token"><span class="n"><span class="pre">token</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="errors/error.html#_CPPv4N3god5errorE" title="god::error"><span class="n"><span class="pre">error</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">first</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3god11tokenstream5firstEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the first (index 0) member of the tokenstream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A pointer to the first token or a <a class="reference internal" href="errors/error.html#classgod_1_1error"><span class="std std-ref">god::error</span></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="token.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">god::token</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="errors.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Errors</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstreamE"><code class="docutils literal notranslate"><span class="pre">god::tokenstream</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream7membersE"><code class="docutils literal notranslate"><span class="pre">members</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream3posE"><code class="docutils literal notranslate"><span class="pre">pos</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream11tokenstreamENSt5dequeI5tokenEE"><code class="docutils literal notranslate"><span class="pre">tokenstream()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3god11tokenstream2atENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">at()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream4nextEv"><code class="docutils literal notranslate"><span class="pre">next()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream3nowEv"><code class="docutils literal notranslate"><span class="pre">now()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3god11tokenstream4doneEv"><code class="docutils literal notranslate"><span class="pre">done()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3god11tokenstream5emptyEv"><code class="docutils literal notranslate"><span class="pre">empty()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK3god11tokenstream5countEv"><code class="docutils literal notranslate"><span class="pre">count()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream7consumeEv"><code class="docutils literal notranslate"><span class="pre">consume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream7consumeENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">consume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream7consumeENSt6size_tENSt6size_tE"><code class="docutils literal notranslate"><span class="pre">consume()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream4lastEv"><code class="docutils literal notranslate"><span class="pre">last()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N3god11tokenstream5firstEv"><code class="docutils literal notranslate"><span class="pre">first()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/classes/tokenstream.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Will Reed.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

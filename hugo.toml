@@ -11,13 +11,13 @@ theme = "hugo-blog-awesome"
 
 [caches]
   [caches.images]
-    dir = ':cacheDir/images'
+    dir = ":cacheDir/images"
 
 [params]
   sitename = "Will Reed: Developer"
   defaultColor = "dark"
   description = "A blog for my thoughts"
-  mainSections = ['posts']
+  mainSections = ["posts"]
   toc = false
   goToTop = true
 
@@ -50,27 +50,27 @@ url = "https://codeberg.org/wreedb"
 
 [menu]
   [[menu.main]]
-    name = 'Home'
-    url = '/'
+    name = "Home"
+    url = "/"
     weight = 10
   [[menu.main]]
-    name = 'libgod'
-    url = '/docs/libgod'
+    name = "LibGod"
+    url = "/projects/libgod"
   [[menu.main]]
-    name = 'God'
-    url = '/god/'
+    name = "God"
+    url = "/projects/god/"
   [[menu.main]]
-    name = 'Confidant'
-    url = '/confidant/'
+    name = "Confidant"
+    url = "/projects/confidant/"
   [[menu.main]]
-    name = 'Posts'
-    url = '/posts/'
+    name = "Posts"
+    url = "/posts/"
     weight = 20
   [[menu.main]]
-    name = 'About'
-    url = '/about/'
+    name = "About"
+    url = "/about/"
     weight = 30
   [[menu.main]]
-    name = 'PGP'
-    url = '/pgp/'
+    name = "PGP"
+    url = "/pgp/"
     weight = 40
