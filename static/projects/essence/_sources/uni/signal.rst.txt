@@ -1,0 +1,185 @@
+Uni/Signal
+==========
+
+Interface for Unix signal handling.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/signal.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:enum-class:: signals: i32
+
+   .. cpp:enumerator:: hangup = SIGHUP
+
+      Hangup.
+   
+   .. cpp:enumerator:: interrupt = SIGINT
+
+      Terminal interrupt signal.
+   
+   .. cpp:enumerator:: quit = SIGQUIT
+
+      Terminal quit signal.
+   
+   .. cpp:enumerator:: illegal = SIGILL
+
+      Illegal instruction encountered.
+   
+   .. cpp:enumerator:: trap = SIGTRAP
+
+      Trace/breakpoint trap.
+   
+   .. cpp:enumerator:: abrt = SIGABRT
+
+      Abort the process.
+   
+   .. cpp:enumerator:: bus = SIGBUS
+
+      Access to an undefined portion of a memory object.
+   
+   .. cpp:enumerator:: fpe = SIGFPE
+
+      Erroneous arithmetic operation.
+   
+   .. cpp:enumerator:: kill = SIGKILL
+
+      Kill, cannot be caught or ignored.
+   
+   .. cpp:enumerator:: usr_one = SIGUSR1
+
+      User-defined signal 1.
+   
+   .. cpp:enumerator:: segv = SIGSEGV
+
+      Invalid memory reference.
+   
+   .. cpp:enumerator:: usr_two = SIGUSR2
+
+      User-defined signal 2.
+   
+   .. cpp:enumerator:: pipe = SIGPIPE
+
+      Write on a pipe with no one to read it.
+   
+   .. cpp:enumerator:: alrm = SIGALRM
+
+      Alarm clock.
+   
+   .. cpp:enumerator:: term = SIGTERM
+
+      Termination signal.
+   
+   .. cpp:enumerator:: chld = SIGCHLD
+
+      Child process terminated.
+   
+   .. cpp:enumerator:: cont = SIGCONT
+
+      Continue executing if stopped.
+   
+   .. cpp:enumerator:: stop = SIGSTOP
+
+      Stop executing, cannot be caught or ignored.
+   
+   .. cpp:enumerator:: tstp = SIGTSTP
+
+      Terminal stop signal.
+   
+   .. cpp:enumerator:: ttin = SIGTTIN
+
+      Background process attempting read.
+   
+   .. cpp:enumerator:: ttou = SIGTTOU
+
+      Background process attempting write.
+   
+   .. cpp:enumerator:: urg = SIGURG
+
+      High bandwidth data is available at a socket.
+   
+   .. cpp:enumerator:: xcpu = SIGXCPU
+
+      CPU time limit exceeded.
+   
+   .. cpp:enumerator:: xfsz = SIGXFSZ
+
+      File size limit exceeded.
+   
+   .. cpp:enumerator:: vtalrm = SIGVTALRM
+
+      Virtual timer expired.
+   
+   .. cpp:enumerator:: winch = SIGWINCH
+
+      Terminal window size changed.
+   
+   .. cpp:enumerator:: sys = SIGSYS
+
+      Bad system call.
+
+   .. cpp:enumerator:: unknown = 65535
+
+      Invalid/unknown signal.
+
+.. cpp:function:: std::string_view uni::signal_str(enum uni::signals s)
+
+   Get a string representation of signal ``s``.
+
+   Parameter ``s`` may also be an :cpp:expr:`i32`.
+
+.. cpp:namespace-push:: uni
+
+
+.. cpp:class:: signal
+   
+   A wrapper for a signal handler.
+
+   .. cpp:type:: handler = std::function<void(i32)>
+
+      Function object used to handle a specific signal.
+
+   .. cpp:function:: signal::signal(enum signals s, handler fn)
+
+      Main constructor accepting a :cpp:expr:`signals` member and handler function.
+
+   .. cpp:function:: const handler& get_handler() const
+
+      Getter for the :cpp:expr:`handler` function.
+
+   .. cpp:function:: signal& set_handler(handler new_handler)
+
+      Setter for the handler function.
+
+   .. cpp:function:: const struct sigaction& sa() const
+
+      Getter for the internal ``sigaction`` struct.
+
+   .. cpp:function:: signal& sa(struct sigaction& new_sa)
+
+      Setter for the internal ``sigaction`` struct.
+
+   .. cpp:function:: const enum signals sig() const
+
+      Getter for the ``signals`` member.
+
+   .. cpp:function:: signal& sig(enum signals s)
+
+      Setter for the ``signals`` member.
+
+   .. cpp:function:: void setup(i32 flags = 0)
+
+      Register the signal handler.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      auto handle_sig = [] (i32 sig) -> void
+      {
+         io::printn("Hello, I'm catching signal {}", uni::signal_str(sig));
+      };
+      
+      uni::signal sigint(uni::signals::interrupt, handle_sig);
+      sigint.setup();

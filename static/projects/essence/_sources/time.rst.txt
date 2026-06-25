@@ -1,0 +1,28 @@
+Time
+====
+
+Time related functions
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/time.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+
+.. cpp:function:: u64 seconds_since_epoch() noexcept
+
+   Get the number of seconds elapsed since the `Unix Epoch <https://en.wikipedia.org/wiki/Epoch_(computing)>`__.
+
+.. cpp:function:: std::string readable_timestamp()
+
+   Get a readable timestamp in the format of:
+   ``<year>-<month>-<day> <12-based hour>:<minute>:<second> <AM/PM>``
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      io::printn("INFO [{}]: an informational message", readable_timestamp());
+      // prints:
+      // "INFO [2026-06-24 01:04:59 PM]: an informational message"

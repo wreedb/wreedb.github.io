@@ -1,0 +1,1065 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Process &#8212; Essence 0.6.0
+ documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="_static/documentation_options.js?v=8fa8b3e9"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'process';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://wreedb.github.io/projects/essence/process.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Random" href="random.html" />
+    <link rel="prev" title="Path" href="path.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Essence 0.6.0
+ documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="color.html">
+    Color
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="encoding.html">
+    Encoding
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="environment.html">
+    Environment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="error.html">
+    Error
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="i18n.html">
+    I18N
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="io.html">
+    IO
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="path.html">
+    Path
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    Process
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="random.html">
+    Random
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="str.html">
+    Str
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="time.html">
+    Time
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="types.html">
+    Types
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="uni.html">
+    Uni
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="url.html">
+    URL
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="uuid.html">
+    UUID
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="xdg.html">
+    XDG
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="color.html">
+    Color
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="encoding.html">
+    Encoding
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="environment.html">
+    Environment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="error.html">
+    Error
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="i18n.html">
+    I18N
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="io.html">
+    IO
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="path.html">
+    Path
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Process
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="random.html">
+    Random
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="str.html">
+    Str
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="time.html">
+    Time
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="types.html">
+    Types
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="uni.html">
+    Uni
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="url.html">
+    URL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="uuid.html">
+    UUID
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="xdg.html">
+    XDG
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Process</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="process">
+<h1>Process<a class="headerlink" href="#process" title="Link to this heading">#</a></h1>
+<p>Unix process creation and configuration.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>To use declarations from this page, include the <code class="docutils literal notranslate"><span class="pre">&lt;essence/process.hpp&gt;</span></code> header.</p>
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7processE">
+<span id="_CPPv3N7essence7processE"></span><span id="_CPPv2N7essence7processE"></span><span id="essence::process"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">process</span></span></span><a class="headerlink" href="#_CPPv4N7essence7processE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A Unix process abstraction.</p>
+<p class="rubric">Example</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// calls the `ls` executable with `-alhF --color=auto` arguments</span>
+<span class="c1">// and then returns with the program with the exit status of the process.</span>
+<span class="n">process</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;-alhF&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;--color=auto&quot;</span><span class="p">});</span>
+<span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">spawn</span><span class="p">().</span><span class="n">wait</span><span class="p">().</span><span class="n">status</span><span class="p">();</span>
+</pre></div>
+</div>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process7programE">
+<span id="_CPPv3N7essence7process7programE"></span><span id="_CPPv2N7essence7process7programE"></span><span id="essence::process::program__ss"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">program</span></span></span><a class="headerlink" href="#_CPPv4N7essence7process7programE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The program name or full path to execute.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process9argumentsE">
+<span id="_CPPv3N7essence7process9argumentsE"></span><span id="_CPPv2N7essence7process9argumentsE"></span><span id="essence::process::arguments__std::vector:ss:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">arguments</span></span></span><a class="headerlink" href="#_CPPv4N7essence7process9argumentsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The arguments supplied to the process.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process11environmentE">
+<span id="_CPPv3N7essence7process11environmentE"></span><span id="_CPPv2N7essence7process11environmentE"></span><span id="essence::process::environment__std::unordered_map:ss.ss:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_map</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">environment</span></span></span><a class="headerlink" href="#_CPPv4N7essence7process11environmentE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The process environment variables.</p>
+<p>The default value when not supplied is to call <span class="cpp-expr sig sig-inline cpp"><span class="n">env</span><span class="p">::</span><a class="reference internal" href="environment.html#_CPPv4N7essence3env3mapEPPCc" title="essence::env::map"><span class="n">map</span></a><span class="p">(</span><span class="p">)</span></span>.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process2ioE">
+<span id="_CPPv3N7essence7process2ioE"></span><span id="_CPPv2N7essence7process2ioE"></span><span id="essence::process::io__ioconfig"></span><a class="reference internal" href="#_CPPv4N7essence8ioconfigE" title="essence::ioconfig"><span class="n"><span class="pre">ioconfig</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">io</span></span></span><a class="headerlink" href="#_CPPv4N7essence7process2ioE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The input, output and error port configuration.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process6statusE">
+<span id="_CPPv3N7essence7process6statusE"></span><span id="_CPPv2N7essence7process6statusE"></span><span id="essence::process::status__i32"></span><a class="reference internal" href="types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">status</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7essence7process6statusE" title="Link to this definition">#</a><br /></dt>
+<dd><p>After completion, the exit status of the process.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process3pidE">
+<span id="_CPPv3N7essence7process3pidE"></span><span id="_CPPv2N7essence7process3pidE"></span><span id="essence::process::pid__pid_t"></span><span class="n"><span class="pre">pid_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pid</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N7essence7process3pidE" title="Link to this definition">#</a><br /></dt>
+<dd><p>When spawned, the process id.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process7argzeroE">
+<span id="_CPPv3N7essence7process7argzeroE"></span><span id="_CPPv2N7essence7process7argzeroE"></span><span id="essence::process::argzero__ss"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">argzero</span></span></span><a class="headerlink" href="#_CPPv4N7essence7process7argzeroE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The 0th argument in the exec argv, may be different from the program name.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process5spawnEv">
+<span id="_CPPv3N7essence7process5spawnEv"></span><span id="_CPPv2N7essence7process5spawnEv"></span><span id="essence::process::spawn"></span><a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n"><span class="pre">process</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">spawn</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence7process5spawnEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Fork the parent process and execute the process in the child.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process4waitEv">
+<span id="_CPPv3N7essence7process4waitEv"></span><span id="_CPPv2N7essence7process4waitEv"></span><span id="essence::process::wait"></span><a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n"><span class="pre">process</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">wait</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence7process4waitEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wait for the process to finish.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process3runEv">
+<span id="_CPPv3N7essence7process3runEv"></span><span id="_CPPv2N7essence7process3runEv"></span><span id="essence::process::run"></span><a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n"><span class="pre">process</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">run</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence7process3runEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Shorthand to run spawn and wait, for the impatient.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process7captureEv">
+<span id="_CPPv3N7essence7process7captureEv"></span><span id="_CPPv2N7essence7process7captureEv"></span><span id="essence::process::capture"></span><a class="reference internal" href="#_CPPv4N7essence6outputE" title="essence::output"><span class="n"><span class="pre">output</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">capture</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence7process7captureEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Spawn the process, capture its’ output and error, then wait.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process7runningEv">
+<span id="_CPPv3N7essence7process7runningEv"></span><span id="_CPPv2N7essence7process7runningEv"></span><span id="essence::process::running"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">running</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence7process7runningEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the process is alive.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process4killE3i32">
+<span id="_CPPv3N7essence7process4killE3i32"></span><span id="_CPPv2N7essence7process4killE3i32"></span><span id="essence::process::kill__i32"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kill</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">sig</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">15</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence7process4killE3i32" title="Link to this definition">#</a><br /></dt>
+<dd><p>Send a signal to the process, by default <code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7process4execEv">
+<span id="_CPPv3N7essence7process4execEv"></span><span id="_CPPv2N7essence7process4execEv"></span><span id="essence::process::exec"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exec</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence7process4execEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Execute the process without forking, replacing the current process.
+Marked with the <code class="docutils literal notranslate"><span class="pre">[[noreturn]]</span></code> attribute.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8pipelineE">
+<span id="_CPPv3N7essence8pipelineE"></span><span id="_CPPv2N7essence8pipelineE"></span><span id="essence::pipeline"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pipeline</span></span></span><a class="headerlink" href="#_CPPv4N7essence8pipelineE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Unix pipeline abstraction leveraging the <span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n">process</span></a></span> class.</p>
+<p class="rubric">Example</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">pl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">process</span><span class="p">(</span><span class="s">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Hello there friend&quot;</span><span class="p">})</span>
+<span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">process</span><span class="p">(</span><span class="s">&quot;grep&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;-v&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-i&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;i&quot;</span><span class="p">})</span>
+<span class="w">        </span><span class="o">|</span><span class="w"> </span><span class="n">process</span><span class="p">(</span><span class="s">&quot;grep&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;-v&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-i&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;t&quot;</span><span class="p">});</span>
+
+<span class="n">pl</span><span class="p">.</span><span class="n">run</span><span class="p">();</span><span class="w"> </span><span class="c1">// outputs: &quot;Hello&quot;</span>
+</pre></div>
+</div>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8pipeline9processesE">
+<span id="_CPPv3N7essence8pipeline9processesE"></span><span id="_CPPv2N7essence8pipeline9processesE"></span><span id="essence::pipeline::processes__std::vector:process:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n"><span class="pre">process</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">processes</span></span></span><a class="headerlink" href="#_CPPv4N7essence8pipeline9processesE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The process members of the pipeline, in execution order.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8pipeline5pipesE">
+<span id="_CPPv3N7essence8pipeline5pipesE"></span><span id="_CPPv2N7essence8pipeline5pipesE"></span><span id="essence::pipeline::pipes__std::vector:std::array:i32.2::"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pipes</span></span></span><a class="headerlink" href="#_CPPv4N7essence8pipeline5pipesE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The pipe file descriptor pairs for each process.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8pipeline4pipeE7process">
+<span id="_CPPv3N7essence8pipeline4pipeE7process"></span><span id="_CPPv2N7essence8pipeline4pipeE7process"></span><span id="essence::pipeline::pipe__process"></span><a class="reference internal" href="#_CPPv4N7essence8pipelineE" title="essence::pipeline"><span class="n"><span class="pre">pipeline</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">pipe</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n"><span class="pre">process</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8pipeline4pipeE7process" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a process to the pipeline.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8pipeline5spawnEv">
+<span id="_CPPv3N7essence8pipeline5spawnEv"></span><span id="_CPPv2N7essence8pipeline5spawnEv"></span><span id="essence::pipeline::spawn"></span><a class="reference internal" href="#_CPPv4N7essence8pipelineE" title="essence::pipeline"><span class="n"><span class="pre">pipeline</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">spawn</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8pipeline5spawnEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Spawn the pipeline.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8pipeline4waitEv">
+<span id="_CPPv3N7essence8pipeline4waitEv"></span><span id="_CPPv2N7essence8pipeline4waitEv"></span><span id="essence::pipeline::wait"></span><a class="reference internal" href="#_CPPv4N7essence8pipelineE" title="essence::pipeline"><span class="n"><span class="pre">pipeline</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">wait</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8pipeline4waitEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wait for the pipeline processes.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8pipeline3runEv">
+<span id="_CPPv3N7essence8pipeline3runEv"></span><span id="_CPPv2N7essence8pipeline3runEv"></span><span id="essence::pipeline::run"></span><a class="reference internal" href="#_CPPv4N7essence8pipelineE" title="essence::pipeline"><span class="n"><span class="pre">pipeline</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">run</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8pipeline3runEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Shorthand to spawn and wait for the pipeline.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence8pipeline6statusEv">
+<span id="_CPPv3NK7essence8pipeline6statusEv"></span><span id="_CPPv2NK7essence8pipeline6statusEv"></span><span id="essence::pipeline::statusC"></span><a class="reference internal" href="types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">status</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence8pipeline6statusEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the status of the last process in the pipeline.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence8pipeline8statusesEv">
+<span id="_CPPv3NK7essence8pipeline8statusesEv"></span><span id="_CPPv2NK7essence8pipeline8statusesEv"></span><span id="essence::pipeline::statusesC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">statuses</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence8pipeline8statusesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the statuses of all processes in the pipeline.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essenceorE7process7process">
+<span id="_CPPv3N7essenceorE7process7process"></span><span id="_CPPv2N7essenceorE7process7process"></span><span id="essence::or-operator__process.process"></span><a class="reference internal" href="#_CPPv4N7essence8pipelineE" title="essence::pipeline"><span class="n"><span class="pre">pipeline</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">|</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n"><span class="pre">process</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">lhs</span></span>, <a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n"><span class="pre">process</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essenceorE7process7process" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct a pipeline from two processes.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essenceorE8pipeline7process">
+<span id="_CPPv3N7essenceorE8pipeline7process"></span><span id="_CPPv2N7essenceorE8pipeline7process"></span><span id="essence::or-operator__pipeline.process"></span><a class="reference internal" href="#_CPPv4N7essence8pipelineE" title="essence::pipeline"><span class="n"><span class="pre">pipeline</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">|</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence8pipelineE" title="essence::pipeline"><span class="n"><span class="pre">pipeline</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">lhs</span></span>, <a class="reference internal" href="#_CPPv4N7essence7processE" title="essence::process"><span class="n"><span class="pre">process</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essenceorE8pipeline7process" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct a pipeline from an existing pipeline and a process.</p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6outputE">
+<span id="_CPPv3N7essence6outputE"></span><span id="_CPPv2N7essence6outputE"></span><span id="essence::output"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">output</span></span></span><a class="headerlink" href="#_CPPv4N7essence6outputE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A container for process standard output and error.</p>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6output3outE">
+<span id="_CPPv3N7essence6output3outE"></span><span id="_CPPv2N7essence6output3outE"></span><span id="essence::output::out__ss"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">out</span></span></span><a class="headerlink" href="#_CPPv4N7essence6output3outE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The standard output.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6output3errE">
+<span id="_CPPv3N7essence6output3errE"></span><span id="_CPPv2N7essence6output3errE"></span><span id="essence::output::err__ss"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">err</span></span></span><a class="headerlink" href="#_CPPv4N7essence6output3errE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The standard error.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6output6output6outputENSt6stringENSt6stringE">
+<span id="_CPPv3N7essence6output6output6outputENSt6stringENSt6stringE"></span><span id="_CPPv2N7essence6output6output6outputENSt6stringENSt6stringE"></span><span id="essence::output::output::output__ss.ss"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence6output6output6outputENSt6stringENSt6stringE" title="essence::output::output::output"><span class="n"><span class="pre">output</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">output</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">o</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">e</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6output6output6outputENSt6stringENSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Main constructor, accepting two strings.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6output6output6outputENSt4pairINSt6stringENSt6stringEEE">
+<span id="_CPPv3N7essence6output6output6outputENSt4pairINSt6stringENSt6stringEEE"></span><span id="_CPPv2N7essence6output6output6outputENSt4pairINSt6stringENSt6stringEEE"></span><span id="essence::output::output::output__std::pair:ss.ss:"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence6output6output6outputENSt4pairINSt6stringENSt6stringEEE" title="essence::output::output::output"><span class="n"><span class="pre">output</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">output</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">pair</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">outerr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6output6output6outputENSt4pairINSt6stringENSt6stringEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Alternative constructor, accepting a pair of strings.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioportE">
+<span id="_CPPv3N7essence6ioportE"></span><span id="_CPPv2N7essence6ioportE"></span><span id="essence::ioport"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ioport</span></span></span><a class="headerlink" href="#_CPPv4N7essence6ioportE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents an IO stream as it relates to a process.</p>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport2fdE">
+<span id="_CPPv3N7essence6ioport2fdE"></span><span id="_CPPv2N7essence6ioport2fdE"></span><span id="essence::ioport::fd__i32"></span><a class="reference internal" href="types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fd</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv4N7essence6ioport2fdE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The file descriptor integer for the port.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport6ioport6ioportE3i32">
+<span id="_CPPv3N7essence6ioport6ioport6ioportE3i32"></span><span id="_CPPv2N7essence6ioport6ioport6ioportE3i32"></span><span id="essence::ioport::ioport::ioport__i32"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence6ioport6ioport6ioportE3i32" title="essence::ioport::ioport::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ioport</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pfd</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6ioport6ioport6ioportE3i32" title="Link to this definition">#</a><br /></dt>
+<dd><p>Main constructor, accepting a file descriptor integer.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport6ioport6ioportERKNSt10filesystem4pathE">
+<span id="_CPPv3N7essence6ioport6ioport6ioportERKNSt10filesystem4pathE"></span><span id="_CPPv2N7essence6ioport6ioport6ioportERKNSt10filesystem4pathE"></span><span id="essence::ioport::ioport::ioport__std::filesystem::pathCR"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence6ioport6ioport6ioportERKNSt10filesystem4pathE" title="essence::ioport::ioport::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ioport</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">path</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6ioport6ioport6ioportERKNSt10filesystem4pathE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Alternative constructor accepting a filesystem path.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport6ioport5inputEv">
+<span id="_CPPv3N7essence6ioport6ioport5inputEv"></span><span id="_CPPv2N7essence6ioport6ioport5inputEv"></span><span id="essence::ioport::ioport::input"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">ioport</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">input</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6ioport6ioport5inputEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Static constructor using <code class="docutils literal notranslate"><span class="pre">STDIN_FILENO</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport6ioport6outputEv">
+<span id="_CPPv3N7essence6ioport6ioport6outputEv"></span><span id="_CPPv2N7essence6ioport6ioport6outputEv"></span><span id="essence::ioport::ioport::output"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">ioport</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">output</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6ioport6ioport6outputEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Static constructor using <code class="docutils literal notranslate"><span class="pre">STDOUT_FILENO</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport6ioport5errorEv">
+<span id="_CPPv3N7essence6ioport6ioport5errorEv"></span><span id="_CPPv2N7essence6ioport6ioport5errorEv"></span><span id="essence::ioport::ioport::error"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">ioport</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6ioport6ioport5errorEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Static constructor using <code class="docutils literal notranslate"><span class="pre">STDERR_FILENO</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport6ioport4nullEv">
+<span id="_CPPv3N7essence6ioport6ioport4nullEv"></span><span id="_CPPv2N7essence6ioport6ioport4nullEv"></span><span id="essence::ioport::ioport::null"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">ioport</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">null</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6ioport6ioport4nullEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Static constructor using <code class="docutils literal notranslate"><span class="pre">/dev/null</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport7cloexecEv">
+<span id="_CPPv3N7essence6ioport7cloexecEv"></span><span id="_CPPv2N7essence6ioport7cloexecEv"></span><span id="essence::ioport::cloexec"></span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">cloexec</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6ioport7cloexecEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the close-on-exec flag for the port.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence6ioport7is_openEv">
+<span id="_CPPv3NK7essence6ioport7is_openEv"></span><span id="_CPPv2NK7essence6ioport7is_openEv"></span><span id="essence::ioport::is_openC"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">is_open</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence6ioport7is_openEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if the port is open.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence6ioport5closeEv">
+<span id="_CPPv3N7essence6ioport5closeEv"></span><span id="_CPPv2N7essence6ioport5closeEv"></span><span id="essence::ioport::close"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">close</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6ioport5closeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Close the port</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence6ioportcvbEv">
+<span id="_CPPv3NK7essence6ioportcvbEv"></span><span id="_CPPv2NK7essence6ioportcvbEv"></span><span id="essence::ioport::castto-b-operatorC"></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence6ioportcvbEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicit conversion to bool.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8ioconfigE">
+<span id="_CPPv3N7essence8ioconfigE"></span><span id="_CPPv2N7essence8ioconfigE"></span><span id="essence::ioconfig"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ioconfig</span></span></span><a class="headerlink" href="#_CPPv4N7essence8ioconfigE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents the three IO ports used by a process.</p>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8ioconfig2inE">
+<span id="_CPPv3N7essence8ioconfig2inE"></span><span id="_CPPv2N7essence8ioconfig2inE"></span><span id="essence::ioconfig::in__ioport"></span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">in</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N7essence8ioconfig2inE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The input port, defaulting to <code class="docutils literal notranslate"><span class="pre">stdin</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8ioconfig3outE">
+<span id="_CPPv3N7essence8ioconfig3outE"></span><span id="_CPPv2N7essence8ioconfig3outE"></span><span id="essence::ioconfig::out__ioport"></span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">out</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">output</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N7essence8ioconfig3outE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The output port, defaulting to <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8ioconfig3errE">
+<span id="_CPPv3N7essence8ioconfig3errE"></span><span id="_CPPv2N7essence8ioconfig3errE"></span><span id="essence::ioconfig::err__ioport"></span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">err</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv4N7essence8ioconfig3errE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The error port, defaulting to <code class="docutils literal notranslate"><span class="pre">stderr</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8ioconfig8ioconfig8ioconfigEv">
+<span id="_CPPv3N7essence8ioconfig8ioconfig8ioconfigEv"></span><span id="_CPPv2N7essence8ioconfig8ioconfig8ioconfigEv"></span><span id="essence::ioconfig::ioconfig::ioconfig"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigEv" title="essence::ioconfig::ioconfig::ioconfig"><span class="n"><span class="pre">ioconfig</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ioconfig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor retaining default ports.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8ioconfig8ioconfig8ioconfigE6ioport6ioport6ioport">
+<span id="_CPPv3N7essence8ioconfig8ioconfig8ioconfigE6ioport6ioport6ioport"></span><span id="_CPPv2N7essence8ioconfig8ioconfig8ioconfigE6ioport6ioport6ioport"></span><span id="essence::ioconfig::ioconfig::ioconfig__ioport.ioport.ioport"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigE6ioport6ioport6ioport" title="essence::ioconfig::ioconfig::ioconfig"><span class="n"><span class="pre">ioconfig</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ioconfig</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pIn</span></span>, <a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pOut</span></span>, <a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pErr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigE6ioport6ioport6ioport" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor accepting all three port arguments.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence8ioconfig8ioconfig8ioconfigE6ioport">
+<span id="_CPPv3N7essence8ioconfig8ioconfig8ioconfigE6ioport"></span><span id="_CPPv2N7essence8ioconfig8ioconfig8ioconfigE6ioport"></span><span id="essence::ioconfig::ioconfig::ioconfig__ioport"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigE6ioport" title="essence::ioconfig::ioconfig::ioconfig"><span class="n"><span class="pre">ioconfig</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">ioconfig</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence6ioportE" title="essence::ioport"><span class="n"><span class="pre">ioport</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">pOutErr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigE6ioport" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor accepting a single port for output and error, retaining default input.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="path.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Path</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="random.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Random</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7processE"><code class="docutils literal notranslate"><span class="pre">process</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process7programE"><code class="docutils literal notranslate"><span class="pre">process::program</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process9argumentsE"><code class="docutils literal notranslate"><span class="pre">process::arguments</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process11environmentE"><code class="docutils literal notranslate"><span class="pre">process::environment</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process2ioE"><code class="docutils literal notranslate"><span class="pre">process::io</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process6statusE"><code class="docutils literal notranslate"><span class="pre">process::status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process3pidE"><code class="docutils literal notranslate"><span class="pre">process::pid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process7argzeroE"><code class="docutils literal notranslate"><span class="pre">process::argzero</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process5spawnEv"><code class="docutils literal notranslate"><span class="pre">process::spawn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process4waitEv"><code class="docutils literal notranslate"><span class="pre">process::wait()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process3runEv"><code class="docutils literal notranslate"><span class="pre">process::run()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process7captureEv"><code class="docutils literal notranslate"><span class="pre">process::capture()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process7runningEv"><code class="docutils literal notranslate"><span class="pre">process::running()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process4killE3i32"><code class="docutils literal notranslate"><span class="pre">process::kill()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7process4execEv"><code class="docutils literal notranslate"><span class="pre">process::exec()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8pipelineE"><code class="docutils literal notranslate"><span class="pre">pipeline</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8pipeline9processesE"><code class="docutils literal notranslate"><span class="pre">pipeline::processes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8pipeline5pipesE"><code class="docutils literal notranslate"><span class="pre">pipeline::pipes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8pipeline4pipeE7process"><code class="docutils literal notranslate"><span class="pre">pipeline::pipe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8pipeline5spawnEv"><code class="docutils literal notranslate"><span class="pre">pipeline::spawn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8pipeline4waitEv"><code class="docutils literal notranslate"><span class="pre">pipeline::wait()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8pipeline3runEv"><code class="docutils literal notranslate"><span class="pre">pipeline::run()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence8pipeline6statusEv"><code class="docutils literal notranslate"><span class="pre">pipeline::status()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence8pipeline8statusesEv"><code class="docutils literal notranslate"><span class="pre">pipeline::statuses()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essenceorE7process7process"><code class="docutils literal notranslate"><span class="pre">operator|()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essenceorE8pipeline7process"><code class="docutils literal notranslate"><span class="pre">operator|()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6outputE"><code class="docutils literal notranslate"><span class="pre">output</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6output3outE"><code class="docutils literal notranslate"><span class="pre">output::out</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6output3errE"><code class="docutils literal notranslate"><span class="pre">output::err</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6output6output6outputENSt6stringENSt6stringE"><code class="docutils literal notranslate"><span class="pre">output::output()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6output6output6outputENSt4pairINSt6stringENSt6stringEEE"><code class="docutils literal notranslate"><span class="pre">output::output()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioportE"><code class="docutils literal notranslate"><span class="pre">ioport</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport2fdE"><code class="docutils literal notranslate"><span class="pre">ioport::fd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport6ioport6ioportE3i32"><code class="docutils literal notranslate"><span class="pre">ioport::ioport()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport6ioport6ioportERKNSt10filesystem4pathE"><code class="docutils literal notranslate"><span class="pre">ioport::ioport()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport6ioport5inputEv"><code class="docutils literal notranslate"><span class="pre">ioport::input()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport6ioport6outputEv"><code class="docutils literal notranslate"><span class="pre">ioport::output()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport6ioport5errorEv"><code class="docutils literal notranslate"><span class="pre">ioport::error()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport6ioport4nullEv"><code class="docutils literal notranslate"><span class="pre">ioport::null()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport7cloexecEv"><code class="docutils literal notranslate"><span class="pre">ioport::cloexec()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence6ioport7is_openEv"><code class="docutils literal notranslate"><span class="pre">ioport::is_open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence6ioport5closeEv"><code class="docutils literal notranslate"><span class="pre">ioport::close()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence6ioportcvbEv"><code class="docutils literal notranslate"><span class="pre">ioport::operator</span> <span class="pre">bool()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8ioconfigE"><code class="docutils literal notranslate"><span class="pre">ioconfig</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8ioconfig2inE"><code class="docutils literal notranslate"><span class="pre">ioconfig::in</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8ioconfig3outE"><code class="docutils literal notranslate"><span class="pre">ioconfig::out</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8ioconfig3errE"><code class="docutils literal notranslate"><span class="pre">ioconfig::err</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigEv"><code class="docutils literal notranslate"><span class="pre">ioconfig::ioconfig()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigE6ioport6ioport6ioport"><code class="docutils literal notranslate"><span class="pre">ioconfig::ioconfig()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence8ioconfig8ioconfig8ioconfigE6ioport"><code class="docutils literal notranslate"><span class="pre">ioconfig::ioconfig()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/process.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026 Will Reed.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

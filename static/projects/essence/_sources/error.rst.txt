@@ -1,0 +1,52 @@
+Error
+=====
+
+A flexible error result type.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/error.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:class:: error
+
+   A flexible error type, great for use with :cpp:expr:`std::expected`.
+   
+   .. cpp:function:: error::error(std::string msg, i32 n = 1)
+
+   .. cpp:function:: template<typename... Args> \
+                     error::error(i32 n, std::string_view msg, Args&&... args)
+
+      Constructor using :cpp:expr:`std::format` arguments.
+
+   .. cpp:function:: std::string message() const
+
+      Get a copy of the error message string.
+
+   .. cpp:function:: error& message(std::string_view msg)
+
+      Setter for the error message.
+
+   .. cpp:function:: template<typename... Args> \
+                     error& message(std::string_view msg, Args&&... args)
+
+      Setter for the error message, with :cpp:expr:`std::format` arguments.
+
+   .. cpp:function:: i32 number() const
+
+      Get the error number.
+
+   .. cpp:function:: error& number(i32 n)
+
+      Setter for the error number.
+
+   .. cpp:function:: void die() const noexcept
+
+      Prints the error message and terminates, marked with the
+      ``[[noreturn]]`` attribute.
+
+   .. cpp:function:: constexpr operator bool() const noexcept
+
+      Implicit boolean conversion; evaluates to true only when the
+      error number is ``-5``, which is the default value.

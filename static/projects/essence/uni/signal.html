@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Uni/Signal &#8212; Essence 0.6.0
+ documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="../_static/documentation_options.js?v=8fa8b3e9"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'uni/signal';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://wreedb.github.io/projects/essence/uni/signal.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Uni/Stat" href="stat.html" />
+    <link rel="prev" title="Uni/Passwd" href="passwd.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Essence 0.6.0
+ documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../color.html">
+    Color
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../encoding.html">
+    Encoding
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../environment.html">
+    Environment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../error.html">
+    Error
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../i18n.html">
+    I18N
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../io.html">
+    IO
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../path.html">
+    Path
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../process.html">
+    Process
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../random.html">
+    Random
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../str.html">
+    Str
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../time.html">
+    Time
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../types.html">
+    Types
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../uni.html">
+    Uni
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../url.html">
+    URL
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../uuid.html">
+    UUID
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../xdg.html">
+    XDG
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../color.html">
+    Color
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../encoding.html">
+    Encoding
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../environment.html">
+    Environment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../error.html">
+    Error
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../i18n.html">
+    I18N
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../io.html">
+    IO
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../path.html">
+    Path
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../process.html">
+    Process
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../random.html">
+    Random
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../str.html">
+    Str
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../time.html">
+    Time
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../types.html">
+    Types
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../uni.html">
+    Uni
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../url.html">
+    URL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../uuid.html">
+    UUID
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../xdg.html">
+    XDG
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../uni.html" class="nav-link">Uni</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Uni/Signal</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="uni-signal">
+<h1>Uni/Signal<a class="headerlink" href="#uni-signal" title="Link to this heading">#</a></h1>
+<p>Interface for Unix signal handling.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>To use declarations from this page, include the <code class="docutils literal notranslate"><span class="pre">&lt;essence/uni/signal.hpp&gt;</span></code> header.</p>
+</div>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signalsE">
+<span id="_CPPv3N7essence7signalsE"></span><span id="_CPPv2N7essence7signalsE"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">signals</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><a class="headerlink" href="#_CPPv4N7essence7signalsE" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals6hangupE">
+<span id="_CPPv3N7essence7signals6hangupE"></span><span id="_CPPv2N7essence7signals6hangupE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hangup</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGHUP</span></span><a class="headerlink" href="#_CPPv4N7essence7signals6hangupE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Hangup.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals9interruptE">
+<span id="_CPPv3N7essence7signals9interruptE"></span><span id="_CPPv2N7essence7signals9interruptE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interrupt</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGINT</span></span><a class="headerlink" href="#_CPPv4N7essence7signals9interruptE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Terminal interrupt signal.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4quitE">
+<span id="_CPPv3N7essence7signals4quitE"></span><span id="_CPPv2N7essence7signals4quitE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">quit</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGQUIT</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4quitE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Terminal quit signal.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals7illegalE">
+<span id="_CPPv3N7essence7signals7illegalE"></span><span id="_CPPv2N7essence7signals7illegalE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">illegal</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGILL</span></span><a class="headerlink" href="#_CPPv4N7essence7signals7illegalE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Illegal instruction encountered.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4trapE">
+<span id="_CPPv3N7essence7signals4trapE"></span><span id="_CPPv2N7essence7signals4trapE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">trap</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGTRAP</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4trapE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Trace/breakpoint trap.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4abrtE">
+<span id="_CPPv3N7essence7signals4abrtE"></span><span id="_CPPv2N7essence7signals4abrtE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">abrt</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGABRT</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4abrtE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Abort the process.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals3busE">
+<span id="_CPPv3N7essence7signals3busE"></span><span id="_CPPv2N7essence7signals3busE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bus</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGBUS</span></span><a class="headerlink" href="#_CPPv4N7essence7signals3busE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Access to an undefined portion of a memory object.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals3fpeE">
+<span id="_CPPv3N7essence7signals3fpeE"></span><span id="_CPPv2N7essence7signals3fpeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fpe</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGFPE</span></span><a class="headerlink" href="#_CPPv4N7essence7signals3fpeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Erroneous arithmetic operation.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4killE">
+<span id="_CPPv3N7essence7signals4killE"></span><span id="_CPPv2N7essence7signals4killE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kill</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGKILL</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4killE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Kill, cannot be caught or ignored.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals7usr_oneE">
+<span id="_CPPv3N7essence7signals7usr_oneE"></span><span id="_CPPv2N7essence7signals7usr_oneE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usr_one</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGUSR1</span></span><a class="headerlink" href="#_CPPv4N7essence7signals7usr_oneE" title="Link to this definition">#</a><br /></dt>
+<dd><p>User-defined signal 1.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4segvE">
+<span id="_CPPv3N7essence7signals4segvE"></span><span id="_CPPv2N7essence7signals4segvE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">segv</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGSEGV</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4segvE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Invalid memory reference.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals7usr_twoE">
+<span id="_CPPv3N7essence7signals7usr_twoE"></span><span id="_CPPv2N7essence7signals7usr_twoE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">usr_two</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGUSR2</span></span><a class="headerlink" href="#_CPPv4N7essence7signals7usr_twoE" title="Link to this definition">#</a><br /></dt>
+<dd><p>User-defined signal 2.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4pipeE">
+<span id="_CPPv3N7essence7signals4pipeE"></span><span id="_CPPv2N7essence7signals4pipeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pipe</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGPIPE</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4pipeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write on a pipe with no one to read it.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4alrmE">
+<span id="_CPPv3N7essence7signals4alrmE"></span><span id="_CPPv2N7essence7signals4alrmE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alrm</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGALRM</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4alrmE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Alarm clock.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4termE">
+<span id="_CPPv3N7essence7signals4termE"></span><span id="_CPPv2N7essence7signals4termE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">term</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGTERM</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4termE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Termination signal.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4chldE">
+<span id="_CPPv3N7essence7signals4chldE"></span><span id="_CPPv2N7essence7signals4chldE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chld</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGCHLD</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4chldE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Child process terminated.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4contE">
+<span id="_CPPv3N7essence7signals4contE"></span><span id="_CPPv2N7essence7signals4contE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cont</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGCONT</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4contE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Continue executing if stopped.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4stopE">
+<span id="_CPPv3N7essence7signals4stopE"></span><span id="_CPPv2N7essence7signals4stopE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stop</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGSTOP</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4stopE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Stop executing, cannot be caught or ignored.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4tstpE">
+<span id="_CPPv3N7essence7signals4tstpE"></span><span id="_CPPv2N7essence7signals4tstpE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">tstp</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGTSTP</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4tstpE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Terminal stop signal.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4ttinE">
+<span id="_CPPv3N7essence7signals4ttinE"></span><span id="_CPPv2N7essence7signals4ttinE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ttin</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGTTIN</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4ttinE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Background process attempting read.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4ttouE">
+<span id="_CPPv3N7essence7signals4ttouE"></span><span id="_CPPv2N7essence7signals4ttouE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ttou</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGTTOU</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4ttouE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Background process attempting write.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals3urgE">
+<span id="_CPPv3N7essence7signals3urgE"></span><span id="_CPPv2N7essence7signals3urgE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">urg</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGURG</span></span><a class="headerlink" href="#_CPPv4N7essence7signals3urgE" title="Link to this definition">#</a><br /></dt>
+<dd><p>High bandwidth data is available at a socket.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4xcpuE">
+<span id="_CPPv3N7essence7signals4xcpuE"></span><span id="_CPPv2N7essence7signals4xcpuE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">xcpu</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGXCPU</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4xcpuE" title="Link to this definition">#</a><br /></dt>
+<dd><p>CPU time limit exceeded.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals4xfszE">
+<span id="_CPPv3N7essence7signals4xfszE"></span><span id="_CPPv2N7essence7signals4xfszE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">xfsz</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGXFSZ</span></span><a class="headerlink" href="#_CPPv4N7essence7signals4xfszE" title="Link to this definition">#</a><br /></dt>
+<dd><p>File size limit exceeded.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals6vtalrmE">
+<span id="_CPPv3N7essence7signals6vtalrmE"></span><span id="_CPPv2N7essence7signals6vtalrmE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vtalrm</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGVTALRM</span></span><a class="headerlink" href="#_CPPv4N7essence7signals6vtalrmE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Virtual timer expired.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals5winchE">
+<span id="_CPPv3N7essence7signals5winchE"></span><span id="_CPPv2N7essence7signals5winchE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">winch</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGWINCH</span></span><a class="headerlink" href="#_CPPv4N7essence7signals5winchE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Terminal window size changed.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals3sysE">
+<span id="_CPPv3N7essence7signals3sysE"></span><span id="_CPPv2N7essence7signals3sysE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sys</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">SIGSYS</span></span><a class="headerlink" href="#_CPPv4N7essence7signals3sysE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Bad system call.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence7signals7unknownE">
+<span id="_CPPv3N7essence7signals7unknownE"></span><span id="_CPPv2N7essence7signals7unknownE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unknown</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">65535</span></span><a class="headerlink" href="#_CPPv4N7essence7signals7unknownE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Invalid/unknown signal.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni10signal_strEN3uni7signalsE">
+<span id="_CPPv3N7essence3uni10signal_strEN3uni7signalsE"></span><span id="_CPPv2N7essence3uni10signal_strEN3uni7signalsE"></span><span id="essence::uni::signal_str__uni::signals"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">uni</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">signal_str</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="n"><span class="pre">uni</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">signals</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni10signal_strEN3uni7signalsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a string representation of signal <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<p>Parameter <code class="docutils literal notranslate"><span class="pre">s</span></code> may also be an <span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n">i32</span></a></span>.</p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6signalE">
+<span id="_CPPv3N7essence3uni6signalE"></span><span id="_CPPv2N7essence3uni6signalE"></span><span id="essence::uni::signal"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">signal</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6signalE" title="Link to this definition">#</a><br /></dt>
+<dd><p>A wrapper for a signal handler.</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6signal7handlerE">
+<span id="_CPPv3N7essence3uni6signal7handlerE"></span><span id="_CPPv2N7essence3uni6signal7handlerE"></span><span class="k"><span class="pre">using</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">handler</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><a class="headerlink" href="#_CPPv4N7essence3uni6signal7handlerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Function object used to handle a specific signal.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6signal6signal6signalE7signals7handler">
+<span id="_CPPv3N7essence3uni6signal6signal6signalE7signals7handler"></span><span id="_CPPv2N7essence3uni6signal6signal6signalE7signals7handler"></span><span id="essence::uni::signal::signal::signal__signals.handler"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence3uni6signal6signal6signalE7signals7handler" title="essence::uni::signal::signal::signal"><span class="n"><span class="pre">signal</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">signal</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence7signalsE" title="essence::signals"><span class="n"><span class="pre">signals</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">s</span></span>, <a class="reference internal" href="#_CPPv4N7essence3uni6signal7handlerE" title="essence::uni::signal::handler"><span class="n"><span class="pre">handler</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fn</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6signal6signal6signalE7signals7handler" title="Link to this definition">#</a><br /></dt>
+<dd><p>Main constructor accepting a <span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="#_CPPv4N7essence7signalsE" title="essence::signals"><span class="n">signals</span></a></span> member and handler function.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6signal11get_handlerEv">
+<span id="_CPPv3NK7essence3uni6signal11get_handlerEv"></span><span id="_CPPv2NK7essence3uni6signal11get_handlerEv"></span><span id="essence::uni::signal::get_handlerC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence3uni6signal7handlerE" title="essence::uni::signal::handler"><span class="n"><span class="pre">handler</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_handler</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6signal11get_handlerEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the <span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="#_CPPv4N7essence3uni6signal7handlerE" title="essence::uni::signal::handler"><span class="n">handler</span></a></span> function.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6signal11set_handlerE7handler">
+<span id="_CPPv3N7essence3uni6signal11set_handlerE7handler"></span><span id="_CPPv2N7essence3uni6signal11set_handlerE7handler"></span><span id="essence::uni::signal::set_handler__handler"></span><a class="reference internal" href="#_CPPv4N7essence3uni6signalE" title="essence::uni::signal"><span class="n"><span class="pre">signal</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">set_handler</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence3uni6signal7handlerE" title="essence::uni::signal::handler"><span class="n"><span class="pre">handler</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">new_handler</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6signal11set_handlerE7handler" title="Link to this definition">#</a><br /></dt>
+<dd><p>Setter for the handler function.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6signal2saEv">
+<span id="_CPPv3NK7essence3uni6signal2saEv"></span><span id="_CPPv2NK7essence3uni6signal2saEv"></span><span id="essence::uni::signal::saC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">sigaction</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">sa</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6signal2saEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the internal <code class="docutils literal notranslate"><span class="pre">sigaction</span></code> struct.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6signal2saER9sigaction">
+<span id="_CPPv3N7essence3uni6signal2saER9sigaction"></span><span id="_CPPv2N7essence3uni6signal2saER9sigaction"></span><span id="essence::uni::signal::sa__sigactionR"></span><a class="reference internal" href="#_CPPv4N7essence3uni6signalE" title="essence::uni::signal"><span class="n"><span class="pre">signal</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">sa</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">sigaction</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">new_sa</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6signal2saER9sigaction" title="Link to this definition">#</a><br /></dt>
+<dd><p>Setter for the internal <code class="docutils literal notranslate"><span class="pre">sigaction</span></code> struct.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6signal3sigEv">
+<span id="_CPPv3NK7essence3uni6signal3sigEv"></span><span id="_CPPv2NK7essence3uni6signal3sigEv"></span><span id="essence::uni::signal::sigC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence7signalsE" title="essence::signals"><span class="n"><span class="pre">signals</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sig</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6signal3sigEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the <code class="docutils literal notranslate"><span class="pre">signals</span></code> member.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6signal3sigE7signals">
+<span id="_CPPv3N7essence3uni6signal3sigE7signals"></span><span id="_CPPv2N7essence3uni6signal3sigE7signals"></span><span id="essence::uni::signal::sig__signals"></span><a class="reference internal" href="#_CPPv4N7essence3uni6signalE" title="essence::uni::signal"><span class="n"><span class="pre">signal</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">sig</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence7signalsE" title="essence::signals"><span class="n"><span class="pre">signals</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6signal3sigE7signals" title="Link to this definition">#</a><br /></dt>
+<dd><p>Setter for the <code class="docutils literal notranslate"><span class="pre">signals</span></code> member.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6signal5setupE3i32">
+<span id="_CPPv3N7essence3uni6signal5setupE3i32"></span><span id="_CPPv2N7essence3uni6signal5setupE3i32"></span><span id="essence::uni::signal::setup__i32"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setup</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">flags</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6signal5setupE3i32" title="Link to this definition">#</a><br /></dt>
+<dd><p>Register the signal handler.</p>
+</dd></dl>
+
+<p class="rubric">Example</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">handle_sig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="n">i32</span><span class="w"> </span><span class="n">sig</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">void</span>
+<span class="p">{</span>
+<span class="w">   </span><span class="n">io</span><span class="o">::</span><span class="n">printn</span><span class="p">(</span><span class="s">&quot;Hello, I&#39;m catching signal {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">uni</span><span class="o">::</span><span class="n">signal_str</span><span class="p">(</span><span class="n">sig</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="n">uni</span><span class="o">::</span><span class="n">signal</span><span class="w"> </span><span class="nf">sigint</span><span class="p">(</span><span class="n">uni</span><span class="o">::</span><span class="n">signals</span><span class="o">::</span><span class="n">interrupt</span><span class="p">,</span><span class="w"> </span><span class="n">handle_sig</span><span class="p">);</span>
+<span class="n">sigint</span><span class="p">.</span><span class="n">setup</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="passwd.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Uni/Passwd</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="stat.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Uni/Stat</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signalsE"><code class="docutils literal notranslate"><span class="pre">signals</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals6hangupE"><code class="docutils literal notranslate"><span class="pre">signals::hangup</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals9interruptE"><code class="docutils literal notranslate"><span class="pre">signals::interrupt</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4quitE"><code class="docutils literal notranslate"><span class="pre">signals::quit</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals7illegalE"><code class="docutils literal notranslate"><span class="pre">signals::illegal</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4trapE"><code class="docutils literal notranslate"><span class="pre">signals::trap</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4abrtE"><code class="docutils literal notranslate"><span class="pre">signals::abrt</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals3busE"><code class="docutils literal notranslate"><span class="pre">signals::bus</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals3fpeE"><code class="docutils literal notranslate"><span class="pre">signals::fpe</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4killE"><code class="docutils literal notranslate"><span class="pre">signals::kill</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals7usr_oneE"><code class="docutils literal notranslate"><span class="pre">signals::usr_one</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4segvE"><code class="docutils literal notranslate"><span class="pre">signals::segv</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals7usr_twoE"><code class="docutils literal notranslate"><span class="pre">signals::usr_two</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4pipeE"><code class="docutils literal notranslate"><span class="pre">signals::pipe</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4alrmE"><code class="docutils literal notranslate"><span class="pre">signals::alrm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4termE"><code class="docutils literal notranslate"><span class="pre">signals::term</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4chldE"><code class="docutils literal notranslate"><span class="pre">signals::chld</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4contE"><code class="docutils literal notranslate"><span class="pre">signals::cont</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4stopE"><code class="docutils literal notranslate"><span class="pre">signals::stop</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4tstpE"><code class="docutils literal notranslate"><span class="pre">signals::tstp</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4ttinE"><code class="docutils literal notranslate"><span class="pre">signals::ttin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4ttouE"><code class="docutils literal notranslate"><span class="pre">signals::ttou</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals3urgE"><code class="docutils literal notranslate"><span class="pre">signals::urg</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4xcpuE"><code class="docutils literal notranslate"><span class="pre">signals::xcpu</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals4xfszE"><code class="docutils literal notranslate"><span class="pre">signals::xfsz</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals6vtalrmE"><code class="docutils literal notranslate"><span class="pre">signals::vtalrm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals5winchE"><code class="docutils literal notranslate"><span class="pre">signals::winch</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals3sysE"><code class="docutils literal notranslate"><span class="pre">signals::sys</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence7signals7unknownE"><code class="docutils literal notranslate"><span class="pre">signals::unknown</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni10signal_strEN3uni7signalsE"><code class="docutils literal notranslate"><span class="pre">signal_str()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6signalE"><code class="docutils literal notranslate"><span class="pre">signal</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6signal7handlerE"><code class="docutils literal notranslate"><span class="pre">signal::handler</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6signal6signal6signalE7signals7handler"><code class="docutils literal notranslate"><span class="pre">signal::signal()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6signal11get_handlerEv"><code class="docutils literal notranslate"><span class="pre">signal::get_handler()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6signal11set_handlerE7handler"><code class="docutils literal notranslate"><span class="pre">signal::set_handler()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6signal2saEv"><code class="docutils literal notranslate"><span class="pre">signal::sa()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6signal2saER9sigaction"><code class="docutils literal notranslate"><span class="pre">signal::sa()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6signal3sigEv"><code class="docutils literal notranslate"><span class="pre">signal::sig()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6signal3sigE7signals"><code class="docutils literal notranslate"><span class="pre">signal::sig()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6signal5setupE3i32"><code class="docutils literal notranslate"><span class="pre">signal::setup()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/uni/signal.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026 Will Reed.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

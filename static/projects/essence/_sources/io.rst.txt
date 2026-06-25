@@ -1,0 +1,166 @@
+IO
+==
+
+Input/output related functions for printing, flushing, writing, reading and scanning.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/io.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:function:: std::string io::readline(std::FILE* stream, char delimiter = '\n')
+
+   Read from a file stream until a delimiter is reached.
+   The default is to read until a newline character.
+
+.. code-block:: cpp
+
+   std::string line = io::readline(stdin);
+
+   if (result.empty())
+   {
+      io::eprintn("Got an empty line!");
+      return 1;
+   }
+
+   io::printn("You entered {:s}", line);
+
+
+.. cpp:function:: template<scannable T> \
+                  std::expected<T, error> io::scan(std::FILE* port = stdin)
+
+   Scan a line from a file stream for a :cpp:expr:`scannable` type.
+   Returns an :cpp:expr:`error` object on failure, containing a message and error number.
+
+.. code-block:: cpp
+
+   auto some_integer = io::scan<i32>(stdin);
+   
+   if (not some_integer)
+   {
+      // hanlde the error
+      io::eprintn(some_integer.error().message());
+      return some_integer.error().number();
+   }
+
+   io::printn("You entered the number {:d}", *some_integer);
+
+.. cpp:function:: template<scannable T> \
+                  std::expected<T, error> io::prompt(std::string_view message = "")
+
+   Print a message to ``stdout`` and scan a line for a :cpp:expr:`scannable` type.
+   Returns an :cpp:expr:`error` object on failure, containing a message and error number.
+
+.. code-block:: cpp
+
+   auto result = io::prompt<std::string>("What is your name? ");
+
+   if (not result)
+   {
+      io::eprintn(result.error().message());
+      return result.error().number();
+   }
+
+   io::printn("Hello {:s}, nice to meet you.", *result);
+
+.. cpp:function:: void io::write(char c, std::FILE* port)
+
+   Write a character to a file stream. ``stdout`` by default.
+
+.. cpp:function:: void io::write(const char* s, std::FILE* port)
+
+   Write a string to a file stream. ``stdout`` by default.
+
+.. cpp:function:: void io::flush(std::FILE* port)
+
+   Flush a file stream. ``stdout`` by default.
+
+   Passing a ``nullptr`` will cause all ports to be flushed, as in the behaviour of ``fflush``.
+
+.. cpp:function:: template<typename... Args> \
+                  void io::print(std::string_view msg, Args&&... args)
+
+   Print a string to ``stdout`` after applying the format arguments ``args``.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string name { "Will" };
+      i32 lucky_number = 7;
+      io::print("Hello {}, your lucky number is {}\n", name, lucky_number);
+
+.. cpp:function:: template<typename... Args> \
+                  void io::printn(std::string_view msg, Args&&... args)
+
+   Print a string to ``stdout`` with a newline after applying the format
+   arguments ``args``.
+   
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string name { "Will" };
+      i32 lucky_number = 7;
+      io::print("Hello {}, your lucky number is {}", name, lucky_number);
+
+.. cpp:function:: template<typename... Args> \
+                  void io::eprint(std::string_view msg, Args&&... args)
+
+   Print a string to ``stderr`` after applying the format arguments ``args``.
+
+.. cpp:function:: template<typename... Args> \
+                  void io::eprintn(std::string_view msg, Args&&... args)
+
+   Print a string to ``stderr`` with a newline after applying the format
+   arguments ``args``.
+
+.. cpp:function:: std::string io::file::to_string(const std::string& path)
+   
+   Read a file from disk to a new string. On failure to read
+   ``path``, it will return an empty string.
+   
+   Parameter ``path`` may also be a :cpp:expr:`const char*`.
+
+.. cpp:function:: void io::file::to_string(const std::string& path, std::string& out)
+
+   Read a file from disk into the mutable string reference ``out``.
+
+   On failure, the string will be unchanged.
+
+   Parameter ``path`` may also be a :cpp:expr:`const char*`.
+
+.. cpp:function:: std::vector<std::string> io::file::lines(const std::string& path) noexcept
+
+   Read a file from disk into a new vector of strings, one entry for each line.
+
+   The returned vector will be empty on failure to read ``path``.
+
+   Parameter ``path`` may also be a :cpp:expr:`const char*`.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      auto lines = io::file::lines("some-file.txt");
+
+      for (usize n = 1; const auto& line: lines)
+      {
+         io::printn("{} | {}", n, line);
+         ++n;
+      }
+
+      // output:
+      // 
+      // 1 | this is line one
+      // 2 | this is line two
+      // ...
+
+.. cpp:function:: void io::file::lines(const std::string& path, std::vector<std::string>& out) noexcept
+
+   Read a file from disk into the mutable string vector ``out``.
+
+   On failure to read ``path``, ``out`` will be unchanged.
+
+   Parameter ``path`` may also be a :cpp:expr:`const char*`.

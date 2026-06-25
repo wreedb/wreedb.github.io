@@ -1,0 +1,1035 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Uni/Stat &#8212; Essence 0.6.0
+ documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="../_static/documentation_options.js?v=8fa8b3e9"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'uni/stat';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://wreedb.github.io/projects/essence/uni/stat.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Uni/Strerror" href="strerror.html" />
+    <link rel="prev" title="Uni/Signal" href="signal.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Essence 0.6.0
+ documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../color.html">
+    Color
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../encoding.html">
+    Encoding
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../environment.html">
+    Environment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../error.html">
+    Error
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../i18n.html">
+    I18N
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../io.html">
+    IO
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../path.html">
+    Path
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../process.html">
+    Process
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../random.html">
+    Random
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../str.html">
+    Str
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../time.html">
+    Time
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../types.html">
+    Types
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../uni.html">
+    Uni
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../url.html">
+    URL
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../uuid.html">
+    UUID
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../xdg.html">
+    XDG
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../color.html">
+    Color
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../encoding.html">
+    Encoding
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../environment.html">
+    Environment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../error.html">
+    Error
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../i18n.html">
+    I18N
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../io.html">
+    IO
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../path.html">
+    Path
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../process.html">
+    Process
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../random.html">
+    Random
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../str.html">
+    Str
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../time.html">
+    Time
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../types.html">
+    Types
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../uni.html">
+    Uni
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../url.html">
+    URL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../uuid.html">
+    UUID
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../xdg.html">
+    XDG
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../uni.html" class="nav-link">Uni</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Uni/Stat</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="uni-stat">
+<h1>Uni/Stat<a class="headerlink" href="#uni-stat" title="Link to this heading">#</a></h1>
+<p>Wrapper for the Unix <code class="docutils literal notranslate"><span class="pre">stat</span></code> C struct.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>To use declarations from this page, include the <code class="docutils literal notranslate"><span class="pre">&lt;essence/uni/stat.hpp&gt;</span></code> header.
+The declarations are found within the <code class="docutils literal notranslate"><span class="pre">essence::uni</span></code> namespace.</p>
+</div>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetypeE">
+<span id="_CPPv3N7essence3uni8filetypeE"></span><span id="_CPPv2N7essence3uni8filetypeE"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filetype</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><a class="headerlink" href="#_CPPv4N7essence3uni8filetypeE" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetype7regularE">
+<span id="_CPPv3N7essence3uni8filetype7regularE"></span><span id="_CPPv2N7essence3uni8filetype7regularE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">regular</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">S_IFREG</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetype7regularE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetype7symlinkE">
+<span id="_CPPv3N7essence3uni8filetype7symlinkE"></span><span id="_CPPv2N7essence3uni8filetype7symlinkE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">symlink</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">S_IFLNK</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetype7symlinkE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetype9directoryE">
+<span id="_CPPv3N7essence3uni8filetype9directoryE"></span><span id="_CPPv2N7essence3uni8filetype9directoryE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">directory</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">S_IFDIR</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetype9directoryE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetype6socketE">
+<span id="_CPPv3N7essence3uni8filetype6socketE"></span><span id="_CPPv2N7essence3uni8filetype6socketE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">socket</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">S_IFSOCK</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetype6socketE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetype9characterE">
+<span id="_CPPv3N7essence3uni8filetype9characterE"></span><span id="_CPPv2N7essence3uni8filetype9characterE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">character</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">S_IFCHR</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetype9characterE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetype5blockE">
+<span id="_CPPv3N7essence3uni8filetype5blockE"></span><span id="_CPPv2N7essence3uni8filetype5blockE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">block</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">S_IFBLK</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetype5blockE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetype4fifoE">
+<span id="_CPPv3N7essence3uni8filetype4fifoE"></span><span id="_CPPv2N7essence3uni8filetype4fifoE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fifo</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">S_IFIFO</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetype4fifoE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetype7unknownE">
+<span id="_CPPv3N7essence3uni8filetype7unknownE"></span><span id="_CPPv2N7essence3uni8filetype7unknownE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unknown</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">65535</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetype7unknownE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni11detect_fileE6mode_t">
+<span id="_CPPv3N7essence3uni11detect_fileE6mode_t"></span><span id="_CPPv2N7essence3uni11detect_fileE6mode_t"></span><span id="essence::uni::detect_file__mode_t"></span><a class="reference internal" href="#_CPPv4N7essence3uni8filetypeE" title="essence::uni::filetype"><span class="n"><span class="pre">filetype</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detect_file</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">mode_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni11detect_fileE6mode_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Detect the type of a file given its’ mode.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni15filetype_stringE8filetype">
+<span id="_CPPv3N7essence3uni15filetype_stringE8filetype"></span><span id="_CPPv2N7essence3uni15filetype_stringE8filetype"></span><span id="essence::uni::filetype_string__filetype"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filetype_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence3uni8filetypeE" title="essence::uni::filetype"><span class="n"><span class="pre">filetype</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">t</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni15filetype_stringE8filetype" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a string representation of the filetype <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni10permissionE">
+<span id="_CPPv3N7essence3uni10permissionE"></span><span id="_CPPv2N7essence3uni10permissionE"></span><span id="essence::uni::permission"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">permission</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni10permissionE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents the three access permission bits for a file.</p>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni10permission4readE">
+<span id="_CPPv3N7essence3uni10permission4readE"></span><span id="_CPPv2N7essence3uni10permission4readE"></span><span id="essence::uni::permission::read__b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read</span></span></span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7essence3uni10permission4readE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni10permission5writeE">
+<span id="_CPPv3N7essence3uni10permission5writeE"></span><span id="_CPPv2N7essence3uni10permission5writeE"></span><span id="essence::uni::permission::write__b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">write</span></span></span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7essence3uni10permission5writeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni10permission4execE">
+<span id="_CPPv3N7essence3uni10permission4execE"></span><span id="_CPPv2N7essence3uni10permission4execE"></span><span id="essence::uni::permission::exec__b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">exec</span></span></span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7essence3uni10permission4execE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni11permissionsE">
+<span id="_CPPv3N7essence3uni11permissionsE"></span><span id="_CPPv2N7essence3uni11permissionsE"></span><span id="essence::uni::permissions"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">permissions</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni11permissionsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents permissions for the owner, group and others along
+with the setuid, setgid and sticky bits.</p>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni11permissions5ownerE">
+<span id="_CPPv3N7essence3uni11permissions5ownerE"></span><span id="_CPPv2N7essence3uni11permissions5ownerE"></span><span id="essence::uni::permissions::owner__permission"></span><a class="reference internal" href="#_CPPv4N7essence3uni10permissionE" title="essence::uni::permission"><span class="n"><span class="pre">permission</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">owner</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni11permissions5ownerE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni11permissions5groupE">
+<span id="_CPPv3N7essence3uni11permissions5groupE"></span><span id="_CPPv2N7essence3uni11permissions5groupE"></span><span id="essence::uni::permissions::group__permission"></span><a class="reference internal" href="#_CPPv4N7essence3uni10permissionE" title="essence::uni::permission"><span class="n"><span class="pre">permission</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">group</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni11permissions5groupE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni11permissions5otherE">
+<span id="_CPPv3N7essence3uni11permissions5otherE"></span><span id="_CPPv2N7essence3uni11permissions5otherE"></span><span id="essence::uni::permissions::other__permission"></span><a class="reference internal" href="#_CPPv4N7essence3uni10permissionE" title="essence::uni::permission"><span class="n"><span class="pre">permission</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">other</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni11permissions5otherE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni11permissions6setuidE">
+<span id="_CPPv3N7essence3uni11permissions6setuidE"></span><span id="_CPPv2N7essence3uni11permissions6setuidE"></span><span id="essence::uni::permissions::setuid__b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setuid</span></span></span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7essence3uni11permissions6setuidE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni11permissions6setgidE">
+<span id="_CPPv3N7essence3uni11permissions6setgidE"></span><span id="_CPPv2N7essence3uni11permissions6setgidE"></span><span id="essence::uni::permissions::setgid__b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setgid</span></span></span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7essence3uni11permissions6setgidE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni11permissions6stickyE">
+<span id="_CPPv3N7essence3uni11permissions6stickyE"></span><span id="_CPPv2N7essence3uni11permissions6stickyE"></span><span id="essence::uni::permissions::sticky__b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">sticky</span></span></span><span class="p"><span class="pre">{</span></span><span class="k"><span class="pre">false</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7essence3uni11permissions6stickyE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni11permissions5octalEv">
+<span id="_CPPv3NK7essence3uni11permissions5octalEv"></span><span id="_CPPv2NK7essence3uni11permissions5octalEv"></span><span id="essence::uni::permissions::octalC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">octal</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni11permissions5octalEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Return an octal string representation of the permissions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetimeE">
+<span id="_CPPv3N7essence3uni8filetimeE"></span><span id="_CPPv2N7essence3uni8filetimeE"></span><span id="essence::uni::filetime"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filetime</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetimeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents the time points associated with a file.</p>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetime6accessE">
+<span id="_CPPv3N7essence3uni8filetime6accessE"></span><span id="_CPPv2N7essence3uni8filetime6accessE"></span><span id="essence::uni::filetime::access__std::chrono::time_point:std::chrono::file_clock:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">file_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">access</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetime6accessE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetime6modifyE">
+<span id="_CPPv3N7essence3uni8filetime6modifyE"></span><span id="_CPPv2N7essence3uni8filetime6modifyE"></span><span id="essence::uni::filetime::modify__std::chrono::time_point:std::chrono::file_clock:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">file_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">modify</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetime6modifyE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8filetime6changeE">
+<span id="_CPPv3N7essence3uni8filetime6changeE"></span><span id="_CPPv2N7essence3uni8filetime6changeE"></span><span id="essence::uni::filetime::change__std::chrono::time_point:std::chrono::file_clock:"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">file_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">change</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni8filetime6changeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6ownersE">
+<span id="_CPPv3N7essence3uni6ownersE"></span><span id="_CPPv2N7essence3uni6ownersE"></span><span id="essence::uni::owners"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">owners</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6ownersE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents the owning user and group of a file.</p>
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6owners3gidE">
+<span id="_CPPv3N7essence3uni6owners3gidE"></span><span id="_CPPv2N7essence3uni6owners3gidE"></span><span id="essence::uni::owners::gid__gid_t"></span><span class="n"><span class="pre">gid_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gid</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6owners3gidE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6owners3uidE">
+<span id="_CPPv3N7essence3uni6owners3uidE"></span><span id="_CPPv2N7essence3uni6owners3uidE"></span><span id="essence::uni::owners::uid__uid_t"></span><span class="n"><span class="pre">uid_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uid</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6owners3uidE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6owners5groupE">
+<span id="_CPPv3N7essence3uni6owners5groupE"></span><span id="_CPPv2N7essence3uni6owners5groupE"></span><span id="essence::uni::owners::group__ss"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">group</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6owners5groupE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp member">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6owners4userE">
+<span id="_CPPv3N7essence3uni6owners4userE"></span><span id="_CPPv2N7essence3uni6owners4userE"></span><span id="essence::uni::owners::user__ss"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">user</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6owners4userE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6statusE">
+<span id="_CPPv3N7essence3uni6statusE"></span><span id="_CPPv2N7essence3uni6statusE"></span><span id="essence::uni::status"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">status</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6statusE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wrapper around the <code class="docutils literal notranslate"><span class="pre">stat</span></code> C struct.</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6status6status6statusENSt10filesystem4pathEb">
+<span id="_CPPv3N7essence3uni6status6status6statusENSt10filesystem4pathEb"></span><span id="_CPPv2N7essence3uni6status6status6statusENSt10filesystem4pathEb"></span><span id="essence::uni::status::status::status__std::filesystem::path.b"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence3uni6status6status6statusENSt10filesystem4pathEb" title="essence::uni::status::status::status"><span class="n"><span class="pre">status</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">status</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">filesystem</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">path</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">follow</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6status6status6statusENSt10filesystem4pathEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor accepting a filesystem path, and a boolean determining
+whether or not to follow a potential symlink.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6status6status6statusE4stat">
+<span id="_CPPv3N7essence3uni6status6status6statusE4stat"></span><span id="_CPPv2N7essence3uni6status6status6statusE4stat"></span><span id="essence::uni::status::status::status__stat"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence3uni6status6status6statusE4stat" title="essence::uni::status::status::status"><span class="n"><span class="pre">status</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">status</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">stat</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">raw_stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6status6status6statusE4stat" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor accepting a pre-populated <code class="docutils literal notranslate"><span class="pre">stat</span></code> struct</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status3rawEv">
+<span id="_CPPv3NK7essence3uni6status3rawEv"></span><span id="_CPPv2NK7essence3uni6status3rawEv"></span><span id="essence::uni::status::rawC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">stat</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">raw</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status3rawEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the underlying <code class="docutils literal notranslate"><span class="pre">stat</span></code> struct.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status5permsEv">
+<span id="_CPPv3NK7essence3uni6status5permsEv"></span><span id="_CPPv2NK7essence3uni6status5permsEv"></span><span id="essence::uni::status::permsC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence3uni11permissionsE" title="essence::uni::permissions"><span class="n"><span class="pre">permissions</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">perms</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status5permsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the file permissions.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status4typeEv">
+<span id="_CPPv3NK7essence3uni6status4typeEv"></span><span id="_CPPv2NK7essence3uni6status4typeEv"></span><span id="essence::uni::status::typeC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence3uni8filetypeE" title="essence::uni::filetype"><span class="n"><span class="pre">filetype</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status4typeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the file type.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status5timesEv">
+<span id="_CPPv3NK7essence3uni6status5timesEv"></span><span id="_CPPv2NK7essence3uni6status5timesEv"></span><span id="essence::uni::status::timesC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence3uni8filetimeE" title="essence::uni::filetime"><span class="n"><span class="pre">filetime</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">times</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status5timesEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the file times.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status6ownersEv">
+<span id="_CPPv3NK7essence3uni6status6ownersEv"></span><span id="_CPPv2NK7essence3uni6status6ownersEv"></span><span id="essence::uni::status::ownersC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4NK7essence3uni6status6ownersEv" title="essence::uni::status::owners"><span class="n"><span class="pre">owners</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">owners</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status6ownersEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the file owners.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status3uidEv">
+<span id="_CPPv3NK7essence3uni6status3uidEv"></span><span id="_CPPv2NK7essence3uni6status3uidEv"></span><span id="essence::uni::status::uidC"></span><span class="n"><span class="pre">uid_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status3uidEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the user id.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status3gidEv">
+<span id="_CPPv3NK7essence3uni6status3gidEv"></span><span id="_CPPv2NK7essence3uni6status3gidEv"></span><span id="essence::uni::status::gidC"></span><span class="n"><span class="pre">gid_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status3gidEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Getter for the group id.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status6deviceEv">
+<span id="_CPPv3NK7essence3uni6status6deviceEv"></span><span id="_CPPv2NK7essence3uni6status6deviceEv"></span><span id="essence::uni::status::deviceC"></span><span class="n"><span class="pre">dev_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status6deviceEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status14special_deviceEv">
+<span id="_CPPv3NK7essence3uni6status14special_deviceEv"></span><span id="_CPPv2NK7essence3uni6status14special_deviceEv"></span><span id="essence::uni::status::special_deviceC"></span><span class="n"><span class="pre">dev_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">special_device</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status14special_deviceEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status20special_device_majorEv">
+<span id="_CPPv3NK7essence3uni6status20special_device_majorEv"></span><span id="_CPPv2NK7essence3uni6status20special_device_majorEv"></span><span id="essence::uni::status::special_device_majorC"></span><a class="reference internal" href="../types.html#_CPPv4N7essence3u32E" title="essence::u32"><span class="n"><span class="pre">u32</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">special_device_major</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status20special_device_majorEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status20special_device_minorEv">
+<span id="_CPPv3NK7essence3uni6status20special_device_minorEv"></span><span id="_CPPv2NK7essence3uni6status20special_device_minorEv"></span><span id="essence::uni::status::special_device_minorC"></span><a class="reference internal" href="../types.html#_CPPv4N7essence3u32E" title="essence::u32"><span class="n"><span class="pre">u32</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">special_device_minor</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status20special_device_minorEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status4sizeEv">
+<span id="_CPPv3NK7essence3uni6status4sizeEv"></span><span id="_CPPv2NK7essence3uni6status4sizeEv"></span><span id="essence::uni::status::sizeC"></span><a class="reference internal" href="../types.html#_CPPv4N7essence5usizeE" title="essence::usize"><span class="n"><span class="pre">usize</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status4sizeEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status6blocksEv">
+<span id="_CPPv3NK7essence3uni6status6blocksEv"></span><span id="_CPPv2NK7essence3uni6status6blocksEv"></span><span id="essence::uni::status::blocksC"></span><span class="n"><span class="pre">blkcnt_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blocks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status6blocksEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status9blocksizeEv">
+<span id="_CPPv3NK7essence3uni6status9blocksizeEv"></span><span id="_CPPv2NK7essence3uni6status9blocksizeEv"></span><span id="essence::uni::status::blocksizeC"></span><span class="n"><span class="pre">blksize_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blocksize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status9blocksizeEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status8basenameEv">
+<span id="_CPPv3NK7essence3uni6status8basenameEv"></span><span id="_CPPv2NK7essence3uni6status8basenameEv"></span><span id="essence::uni::status::basenameC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">basename</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status8basenameEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status4stemEv">
+<span id="_CPPv3NK7essence3uni6status4stemEv"></span><span id="_CPPv2NK7essence3uni6status4stemEv"></span><span id="essence::uni::status::stemC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stem</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status4stemEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6status7typestrEv">
+<span id="_CPPv3NK7essence3uni6status7typestrEv"></span><span id="_CPPv2NK7essence3uni6status7typestrEv"></span><span id="essence::uni::status::typestrC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">typestr</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6status7typestrEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="signal.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Uni/Signal</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="strerror.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Uni/Strerror</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetypeE"><code class="docutils literal notranslate"><span class="pre">filetype</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetype7regularE"><code class="docutils literal notranslate"><span class="pre">filetype::regular</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetype7symlinkE"><code class="docutils literal notranslate"><span class="pre">filetype::symlink</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetype9directoryE"><code class="docutils literal notranslate"><span class="pre">filetype::directory</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetype6socketE"><code class="docutils literal notranslate"><span class="pre">filetype::socket</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetype9characterE"><code class="docutils literal notranslate"><span class="pre">filetype::character</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetype5blockE"><code class="docutils literal notranslate"><span class="pre">filetype::block</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetype4fifoE"><code class="docutils literal notranslate"><span class="pre">filetype::fifo</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetype7unknownE"><code class="docutils literal notranslate"><span class="pre">filetype::unknown</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni11detect_fileE6mode_t"><code class="docutils literal notranslate"><span class="pre">detect_file()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni15filetype_stringE8filetype"><code class="docutils literal notranslate"><span class="pre">filetype_string()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni10permissionE"><code class="docutils literal notranslate"><span class="pre">permission</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni10permission4readE"><code class="docutils literal notranslate"><span class="pre">permission::read</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni10permission5writeE"><code class="docutils literal notranslate"><span class="pre">permission::write</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni10permission4execE"><code class="docutils literal notranslate"><span class="pre">permission::exec</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni11permissionsE"><code class="docutils literal notranslate"><span class="pre">permissions</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni11permissions5ownerE"><code class="docutils literal notranslate"><span class="pre">permissions::owner</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni11permissions5groupE"><code class="docutils literal notranslate"><span class="pre">permissions::group</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni11permissions5otherE"><code class="docutils literal notranslate"><span class="pre">permissions::other</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni11permissions6setuidE"><code class="docutils literal notranslate"><span class="pre">permissions::setuid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni11permissions6setgidE"><code class="docutils literal notranslate"><span class="pre">permissions::setgid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni11permissions6stickyE"><code class="docutils literal notranslate"><span class="pre">permissions::sticky</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni11permissions5octalEv"><code class="docutils literal notranslate"><span class="pre">permissions::octal()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetimeE"><code class="docutils literal notranslate"><span class="pre">filetime</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetime6accessE"><code class="docutils literal notranslate"><span class="pre">filetime::access</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetime6modifyE"><code class="docutils literal notranslate"><span class="pre">filetime::modify</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8filetime6changeE"><code class="docutils literal notranslate"><span class="pre">filetime::change</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6ownersE"><code class="docutils literal notranslate"><span class="pre">owners</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6owners3gidE"><code class="docutils literal notranslate"><span class="pre">owners::gid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6owners3uidE"><code class="docutils literal notranslate"><span class="pre">owners::uid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6owners5groupE"><code class="docutils literal notranslate"><span class="pre">owners::group</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6owners4userE"><code class="docutils literal notranslate"><span class="pre">owners::user</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6statusE"><code class="docutils literal notranslate"><span class="pre">status</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6status6status6statusENSt10filesystem4pathEb"><code class="docutils literal notranslate"><span class="pre">status::status()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6status6status6statusE4stat"><code class="docutils literal notranslate"><span class="pre">status::status()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status3rawEv"><code class="docutils literal notranslate"><span class="pre">status::raw()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status5permsEv"><code class="docutils literal notranslate"><span class="pre">status::perms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status4typeEv"><code class="docutils literal notranslate"><span class="pre">status::type()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status5timesEv"><code class="docutils literal notranslate"><span class="pre">status::times()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status6ownersEv"><code class="docutils literal notranslate"><span class="pre">status::owners()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status3uidEv"><code class="docutils literal notranslate"><span class="pre">status::uid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status3gidEv"><code class="docutils literal notranslate"><span class="pre">status::gid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status6deviceEv"><code class="docutils literal notranslate"><span class="pre">status::device()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status14special_deviceEv"><code class="docutils literal notranslate"><span class="pre">status::special_device()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status20special_device_majorEv"><code class="docutils literal notranslate"><span class="pre">status::special_device_major()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status20special_device_minorEv"><code class="docutils literal notranslate"><span class="pre">status::special_device_minor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status4sizeEv"><code class="docutils literal notranslate"><span class="pre">status::size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status6blocksEv"><code class="docutils literal notranslate"><span class="pre">status::blocks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status9blocksizeEv"><code class="docutils literal notranslate"><span class="pre">status::blocksize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status8basenameEv"><code class="docutils literal notranslate"><span class="pre">status::basename()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status4stemEv"><code class="docutils literal notranslate"><span class="pre">status::stem()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status7typestrEv"><code class="docutils literal notranslate"><span class="pre">status::typestr()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/uni/stat.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026 Will Reed.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

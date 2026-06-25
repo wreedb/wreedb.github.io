@@ -1,0 +1,98 @@
+Uni
+===
+
+Memory/thread safe and ergonomic wrappers around standard Unix C functions and structs.
+
+.. admonition:: Info
+
+   To use declarations from this module, include the ``<essence/uni.hpp>`` header.
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   uni/dirent
+   uni/fnmatch
+   uni/group
+   uni/passwd
+   uni/signal
+   uni/stat
+   uni/strerror
+   uni/syslog
+   uni/term
+   uni/unistd
+
+   
+.. grid:: 1 1 2 2
+   :padding: 0
+   :gutter: 2
+
+   .. grid-item-card:: dirent
+      :link: uni/dirent
+      :link-type: doc
+
+      Easy wrapper for ``scandir``.
+
+   .. grid-item-card:: fnmatch
+      :link: uni/fnmatch
+      :link-type: doc
+
+      The ``fnmatch`` function, for testing shell glob patterns against filenames
+   
+
+   .. grid-item-card:: group
+      :link: uni/group
+      :link-type: doc
+
+      The Unix ``group`` struct, with some extra quality-of-life added.
+   
+
+   .. grid-item-card:: passwd
+      :link: uni/passwd
+      :link-type: doc
+
+      The Unix ``passwd`` struct, with some quality-of-life added.
+   
+
+   .. grid-item-card:: signal
+      :link: uni/signal
+      :link-type: doc
+
+      An interface for easy signal handling and setup, using function objects
+      as handlers.
+   
+
+   .. grid-item-card:: stat
+      :link: uni/stat
+      :link-type: doc
+
+      Thoroughly written interface to ``stat`` and ``lstat``.
+   
+
+   .. grid-item-card:: strerror
+      :link: uni/strerror
+      :link-type: doc
+
+      Easy wrapper around the thread-safe (reentrant) variant of ``strerror``, as
+      well as an exception class leveraging it.
+   
+
+   .. grid-item-card:: syslog
+      :link: uni/syslog
+      :link-type: doc
+
+      Singleton interface for interacting with ``syslog``.
+   
+
+   .. grid-item-card:: term
+      :link: uni/term
+      :link-type: doc
+
+      Clean abstraction over the ``termios`` struct, with easy restoration of original settings.
+   
+
+   .. grid-item-card:: unistd
+      :link: uni/unistd
+      :link-type: doc
+
+      Various managed and thread-safe (where applicable) wrappers for ``<unistd.h>`` functions.

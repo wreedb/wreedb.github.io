@@ -1,0 +1,170 @@
+Uni/Unistd
+==========
+
+Thread and memory safe wrappers to various ``<unistd.h>`` functions.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/unistd.hpp>`` header.
+
+   They are found within the ``essence::uni`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: uni
+
+.. cpp:type:: groupid = gid_t
+
+.. cpp:type:: userid = uid_t
+
+.. cpp:type:: procid = pid_t
+
+.. cpp:enum-class:: ok: u32
+
+   Flags used for the ``access`` function to determine info about a file.
+
+   .. cpp:enumerator:: exists = F_OK
+
+      The file exists.
+
+   .. cpp:enumerator:: read = R_OK
+
+      The file can be read by the invoking user.
+
+   .. cpp:enumerator:: write = W_OK
+
+      The file can be written to by the invoking user.
+
+   .. cpp:enumerator:: exec = X_OK
+      
+      The file is executable by the invoking user.
+
+   .. cpp:enumerator:: rw = R_OK|W_OK
+      
+      The file can be read and written to by the invoking user.
+
+   .. cpp:enumerator:: rwx = R_OK|W_OK|X_OK
+      
+      The file can be read, written to and executed by the invoking user.
+
+   .. cpp:enumerator:: all = F_OK|R_OK|W_OK|X_OK
+      
+      The file exists, can be read, written to and executed by the invoking user.
+
+
+.. cpp:function:: bool access(const std::string& path, ok flags = ok::exists)
+
+   Check ``flags`` against the file at ``path``
+
+   Returns ``true`` if the check succeeds, ``false`` if it fails for any reason.
+
+   The ``flags`` argument may be a bitwise-or combination of :cpp:expr:`ok` flags,
+   a raw integer value, or a :cpp:expr:`std::initializer_list` of :cpp:expr:`ok` members.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      if (uni::access("/foo/bar/buzz", uni::ok::exists|uni::ok::exec))
+      {
+         // the file exists and is executable
+      }
+
+.. cpp:function:: u32 alarm(u32 n)
+
+   Deliver a ``SIGALRM`` to the calling process in ``n`` seconds.
+
+.. cpp:function:: std::string getcwd()
+
+   Get the path to the current working directory.
+
+   Returns an empty string upon failure.
+
+.. cpp:function:: bool chdir(const std::string& path)
+   
+   Change the current working directory of the calling process to ``path``.
+
+   Returns ``true`` upon success, ``false`` otherwise.
+
+.. cpp:function:: bool chown(const std::string& path, userid u, groupid g)
+
+   Change the ownership of ``path`` the the user ``u`` and group ``g``.
+
+   Returns ``true`` upon success, ``false`` otherwise.
+
+.. cpp:function:: userid getuid()
+
+   Get the user id of the calling process invoker.
+
+.. cpp:function:: groupid geteuid()
+
+   Get the effective user id of the calling process invoker.
+
+.. cpp:function:: groupid getgid()
+
+   Get the group id of the calling process invoker.
+
+.. cpp:function:: groupid getegid()
+
+   Get the effective group id of the calling process invoker.
+
+.. cpp:function:: std::vector<groupid> getgroups()
+
+   Get the IDs of the groups which the process invoker belongs to.
+
+   Returns an empty vector upon failure.
+
+.. cpp:function:: i64 gethostid()
+
+   Get the unique identifier of the host machine.
+
+.. cpp:function:: std::string gethostname()
+
+   Get the hostname of the current machine.
+
+   Returns an empty string upon failure.
+
+.. cpp:function:: std::string getlogin()
+
+   Get the username of the invoking user.
+
+   Returns an empty string upon failure.
+
+.. cpp:function:: procid getpgid(procid p)
+
+   Get the process group id of PID ``p``.
+
+.. cpp:function:: procid getpid()
+
+   Get the PID of current process.
+
+.. cpp:function:: procid getppid()
+
+   Get the PID of the current process's parent.
+
+.. cpp:function:: bool isatty(i32 fd = STDOUT_FILENO)
+
+   Check if ``fd`` is a TTY.
+
+.. cpp:function:: std::string ttyname(i32 fd = STDOUT_FILENO)
+
+   Get the name of the TTY at file descriptor ``fd``.
+
+   Returns an empty string if ``fd`` is not associated with a TTY.
+
+.. cpp:function:: bool unlink(const std::string& path)
+
+   Remove (unlink) the file at ``path``.
+
+   Returns ``false`` upon failure to unlink, ``true`` upon success.
+
+.. cpp:function:: bool symlink(const std::string& from, const std::string& to)
+
+   Create a symbolic link of ``from`` to destination ``to``.
+
+   Returns ``false`` upon failure, ``true`` upon success.
+
+.. cpp:function:: std::string readlink(const std::string& path)
+
+   Return the destination of the symbolic link at ``path``.
+
+   If ``path`` is not a symbolic link, returns the value of ``path``.

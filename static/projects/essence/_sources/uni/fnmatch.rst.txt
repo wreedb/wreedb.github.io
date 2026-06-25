@@ -1,0 +1,58 @@
+Uni/Fnmatch
+===========
+
+Interface to the ``fnmatch`` C function.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/fnmatch.hpp>`` header.
+
+   They are found within the ``essence::uni`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: uni
+
+.. cpp:enum-class:: fnm: i32
+
+   Options passed to ``fnmatch``.
+
+   .. cpp:enumerator:: fnm::none = 0
+   
+   .. cpp:enumerator:: fnm::pathname = FNM_PATHNAME
+   
+   .. cpp:enumerator:: fnm::period = FNM_PERIOD
+   
+   .. cpp:enumerator:: fnm::no_escape = FNM_NOESCAPE
+
+   .. cpp:enumerator:: fnm::case_fold = FNM_CASEFOLD
+
+   .. cpp:enumerator:: fnm::extended_match = FNM_EXTMATCH
+
+   .. cpp:enumerator:: fnm::leading_dir = FNM_LEADING_DIR
+
+.. cpp:function:: bool fnmatch(const std::string& pattern, const std::string& name, fnm flags)
+
+   Return true if ``pattern`` would match the file ``name``.
+
+   Parameters ``pattern`` and ``name`` may also be :cpp:expr:`const char*`.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      #include <essence/io.hpp>
+      #include <essence/uni/dirent.hpp>
+      #include <essence/uni/fnmatch.hpp>
+      
+      using namespace essence;
+
+      std::string pat { "*.cpp" };
+
+      auto entries = uni::scandir("src");
+
+      // print all entries in `src` who match the "*.cpp" glob pattern.
+      for (const auto& entry: entries)
+      {
+         if (uni::fnmatch(pat, entry))
+            io::printn("match: {}", entry);
+      }

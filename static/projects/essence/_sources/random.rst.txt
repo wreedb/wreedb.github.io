@@ -1,0 +1,42 @@
+Random
+======
+
+Random number generation facilities.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/random.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:var:: static std::random_device random::device
+
+   The systems' default random device.
+
+.. cpp:var:: static thread_local std::mt19937 gen = std::mt19937 { device() }
+
+   A thread local Mersenne Twister pseudorandom number genrator.
+
+
+.. cpp:function:: template<typename T = i32> \
+                  T rng(T min, T max) noexcept
+
+   Generate a random number between ``min`` and ``max``.
+   ``T`` must be an integral or floating point type.
+
+.. cpp:function:: template<typename T = i32> \
+                  T rng(T max) noexcept
+
+   Generate a random number between 0 and ``max``.
+   ``T`` must be an integral or floating point type.
+
+
+.. code-block:: cpp
+
+   using namespace essence;
+
+   // a random 32-bit unsigned integer
+   auto rui = rng<u32>(20, 100);
+
+   // a random 64-bit floating point number
+   auto rfp = rng<f64>(100.0);

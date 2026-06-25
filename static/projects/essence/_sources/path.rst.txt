@@ -1,0 +1,91 @@
+Path
+====
+
+File path retrieval and manipulation functions.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/path.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:function:: std::optional<std::string> path::which(const std::string& name)
+
+   Search the ``PATH`` environment variable directories for executable ``name``.
+
+   Parameter ``name`` may also be a :cpp:expr:`const char*`.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      auto result_a = path::which("gcc");
+      auto result_b = path::which("some-non-existent-executable");
+
+      // *result_a holds: "/usr/bin/gcc"
+      // result_b holds: std::nullopt
+
+.. cpp:function:: std::string path::base(const std::string& name)
+
+   Return the basename of ``name``.
+   
+   Parameter ``name`` may also be a :cpp:expr:`const char*`.
+   
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string compiler { "/usr/bin/gcc" };
+      auto result = path::base(compiler);
+      // result holds: "gcc"
+
+.. cpp:function:: std::string path::dir(const std::string& name)
+
+   Return the directory name of ``name``.
+
+   Parameter ``name`` may also be a :cpp:expr:`const char*`.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string compiler { "/usr/bin/gcc" };
+      auto result = path::dir(compiler);
+      // result holds: "/usr/bin"
+
+.. cpp:function:: std::string path::home()
+
+   Return the users' home directory path.
+
+.. cpp:function:: std::string& path::expandhome(std::string& path)
+
+   Expand tilde (``~``) to the users' home directory (in-place).
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      // In this example, the invoking user is 'wbr'
+      std::string screenshots_dir { "~/pictures/screenshots" };
+      path::expandhome(screenshots_dir);
+      // screenshots_dir now holds: "/home/wbr/pictures/screenshots"
+
+.. cpp:function:: std::string path::cexpandhome(std::string_view path)
+
+   Expand tilde (``~``) to the users' home directory (copying).
+
+.. cpp:function:: std::string& path::unexpandhome(std::string& path)
+
+   Reduce the users' home directory to tilde (``~``), in-place.
+   
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string screenshots_dir { "/home/wbr/pictures/screenshots" };
+      path::unexpandhome(screenshots_dir);
+      // screenshots_dir now holds: "~/pictures/screenshots"
+
+.. cpp:function:: std::string path::cunexpandhome(std::string_view path)
+
+   Reduce the users' home directory to tilde (``~``), copying.

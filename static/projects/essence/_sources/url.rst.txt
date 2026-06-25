@@ -1,0 +1,39 @@
+URL
+===
+
+A rudimentary URL class
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/url.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:class:: url
+
+   A simple URL abstraction. Specialization available for :cpp:expr:`std::formatter`.
+
+   .. cpp:function:: url::url(const std::string& raw)
+
+      Default constructor accepting a raw url string.
+   
+   .. cpp:function:: std::string full() const
+
+      Get the full url.
+
+   .. cpp:function:: std::string base() const
+
+      Get the base of the url, e.g.: ``https://foo.org`` from ``https://foo.org/foo/bar.ext``.
+
+   .. cpp:function:: std::string filename() const
+
+      Get the deduced "file name" of the url, e.g.: ``bar.ext`` from ``https://foo.org/foo/bar.ext``.
+      Excellent for use with something like `libcurl <https://curl.se>`__.
+
+   .. cpp:function:: std::string domain() const
+
+      Get the domain of the url, e.g.: ``foo.org`` from ``https://foo.org/foo/bar.ext``.
+
+   .. cpp:function:: std::string path() const
+
+      Get the path of url, e.g.: ``foo/bar.ext`` from ``https://foo.org/foo/bar.ext``.

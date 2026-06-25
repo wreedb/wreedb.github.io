@@ -1,0 +1,233 @@
+Process
+=======
+
+Unix process creation and configuration.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/process.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:class:: process
+
+   A Unix process abstraction.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      // calls the `ls` executable with `-alhF --color=auto` arguments
+      // and then returns with the program with the exit status of the process.
+      process p("ls", {"-alhF", "--color=auto"});
+      return p.spawn().wait().status();
+
+
+   .. cpp:member:: std::string program
+
+      The program name or full path to execute.
+
+   .. cpp:member:: std::vector<std::string> arguments
+
+      The arguments supplied to the process.
+
+   .. cpp:member:: std::unordered_map<std::string, std::string> environment
+
+      The process environment variables.
+
+      The default value when not supplied is to call :cpp:expr:`env::map()`.
+
+   .. cpp:member:: ioconfig io
+
+      The input, output and error port configuration.
+
+   .. cpp:member:: i32 status = 0
+
+      After completion, the exit status of the process.
+
+   .. cpp:member:: pid_t pid = -1
+
+      When spawned, the process id.
+
+   .. cpp:member:: std::string argzero
+
+      The 0th argument in the exec argv, may be different from the program name.
+
+   .. cpp:function:: process& spawn()
+
+      Fork the parent process and execute the process in the child.
+
+   .. cpp:function:: process& wait()
+
+      Wait for the process to finish.
+
+   .. cpp:function:: process& run()
+
+      Shorthand to run spawn and wait, for the impatient.
+
+   .. cpp:function:: output capture()
+
+      Spawn the process, capture its' output and error, then wait.
+
+   .. cpp:function:: bool running()
+
+      Check if the process is alive.
+
+   .. cpp:function:: void kill(i32 sig = 15)
+
+      Send a signal to the process, by default ``SIGTERM``.
+
+   .. cpp:function:: void exec()
+
+      Execute the process without forking, replacing the current process.
+      Marked with the ``[[noreturn]]`` attribute.
+
+.. cpp:class:: pipeline
+
+   Unix pipeline abstraction leveraging the :cpp:expr:`process` class.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      auto pl = process("echo", {"Hello there friend"})
+              | process("grep", {"-v", "-i", "i"})
+              | process("grep", {"-v", "-i", "t"});
+
+      pl.run(); // outputs: "Hello"
+
+   .. cpp:member:: std::vector<process> processes
+
+      The process members of the pipeline, in execution order.
+
+   .. cpp:member:: std::vector<std::array<i32, 2>> pipes
+
+      The pipe file descriptor pairs for each process.
+
+   .. cpp:function:: pipeline& pipe(process p)
+
+      Add a process to the pipeline.
+
+   .. cpp:function:: pipeline& spawn()
+
+      Spawn the pipeline.
+
+   .. cpp:function:: pipeline& wait()
+
+      Wait for the pipeline processes.
+
+   .. cpp:function:: pipeline& run()
+
+      Shorthand to spawn and wait for the pipeline.
+
+   .. cpp:function:: i32 status() const
+
+      Get the status of the last process in the pipeline.
+
+   .. cpp:function:: std::vector<i32> statuses() const
+
+      Get the statuses of all processes in the pipeline.
+
+.. cpp:function:: pipeline operator|(process lhs, process rhs)
+
+   Construct a pipeline from two processes.
+
+.. cpp:function:: pipeline operator|(pipeline lhs, process rhs)
+
+   Construct a pipeline from an existing pipeline and a process.
+
+.. cpp:class:: output
+
+   A container for process standard output and error.
+
+   .. cpp:member:: std::string out
+
+      The standard output.
+
+   .. cpp:member:: std::string err
+
+      The standard error.
+
+   .. cpp:function:: output::output(std::string o, std::string e)
+
+      Main constructor, accepting two strings.
+
+   .. cpp:function:: output::output(std::pair<std::string, std::string> outerr)
+
+      Alternative constructor, accepting a pair of strings.
+
+.. cpp:class:: ioport
+
+   Represents an IO stream as it relates to a process.
+
+   .. cpp:member:: i32 fd = -1
+
+      The file descriptor integer for the port.
+
+   .. cpp:function:: ioport::ioport(i32 pfd)
+
+      Main constructor, accepting a file descriptor integer.
+
+   .. cpp:function:: ioport::ioport(const std::filesystem::path& path)
+
+      Alternative constructor accepting a filesystem path.
+
+   .. cpp:function:: static ioport::input()
+
+      Static constructor using ``STDIN_FILENO``.
+
+   .. cpp:function:: static ioport::output()
+
+      Static constructor using ``STDOUT_FILENO``.
+   
+   .. cpp:function:: static ioport::error()
+
+      Static constructor using ``STDERR_FILENO``.
+
+   .. cpp:function:: static ioport::null()
+
+      Static constructor using ``/dev/null``.
+
+   .. cpp:function:: ioport& cloexec()
+
+      Set the close-on-exec flag for the port.
+
+   .. cpp:function:: bool is_open() const
+
+      Check if the port is open.
+
+   .. cpp:function:: void close()
+
+      Close the port
+
+   .. cpp:function:: operator bool() const
+
+      Implicit conversion to bool.
+
+.. cpp:class:: ioconfig
+   
+   Represents the three IO ports used by a process.
+
+   .. cpp:member:: ioport in = ioport::input()
+
+      The input port, defaulting to ``stdin``.
+
+   .. cpp:member:: ioport out = ioport::output()
+      
+      The output port, defaulting to ``stdout``.
+   
+   .. cpp:member:: ioport err = ioport::error()
+
+      The error port, defaulting to ``stderr``.
+
+   .. cpp:function:: explicit ioconfig::ioconfig()
+
+      Constructor retaining default ports.
+
+   .. cpp:function:: explicit ioconfig::ioconfig(ioport pIn, ioport pOut, ioport pErr)
+
+      Constructor accepting all three port arguments.
+   
+   .. cpp:function:: explicit ioconfig::ioconfig(ioport pOutErr)
+
+      Constructor accepting a single port for output and error, retaining default input.

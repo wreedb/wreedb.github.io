@@ -1,0 +1,35 @@
+I18N
+====
+
+Internationalization and Localization functions leveraging `GNU Gettext <https://gnu.org/software/gettext>`__.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/i18n.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:function:: template<typename... Args> \
+                  std::string _(const char* msgid, Args&&... args)
+
+   GNU Gettext wrapper accepting :cpp:expr:`std::format` arguments.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string name = "Will";
+      std::string my_message = _("Hello {}!", name);
+
+.. cpp:function:: template<typename... Args> \
+                  std::string _n(u64 n, const char* singular, const char* plural, Args&&... args)
+
+   GNU NGettext wrapper accepting :cpp:expr:`std::format` arguments.
+
+   .. rubric:: Example
+
+   .. code-block::
+
+      std::string program_name = "file-processor";
+      u64 count = 100;
+      std::string message = _n(count, "{}: Processed {} file.", "{}: Processed {} files.", count, program_name);

@@ -1,0 +1,235 @@
+Color
+=====
+
+`ANSI escape sequence <https://en.wikipedia.org/wiki/ANSI_escape_code>`__ related functions and facilities.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/color.hpp>`` header.
+
+   They are found within the ``essence::ansi`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: ansi
+
+.. cpp:type:: sequence = std::string_view
+
+   A distinctly-named type for predefined ansi escape sequences.
+
+.. list-table:: Escape sequence constants
+   :widths: auto
+   :align: left
+   :header-rows: 1
+
+   * - Constant
+     - Resetter
+     - Description
+
+   * - :cpp:any:`none`
+     - N/A
+     - Reset all formatting
+
+   * - :cpp:any:`bold`
+     - :cpp:any:`reset::bold`
+     - Bolden text
+
+   * - :cpp:any:`dim`
+     - :cpp:any:`reset::dim`
+     - Dim the text
+
+   * - :cpp:any:`italic`
+     - :cpp:any:`reset::italic`
+     - Italicize text
+
+   * - :cpp:any:`underline`
+     - :cpp:any:`reset::underline`
+     - Underline the text
+   
+   * - :cpp:any:`blink`
+     - :cpp:any:`reset::blink`
+     - Periodically blink between hidden and visible
+
+   * - :cpp:any:`hidden`
+     - :cpp:any:`reset::hidden`
+     - Make text invisible
+
+   * - :cpp:any:`strike`
+     - :cpp:any:`reset::strike`
+     - Add a strike-through line to the text
+
+   * - ``fg::<color>``
+     - :cpp:any:`fg::reset`
+     - Colorize foreground text, where ``<color>`` is one of black, red, green, yellow, blue, magenta, cyan or white
+   
+   * - ``bg::<color>``
+     - :cpp:any:`bg::reset`
+     - Colorize background of cells, where ``<color>`` is one of black, red, green, yellow, blue, magenta, cyan or white
+
+   * - ``fg::bright::<color>``
+     - :cpp:any:`fg::reset`
+     - Colorize foreground text with a bright variant of ``<color>``, where ``<color>`` is one of black, red, green, yellow, blue, magenta, cyan or white
+   
+   * - ``bg::bright::<color>``
+     - :cpp:any:`bg::reset`
+     - Colorize background of cells with a bright variant of ``<color>``, where ``<color>`` is one of black, red, green, yellow, blue, magenta, cyan or white
+
+.. cpp:var:: std::regex escape_rx
+
+   A regex useful for capturing standard ansi escape sequences.
+
+.. cpp:function:: void strip(std::string& in)
+
+   Strip ansi escape sequences from a string (in-place).
+
+   Utilizes the :cpp:expr:`escape_rx` regex to perform the strip.
+
+.. cpp:function:: std::string cstrip(std::string_view in)
+
+   Strip ansi escape sequences from a string (copying).
+   
+   Utilizes the :cpp:expr:`escape_rx` regex to perform the strip.
+
+.. cpp:concept:: template<typename T> Appendable
+
+   A type that can be appended to a `message` instance.
+
+   **Valid Expressions**
+
+   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`std::string`
+   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`std::string_view`
+   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`const char*`
+   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`sequence`
+   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`char`
+
+.. cpp:concept:: template<typename T> StringLike
+   
+   A string-like type.
+
+   **Valid Expressions**
+
+   - :cpp:expr:`T`, when :cpp:expr:`T` is convertible to an :cpp:expr:`std::string_view`
+   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`char`
+
+.. cpp:class:: message
+   
+   A wrapped `std::string` facilitating easy colorization and formatting.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      #include <essence/io.hpp>
+      #include <essence/color.hpp>
+
+      int main()
+      {
+          using namespace essence::ansi;
+
+          // print ' Hello! ' with black text on a green background, in a bold and italic face.
+          message m = fg::black|bg::green|italic|bold|" Hello! "|none;
+
+          io::printn(m);
+
+          return 0;
+      }
+
+   .. cpp:function:: message::message(std::string s)
+
+      Construct a message from a `std::string`. The constructor may also be
+      called with a :cpp:expr:`const char*`, :cpp:expr:`std::string_view`,
+      :cpp:expr:`const std::string&` or a :cpp:expr:`sequence`.
+
+   .. cpp:function:: template<Appendable T> \
+                     message& append(T& t)
+      
+      Append an :cpp:expr:`Appendable` type to a :cpp:expr:`message`. May
+      also be called with a constant ``T`` reference.
+
+   .. cpp:function:: template<StringLike... Args> \
+                     requires (sizeof...(Args) >= 2) \
+                     message& append(Args&&... args)
+
+      Append multiple :cpp:expr:`StringLike` types to a :cpp:expr:`message`.
+
+      .. rubric:: Example
+
+      .. code-block:: cpp
+
+         using namespace essence::ansi;
+         message m;
+
+         m.append(fg::black, bg::green, bold, italic, " Hello ", none);
+
+   .. cpp:function:: message& newline()
+
+      Append a newline character to the end of the message.
+
+   .. cpp:function:: message& clear()
+
+      Empty the contents of the underlying :cpp:expr:`std::string`.
+
+   .. cpp:function:: message& strip()
+
+      Remove all ansi escape sequences from the underlying :cpp:expr:`std::string` using
+      the `ansi::strip` function and `ansi::escape_rx` regex.
+
+   .. cpp:function:: message& reset()
+
+      Append the format clearing sequence to the end of the :cpp:expr:`message`
+
+   .. cpp:function:: message& text(std::string txt)
+
+      Set the contents of the underlying :cpp:expr:`std::string`
+
+   .. cpp:function:: std::string str() const
+
+      Get a copy of the string content.
+
+   .. cpp:function:: template<Appendable T> \
+                     friend message operator+(const message& lhs, T rhs)
+      
+      Addition operator for :cpp:expr:`Appendable` types.
+
+   .. cpp:function:: friend message operator+(message& lhs, message& rhs)
+
+      Construct a new message from :cpp:expr:`lhs` and :cpp:expr:`rhs`
+
+   .. cpp:function:: friend std::ostream& operator<<(std::ostream& os, const message& self)
+
+      Stream overload for :cpp:expr:`std::cout` and the like.
+
+   .. cpp:function:: operator std::string() const
+
+      Implicit conversion operator to produce a :cpp:expr:`std::string`.
+
+.. cpp:function:: message& operator+=(message& lhs, std::string rhs)
+
+   Addition-equal overload to append a :cpp:expr:`std::string` to a message.
+
+.. cpp:function:: std::string& operator|(std::string& lhs, sequence rhs)
+
+   Bitwise-or overload to append a :cpp:expr:`sequence` to a string.
+
+.. cpp:function:: std::string& operator|=(std::string& lhs, sequence rhs)
+
+   Bitwise-or assignment overload to append a :cpp:expr:`sequence` to a string.
+
+.. cpp:function:: std::string  operator+(sequence a, sequence b)
+
+   Addition overload which constructs a string from two sequences.
+
+.. cpp:function:: std::string& operator+=(std::string& lhs, sequence rhs)
+
+   Addition-assignment overload to append a :cpp:expr:`sequence` to a string.
+
+.. cpp:function:: std::string  operator|(sequence a, sequence b)
+
+   Bitwise-or overload to construct a string from two sequences.
+
+.. cpp:function:: std::string  operator|(std::string&& lhs, sequence rhs)
+
+   Bitwise-or overload to construct a string from an ``rvalue`` string and a :cpp:expr:`sequence`.
+
+.. cpp:function:: std::string  operator|(std::string&& lhs, const char* rhs)
+   
+   Bitwise-or overload to construct a string from an ``rvalue`` string and a :cpp:expr:`const char*`.

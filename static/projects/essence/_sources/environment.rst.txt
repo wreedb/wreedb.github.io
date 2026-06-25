@@ -1,0 +1,78 @@
+Environment
+===========
+
+Environment variable access and manipulation functions and facilities.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/environment.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:function:: std::string env::get(const char* key, const char* fallback = "")
+
+   Get the value of an environment variable by name, with a fallback value
+   when the variable is not set.
+
+.. cpp:function:: bool env::set(const char* key, const char* value, bool clobber = false)
+
+   Set the environment variable :cpp:expr:`key` to :cpp:expr:`value`. If
+   clobber is :cpp:expr:`true`, overwrite an existing value.
+
+.. cpp:function:: bool env::unset(const char* key)
+
+   Unset an environment variable by name. Returns true upon success, false otherwise.
+
+.. cpp:function:: std::vector<std::string> env::vec(char* const* envs = environ)
+
+   Construct a :cpp:expr:`std::vector` from the a null-terminated environment array.
+   Each member of the result is the entire pair, including the ``=``.
+
+.. cpp:function:: std::unordered_map<std::string, std::string> env::map(char* const* envs = environ)
+
+   Construct a :cpp:expr:`std::unordered_map` from the null-terminated environment array.
+
+.. cpp:var:: detail::environment_t environment
+
+   Global proxy object instance for convenient but safe environment access
+   and manipulation. Provides null-safe access to the POSIX :cpp:expr:`getenv`,
+   :cpp:expr:`setenv`, :cpp:expr:`unsetenv` family of functions.
+
+   :cpp:expr:`detail::environment_t` is an implementation detail, all interaction
+   should be go through this object.
+
+   .. rubric:: Usage
+
+   .. code-block:: cpp
+      
+      using namespace essence;
+      std::string path = environment["PATH"];
+
+      std::string shell = environment.get("SHELL", "/bin/sh");
+      
+      environment.set("SOME_THING", "foo");
+      environment.set("SOME_THING", "bar", /*clobber=*/ true);
+
+      environment.unset("SOME_THING");
+
+
+.. cpp:class:: detail::environment_t
+   
+   .. cpp:function:: std::string operator[](const char* key)
+
+      Get the value of :cpp:expr:`key` in the environment, or an
+      empty string if unset.
+
+   .. cpp:function:: std::string get(const char* key, const char* fallback = "")
+
+      Get the value of :cpp:expr:`key` in the environment, or the
+      value of :cpp:expr:`fallback` if unset.
+
+   .. cpp:function:: void set(const char* key, const char* value, bool clobber = false)
+
+      Set the environment variable :cpp:expr:`key` to :cpp:expr:`value`,
+      overwriting an existing value if :cpp:expr:`clobber` is true.
+   
+   .. cpp:function:: void unset(const char* key)
+
+      Unset the environment variable :cpp:expr:`key`.

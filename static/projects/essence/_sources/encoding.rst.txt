@@ -1,0 +1,30 @@
+Encoding
+========
+
+`UTF-8 <https://www.unicode.org/faq/utf_bom.html#UTF8>`__ validation and
+codepoint counting facilities.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/encoding.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:function:: usize encoding::count(std::string_view s)
+
+   Count the UTF-8 codepoints in a string. May also be called
+   with a :cpp:expr:`const char*` or :cpp:expr:`const std::string&`
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string micro { "µ" };
+
+      assert(micro.length() == 2);
+      assert(encoding::count(micro) == 1);
+
+.. cpp:function:: bool encoding::validate(std::string_view s)
+
+   Determine UTF-8 validity of a string. May also be called
+   with a :cpp:expr:`const char*` or :cpp:expr:`const std::string&`

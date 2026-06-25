@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Uni/Syslog &#8212; Essence 0.6.0
+ documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=a95f357e85573c9b56d5" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=a95f357e85573c9b56d5"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
+
+    <script src="../_static/documentation_options.js?v=8fa8b3e9"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'uni/syslog';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="canonical" href="https://wreedb.github.io/projects/essence/uni/syslog.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Uni/Term" href="term.html" />
+    <link rel="prev" title="Uni/Strerror" href="strerror.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Essence 0.6.0
+ documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../color.html">
+    Color
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../encoding.html">
+    Encoding
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../environment.html">
+    Environment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../error.html">
+    Error
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../i18n.html">
+    I18N
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../io.html">
+    IO
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../path.html">
+    Path
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../process.html">
+    Process
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../random.html">
+    Random
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../str.html">
+    Str
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../time.html">
+    Time
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../types.html">
+    Types
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../uni.html">
+    Uni
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../url.html">
+    URL
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../uuid.html">
+    UUID
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../xdg.html">
+    XDG
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../color.html">
+    Color
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../encoding.html">
+    Encoding
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../environment.html">
+    Environment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../error.html">
+    Error
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../exceptions.html">
+    Exceptions
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../i18n.html">
+    I18N
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../io.html">
+    IO
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../path.html">
+    Path
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../process.html">
+    Process
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../random.html">
+    Random
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../str.html">
+    Str
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../time.html">
+    Time
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../types.html">
+    Types
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../uni.html">
+    Uni
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../url.html">
+    URL
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../uuid.html">
+    UUID
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../xdg.html">
+    XDG
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../uni.html" class="nav-link">Uni</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Uni/Syslog</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="uni-syslog">
+<h1>Uni/Syslog<a class="headerlink" href="#uni-syslog" title="Link to this heading">#</a></h1>
+<p>Interface to Unix <code class="docutils literal notranslate"><span class="pre">syslog</span></code> functionality.</p>
+<div class="admonition-info admonition">
+<p class="admonition-title">Info</p>
+<p>To use declarations from this page, include the <code class="docutils literal notranslate"><span class="pre">&lt;essence/uni/syslog.hpp&gt;</span></code> header.</p>
+<p>The declarations are within the <code class="docutils literal notranslate"><span class="pre">uni</span></code> namespace.</p>
+</div>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6logoptE">
+<span id="_CPPv3N7essence3uni6logoptE"></span><span id="_CPPv2N7essence3uni6logoptE"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">logopt</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><a class="headerlink" href="#_CPPv4N7essence3uni6logoptE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Options used for the <code class="docutils literal notranslate"><span class="pre">syslog.open()</span></code> call.</p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6logopt4noneE">
+<span id="_CPPv3N7essence3uni6logopt4noneE"></span><span id="_CPPv2N7essence3uni6logopt4noneE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">none</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7essence3uni6logopt4noneE" title="Link to this definition">#</a><br /></dt>
+<dd><p>No additional behaviour above default.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6logopt3pidE">
+<span id="_CPPv3N7essence3uni6logopt3pidE"></span><span id="_CPPv2N7essence3uni6logopt3pidE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pid</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_PID</span></span><a class="headerlink" href="#_CPPv4N7essence3uni6logopt3pidE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Display the PID alongside the process identity in the
+log message, e.g.: <code class="docutils literal notranslate"><span class="pre">&lt;hostname&gt;</span> <span class="pre">&lt;program-name&gt;[&lt;PID&gt;]:</span> <span class="pre">&lt;message&gt;</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6logopt7consoleE">
+<span id="_CPPv3N7essence3uni6logopt7consoleE"></span><span id="_CPPv2N7essence3uni6logopt7consoleE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">console</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_CONS</span></span><a class="headerlink" href="#_CPPv4N7essence3uni6logopt7consoleE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Log to the console if there are errors sending the message.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6logopt8no_delayE">
+<span id="_CPPv3N7essence3uni6logopt8no_delayE"></span><span id="_CPPv2N7essence3uni6logopt8no_delayE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">no_delay</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_NDELAY</span></span><a class="headerlink" href="#_CPPv4N7essence3uni6logopt8no_delayE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Don’t delay opening.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6logopt10delay_openE">
+<span id="_CPPv3N7essence3uni6logopt10delay_openE"></span><span id="_CPPv2N7essence3uni6logopt10delay_openE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">delay_open</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_ODELAY</span></span><a class="headerlink" href="#_CPPv4N7essence3uni6logopt10delay_openE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Delay open until first <code class="docutils literal notranslate"><span class="pre">syslog()</span></code> call (or <span class="cpp-expr sig sig-inline cpp"><span class="n">uni</span><span class="p">::</span><a class="reference internal" href="#_CPPv4N7essence3uni6syslogE" title="essence::uni::syslog"><span class="n">syslog</span></a><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="p">)</span></span>).</p>
+<p>This is default behaviour.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6logopt7no_waitE">
+<span id="_CPPv3N7essence3uni6logopt7no_waitE"></span><span id="_CPPv2N7essence3uni6logopt7no_waitE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">no_wait</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_NOWAIT</span></span><a class="headerlink" href="#_CPPv4N7essence3uni6logopt7no_waitE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Don’t wait for console forks, <strong>DEPRECATED</strong>.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6logopt6perrorE">
+<span id="_CPPv3N7essence3uni6logopt6perrorE"></span><span id="_CPPv2N7essence3uni6logopt6perrorE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">perror</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_PERROR</span></span><a class="headerlink" href="#_CPPv4N7essence3uni6logopt6perrorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Log to <code class="docutils literal notranslate"><span class="pre">stderr</span></code> as well.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facilityE">
+<span id="_CPPv3N7essence3uni8facilityE"></span><span id="_CPPv2N7essence3uni8facilityE"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">facility</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><a class="headerlink" href="#_CPPv4N7essence3uni8facilityE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The various logging facility identifiers.</p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6kernelE">
+<span id="_CPPv3N7essence3uni8facility6kernelE"></span><span id="_CPPv2N7essence3uni8facility6kernelE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">kernel</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_KERN</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6kernelE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Kernel messages.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility4userE">
+<span id="_CPPv3N7essence3uni8facility4userE"></span><span id="_CPPv2N7essence3uni8facility4userE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">user</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_USER</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility4userE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Misc. user-level messages.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility4mailE">
+<span id="_CPPv3N7essence3uni8facility4mailE"></span><span id="_CPPv2N7essence3uni8facility4mailE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mail</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_MAIL</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility4mailE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Mail system messages.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility4newsE">
+<span id="_CPPv3N7essence3uni8facility4newsE"></span><span id="_CPPv2N7essence3uni8facility4newsE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">news</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_NEWS</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility4newsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Network news subsystem messages.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility4uucpE">
+<span id="_CPPv3N7essence3uni8facility4uucpE"></span><span id="_CPPv2N7essence3uni8facility4uucpE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uucp</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_UUCP</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility4uucpE" title="Link to this definition">#</a><br /></dt>
+<dd><p>UUCP subsystem messages</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6daemonE">
+<span id="_CPPv3N7essence3uni8facility6daemonE"></span><span id="_CPPv2N7essence3uni8facility6daemonE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">daemon</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_DAEMON</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6daemonE" title="Link to this definition">#</a><br /></dt>
+<dd><p>System daemon messages.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility4authE">
+<span id="_CPPv3N7essence3uni8facility4authE"></span><span id="_CPPv2N7essence3uni8facility4authE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">auth</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_AUTH</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility4authE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Security and authorization messages.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility4cronE">
+<span id="_CPPv3N7essence3uni8facility4cronE"></span><span id="_CPPv2N7essence3uni8facility4cronE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cron</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_CRON</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility4cronE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Cron">Cron daemon</a> messages.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility7printerE">
+<span id="_CPPv3N7essence3uni8facility7printerE"></span><span id="_CPPv2N7essence3uni8facility7printerE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">printer</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LPR</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility7printerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Line printer subsystem messages.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6local0E">
+<span id="_CPPv3N7essence3uni8facility6local0E"></span><span id="_CPPv2N7essence3uni8facility6local0E"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">local0</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LOCAL0</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6local0E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserved for local use.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6local1E">
+<span id="_CPPv3N7essence3uni8facility6local1E"></span><span id="_CPPv2N7essence3uni8facility6local1E"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">local1</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LOCAL1</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6local1E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserved for local use.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6local2E">
+<span id="_CPPv3N7essence3uni8facility6local2E"></span><span id="_CPPv2N7essence3uni8facility6local2E"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">local2</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LOCAL2</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6local2E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserved for local use.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6local3E">
+<span id="_CPPv3N7essence3uni8facility6local3E"></span><span id="_CPPv2N7essence3uni8facility6local3E"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">local3</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LOCAL3</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6local3E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserved for local use.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6local4E">
+<span id="_CPPv3N7essence3uni8facility6local4E"></span><span id="_CPPv2N7essence3uni8facility6local4E"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">local4</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LOCAL4</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6local4E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserved for local use.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6local5E">
+<span id="_CPPv3N7essence3uni8facility6local5E"></span><span id="_CPPv2N7essence3uni8facility6local5E"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">local5</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LOCAL5</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6local5E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserved for local use.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6local6E">
+<span id="_CPPv3N7essence3uni8facility6local6E"></span><span id="_CPPv2N7essence3uni8facility6local6E"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">local6</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LOCAL6</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6local6E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserved for local use.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8facility6local7E">
+<span id="_CPPv3N7essence3uni8facility6local7E"></span><span id="_CPPv2N7essence3uni8facility6local7E"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">local7</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_LOCAL7</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8facility6local7E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reserved for local use.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severityE">
+<span id="_CPPv3N7essence3uni8severityE"></span><span id="_CPPv2N7essence3uni8severityE"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">severity</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><a class="headerlink" href="#_CPPv4N7essence3uni8severityE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The various log severity levels, listed from highest severity level
+(<code class="docutils literal notranslate"><span class="pre">emergency</span></code>) to the lowest (<code class="docutils literal notranslate"><span class="pre">debug</span></code>).</p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severity9emergencyE">
+<span id="_CPPv3N7essence3uni8severity9emergencyE"></span><span id="_CPPv2N7essence3uni8severity9emergencyE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">emergency</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_EMERG</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8severity9emergencyE" title="Link to this definition">#</a><br /></dt>
+<dd><p>System is unusable.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severity5alertE">
+<span id="_CPPv3N7essence3uni8severity5alertE"></span><span id="_CPPv2N7essence3uni8severity5alertE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alert</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_ALERT</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8severity5alertE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Action must be taken immediately.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severity8criticalE">
+<span id="_CPPv3N7essence3uni8severity8criticalE"></span><span id="_CPPv2N7essence3uni8severity8criticalE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">critical</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_CRIT</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8severity8criticalE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Critical conditions.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severity7warningE">
+<span id="_CPPv3N7essence3uni8severity7warningE"></span><span id="_CPPv2N7essence3uni8severity7warningE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">warning</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_WARNING</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8severity7warningE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Warning conditions.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severity5errorE">
+<span id="_CPPv3N7essence3uni8severity5errorE"></span><span id="_CPPv2N7essence3uni8severity5errorE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">error</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_ERR</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8severity5errorE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error conditions.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severity6noticeE">
+<span id="_CPPv3N7essence3uni8severity6noticeE"></span><span id="_CPPv2N7essence3uni8severity6noticeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">notice</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_NOTICE</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8severity6noticeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Normal but significant condition.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severity4infoE">
+<span id="_CPPv3N7essence3uni8severity4infoE"></span><span id="_CPPv2N7essence3uni8severity4infoE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_INFO</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8severity4infoE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Informational.</p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni8severity5debugE">
+<span id="_CPPv3N7essence3uni8severity5debugE"></span><span id="_CPPv2N7essence3uni8severity5debugE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">debug</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">LOG_DEBUG</span></span><a class="headerlink" href="#_CPPv4N7essence3uni8severity5debugE" title="Link to this definition">#</a><br /></dt>
+<dd><p>For debugging and tracing.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6syslogE">
+<span id="_CPPv3N7essence3uni6syslogE"></span><span id="_CPPv2N7essence3uni6syslogE"></span><span id="essence::uni::syslog__detail::syslog_t"></span><span class="n"><span class="pre">detail</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7essence3uni6detail8syslog_tE" title="essence::uni::detail::syslog_t"><span class="n"><span class="pre">syslog_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">syslog</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6syslogE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">detail::syslog_t</span></code> is an implementation detail, and all interaction
+is intended to go throught the global instantiation of the object.</p>
+<p class="rubric">Example</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">essence</span><span class="p">;</span>
+
+<span class="n">uni</span><span class="o">::</span><span class="n">syslog</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">&quot;program-name&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">uni</span><span class="o">::</span><span class="n">logopt</span><span class="o">::</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="n">uni</span><span class="o">::</span><span class="n">facility</span><span class="o">::</span><span class="n">user</span><span class="p">);</span>
+<span class="n">uni</span><span class="o">::</span><span class="n">syslog</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="n">uni</span><span class="o">::</span><span class="n">severity</span><span class="o">::</span><span class="n">info</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello from my program!&quot;</span><span class="p">);</span>
+
+<span class="c1">// not strictly necessary, as the object closes the syslog on scope exit</span>
+<span class="n">uni</span><span class="o">::</span><span class="n">syslog</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6detail8syslog_tE">
+<span id="_CPPv3N7essence3uni6detail8syslog_tE"></span><span id="_CPPv2N7essence3uni6detail8syslog_tE"></span><span id="essence::uni::detail::syslog_t"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">detail</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">syslog_t</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6detail8syslog_tE" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6detail8syslog_t4maskE8severity">
+<span id="_CPPv3N7essence3uni6detail8syslog_t4maskE8severity"></span><span id="_CPPv2N7essence3uni6detail8syslog_t4maskE8severity"></span><span id="essence::uni::detail::syslog_t::mask__severity"></span><a class="reference internal" href="../types.html#_CPPv4N7essence3i32E" title="essence::i32"><span class="n"><span class="pre">i32</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mask</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence3uni8severityE" title="essence::uni::severity"><span class="n"><span class="pre">severity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">sv</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6detail8syslog_t4maskE8severity" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the minimum severity to expose to the syslog. In practice,
+this means that any messages which are <em>lesser</em> than <code class="docutils literal notranslate"><span class="pre">sv</span></code>
+will be filtered out and not sent to the syslog.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6detail8syslog_t4openEPKc6logopt8facility">
+<span id="_CPPv3N7essence3uni6detail8syslog_t4openEPKc6logopt8facility"></span><span id="_CPPv2N7essence3uni6detail8syslog_t4openEPKc6logopt8facility"></span><span id="essence::uni::detail::syslog_t::open__cCP.logopt.facility"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">open</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ident</span></span>, <a class="reference internal" href="#_CPPv4N7essence3uni6logoptE" title="essence::uni::logopt"><span class="n"><span class="pre">logopt</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">opt</span></span>, <a class="reference internal" href="#_CPPv4N7essence3uni8facilityE" title="essence::uni::facility"><span class="n"><span class="pre">facility</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fac</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6detail8syslog_t4openEPKc6logopt8facility" title="Link to this definition">#</a><br /></dt>
+<dd><p>Open the syslog for sending messages, with options <code class="docutils literal notranslate"><span class="pre">opt</span></code>
+and through the facility <code class="docutils literal notranslate"><span class="pre">fac</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN7essence3uni6detail8syslog_t4sendEv8severityNSt11string_viewEDpRR4Args">
+<span id="_CPPv3IDpEN7essence3uni6detail8syslog_t4sendE8severityNSt11string_viewEDpRR4Args"></span><span id="_CPPv2IDpEN7essence3uni6detail8syslog_t4sendE8severityNSt11string_viewEDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">send</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7essence3uni8severityE" title="essence::uni::severity"><span class="n"><span class="pre">severity</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">sv</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">msg</span></span>, <a class="reference internal" href="#_CPPv4IDpEN7essence3uni6detail8syslog_t4sendEv8severityNSt11string_viewEDpRR4Args" title="essence::uni::detail::syslog_t::send::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN7essence3uni6detail8syslog_t4sendEv8severityNSt11string_viewEDpRR4Args" title="Link to this definition">#</a><br /></dt>
+<dd><p>Send a message with severity <code class="docutils literal notranslate"><span class="pre">sv</span></code> to the syslog, with <code class="docutils literal notranslate"><span class="pre">std::format</span></code> arguments
+<code class="docutils literal notranslate"><span class="pre">args</span></code> applied.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6detail8syslog_t5closeEv">
+<span id="_CPPv3N7essence3uni6detail8syslog_t5closeEv"></span><span id="_CPPv2N7essence3uni6detail8syslog_t5closeEv"></span><span id="essence::uni::detail::syslog_t::close"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">close</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6detail8syslog_t5closeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Close the syslog. Generally not needed, as the object closes the
+syslog on destruction.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="strerror.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Uni/Strerror</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="term.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Uni/Term</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6logoptE"><code class="docutils literal notranslate"><span class="pre">logopt</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6logopt4noneE"><code class="docutils literal notranslate"><span class="pre">logopt::none</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6logopt3pidE"><code class="docutils literal notranslate"><span class="pre">logopt::pid</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6logopt7consoleE"><code class="docutils literal notranslate"><span class="pre">logopt::console</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6logopt8no_delayE"><code class="docutils literal notranslate"><span class="pre">logopt::no_delay</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6logopt10delay_openE"><code class="docutils literal notranslate"><span class="pre">logopt::delay_open</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6logopt7no_waitE"><code class="docutils literal notranslate"><span class="pre">logopt::no_wait</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6logopt6perrorE"><code class="docutils literal notranslate"><span class="pre">logopt::perror</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facilityE"><code class="docutils literal notranslate"><span class="pre">facility</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6kernelE"><code class="docutils literal notranslate"><span class="pre">facility::kernel</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility4userE"><code class="docutils literal notranslate"><span class="pre">facility::user</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility4mailE"><code class="docutils literal notranslate"><span class="pre">facility::mail</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility4newsE"><code class="docutils literal notranslate"><span class="pre">facility::news</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility4uucpE"><code class="docutils literal notranslate"><span class="pre">facility::uucp</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6daemonE"><code class="docutils literal notranslate"><span class="pre">facility::daemon</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility4authE"><code class="docutils literal notranslate"><span class="pre">facility::auth</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility4cronE"><code class="docutils literal notranslate"><span class="pre">facility::cron</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility7printerE"><code class="docutils literal notranslate"><span class="pre">facility::printer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6local0E"><code class="docutils literal notranslate"><span class="pre">facility::local0</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6local1E"><code class="docutils literal notranslate"><span class="pre">facility::local1</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6local2E"><code class="docutils literal notranslate"><span class="pre">facility::local2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6local3E"><code class="docutils literal notranslate"><span class="pre">facility::local3</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6local4E"><code class="docutils literal notranslate"><span class="pre">facility::local4</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6local5E"><code class="docutils literal notranslate"><span class="pre">facility::local5</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6local6E"><code class="docutils literal notranslate"><span class="pre">facility::local6</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8facility6local7E"><code class="docutils literal notranslate"><span class="pre">facility::local7</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severityE"><code class="docutils literal notranslate"><span class="pre">severity</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severity9emergencyE"><code class="docutils literal notranslate"><span class="pre">severity::emergency</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severity5alertE"><code class="docutils literal notranslate"><span class="pre">severity::alert</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severity8criticalE"><code class="docutils literal notranslate"><span class="pre">severity::critical</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severity7warningE"><code class="docutils literal notranslate"><span class="pre">severity::warning</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severity5errorE"><code class="docutils literal notranslate"><span class="pre">severity::error</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severity6noticeE"><code class="docutils literal notranslate"><span class="pre">severity::notice</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severity4infoE"><code class="docutils literal notranslate"><span class="pre">severity::info</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni8severity5debugE"><code class="docutils literal notranslate"><span class="pre">severity::debug</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6syslogE"><code class="docutils literal notranslate"><span class="pre">syslog</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6detail8syslog_tE"><code class="docutils literal notranslate"><span class="pre">syslog_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6detail8syslog_t4maskE8severity"><code class="docutils literal notranslate"><span class="pre">syslog_t::mask()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6detail8syslog_t4openEPKc6logopt8facility"><code class="docutils literal notranslate"><span class="pre">syslog_t::open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4IDpEN7essence3uni6detail8syslog_t4sendEv8severityNSt11string_viewEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">syslog_t::send()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6detail8syslog_t5closeEv"><code class="docutils literal notranslate"><span class="pre">syslog_t::close()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/uni/syslog.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026 Will Reed.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.19.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

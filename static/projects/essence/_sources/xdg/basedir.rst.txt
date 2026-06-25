@@ -1,0 +1,66 @@
+XDG/Basedir
+===========
+
+An implementation of the `FreeDesktop Basedir specification <https://specifications.freedesktop.org/basedir/latest>`__
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/xdg/basedir.hpp>`` header.
+
+.. note:: Implementation detail
+
+   For each of the ``xdg::get`` calls, the environment is queried first for the
+   variable corresponding to the directory, such as ``XDG_CONFIG_HOME`` or
+   ``XDG_DATA_DIRS``, before falling back to a sensible default.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:function:: std::filesystem::path xdg::get::home()
+
+   Get the user's home directory path.
+
+.. cpp:function:: std::filesystem::path xdg::get::config()
+
+   Get the user's configuration directory.
+   
+   Default: ``$HOME/.config``
+
+.. cpp:function:: std::filesystem::path xdg::get::cache()
+
+   Get the user's cache directory.
+   
+   Default: ``$HOME/.cache``
+
+.. cpp:function:: std::filesystem::path xdg::get::data()
+
+   Get the user's data directory.
+   
+   Default: ``$HOME/.local/share``
+
+.. cpp:function:: std::filesystem::path xdg::get::state()
+
+   Get the user's state directory.
+   
+   Default: ``$HOME/.local/state``
+
+.. cpp:function:: std::filesystem::path xdg::get::runtime()
+
+   Get the user's runtime directory.
+   
+   Default: ``/run/user/<user id>``
+
+.. cpp:function:: std::vector<std::filesystem::path> xdg::get::configs()
+
+   Get the system's configuration directories.
+   
+   Default: ``/etc/local/xdg, /etc/xdg`` or the legacy option
+   of ``/usr/local/etc/xdg, /etc/xdg`` if it exists and ``/etc/local``
+   does not.
+
+.. cpp:function:: std::vector<std::filesystem::path> xdg::get::datas()
+
+   Get the system's data directories.
+   
+   Default: ``/usr/local/share, /usr/share``
+
+

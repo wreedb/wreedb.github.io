@@ -1,0 +1,149 @@
+:notoc:
+
+*********************
+Essence API Reference
+*********************
+
+**Date**: |today| **Version**: |release|
+
+**Useful links**:
+`Source repository <https://codeberg.org/wreedb/essence.git>`__ |
+`Releases <https://codeberg.org/wreedb/essence/releases>`__ |
+`Issues <https://codeberg.org/wreedb/essence/issues>`__
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   color
+   concepts
+   encoding
+   environment
+   error
+   exceptions
+   i18n
+   io
+   path
+   process
+   random
+   str
+   time
+   types
+   uni
+   url
+   uuid
+   xdg
+
+.. grid:: 1 1 2 2
+   :padding: 0
+   :gutter: 2
+
+   .. grid-item-card:: Types
+      :link: ./types
+      :link-type: doc
+
+      Type aliases for the sake of programmer sanity.
+
+   .. grid-item-card:: Color
+      :link: ./color
+      :link-type: doc
+
+      Tools for creating colorful, formatted terminal text output.
+
+   .. grid-item-card:: Concepts
+      :link: ./concepts
+      :link-type: doc
+
+      C++20^ Concepts useful for constraining template parameters as well
+      as some helper functions that feel like pure magic.
+
+   .. grid-item-card:: Encoding
+      :link: ./encoding
+      :link-type: doc
+
+      UTF-8 validation and codepoint counting utilities.
+
+   .. grid-item-card:: Environment
+      :link: ./environment
+      :link-type: doc
+
+      Interfaces for querying and manipulating the process environment.
+
+   .. grid-item-card:: Error
+      :link: ./error
+      :link-type: doc
+
+      A flexible error result type, perfect for use with ``std::expected``.
+
+   .. grid-item-card:: Exceptions
+      :link: ./exceptions
+      :link-type: doc
+
+      Standard C++ exceptions augmented to accept ``std::format`` arguments directly.
+
+   .. grid-item-card:: I18N
+      :link: ./i18n
+      :link-type: doc
+
+      Internationalization and localization helpers powered by **GNU Gettext**.
+
+   .. grid-item-card:: IO
+      :link: ./io
+      :link-type: doc
+
+      Input/Output tools for printing, reading files and scanning input.
+
+   .. grid-item-card:: Path
+      :link: ./path
+      :link-type: doc
+
+      File and directory path retrieval and manipulation.
+
+   .. grid-item-card:: Process
+      :link: ./process
+      :link-type: doc
+      
+      Ergonomic and powerful process creation, configuration and pipeline orchestration.
+
+   .. grid-item-card:: Random
+      :link: ./random
+      :link-type: doc
+
+      Entropy source and random number generation.
+
+   .. grid-item-card:: STR
+      :link: ./str
+      :link-type: doc
+
+      String trimming, splitting, joining, substitution and transformation.
+
+   .. grid-item-card:: Time
+      :link: ./time
+      :link-type: doc
+
+      Time-related utilities
+
+   .. grid-item-card:: URL
+      :link: ./url
+      :link-type: doc
+
+      A rudimentary URL class
+
+   .. grid-item-card:: UUID
+      :link: ./uuid
+      :link-type: doc
+
+      Generates 36 million (version 4) UUIDs per second!
+
+   .. grid-item-card:: XDG/Basedir
+      :link: ./xdg/basedir
+      :link-type: doc
+
+      Ergonomic implementation of the Freedesktop Basedir specification.
+
+   .. grid-item-card:: Unix
+      :link: ./uni
+      :link-type: doc
+
+      Various facilities for memory, null and thread safe usage
+      of POSIX functions and structs.

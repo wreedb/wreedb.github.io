@@ -1,0 +1,28 @@
+Uni/Dirent
+==========
+
+Wrapper for ``scandir`` from ``<dirent.h>``.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/dirent.hpp>`` header.
+
+   They are found in the ``essence::uni`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: uni
+
+.. cpp:function:: std::vector<std::string> scandir(const std::string& dir)
+
+   Return the file and directory entries in ``dir`` as a vector of strings.
+
+   If ``dir`` does not exist or is not readable, an empty vector is returned.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      auto entries = uni::scandir(".");
+
+      for (const auto& entry: entries)
+         io::printn("- {}", entry);

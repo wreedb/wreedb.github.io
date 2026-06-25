@@ -1,0 +1,53 @@
+Concepts
+========
+
+Concepts and concept utilizing functions.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/concepts.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:concept:: template<typename T, typename... Args> anyof
+
+   A concept useful for creating other concepts in which only one of the
+   listed types must match.
+
+   **Valid Expressions**
+
+   - ``T`` when ``T`` is any of the types listed in ``Args``.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      template<typename T>
+      concept stringlike = anyof<T, std::string, std::string_view, const char*, char>;
+   
+.. cpp:function:: template<typename T, typename... Args> \
+                  bool matches(const T& value, const Args&... args)
+
+   Apply the ``==`` operator between ``T`` for each arg in ``args``.
+   Each type must be of the same type as ``T``, or of a type that
+   passes :cpp:expr:`std::equality_comparable_with`.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      if (foo == 1 || foo == 2 || foo == 3 || foo == 4) ;
+   
+      // The above may be collaped using the `matches` function like so:
+      if (matches(foo, 1, 2, 3, 4)) ;
+
+.. cpp:concept:: template<typename T> scannable
+
+   A type that can be scanned with the :cpp:func:`io::scan` and :cpp:func:`io::prompt` functions.
+
+   **Valid Expressions**
+
+   - ``T`` when ``T`` is a :cpp:expr:`char` (:cpp:expr:`std::same_as<T, char>`)
+   - ``T`` when ``T`` is an integral type (:cpp:expr:`std::integral<T>`)
+   - ``T`` when ``T`` is a floating point type (:cpp:expr:`std::floating_point<T>`)
+   - ``T`` when ``T`` is convertible to :cpp:expr:`std::string` (:cpp:expr:`std::convertible_to<T, std::string>`)

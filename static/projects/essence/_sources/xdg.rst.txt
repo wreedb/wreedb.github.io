@@ -1,0 +1,15 @@
+XDG
+===
+
+FreeDesktop related facilities
+
+.. admonition:: Info
+
+   To use declarations from this module, include the ``<essence/xdg.hpp>`` header.
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Table Of Contents:
+
+   xdg/basedir

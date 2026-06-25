@@ -1,0 +1,86 @@
+Types
+=====
+
+Type aliases for the sake of sanity.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/types.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:type:: u8 = std::uint8_t
+
+   An 8-bit unsigned integer.
+
+.. cpp:type:: i8 = std::int8_t
+
+   An 8-bit signed integer.
+
+.. cpp:type:: u16 = std::uint16_t
+
+   A 16-bit unsigned integer.
+
+.. cpp:type:: i16 = std::int16_t
+
+   A 16-bit signed integer.
+
+.. cpp:type:: u32 = std::uint32_t
+
+   A 32-bit unsigned integer.
+
+.. cpp:type:: i32 = std::int32_t
+
+   A 32-bit signed integer.
+
+.. cpp:type:: u64 = std::uint64_t
+
+   A 64-bit unsigned integer.
+
+.. cpp:type:: i64 = std::int64_t
+
+   A 64-bit signed integer.
+
+.. cpp:type:: usize = std::size_t
+
+   The standard unsigned "size" type.
+
+.. cpp:type:: isize = std::ptrdiff_t
+
+   A signed counterpart to the standard "size" type.
+
+.. cpp:type:: umax = std::uintmax_t
+
+   Maximum width unsigned integer type.
+
+.. cpp:type:: imax = std::intmax_t
+
+   Maximum width signed integer type.
+
+.. cpp:type:: uptr = std::uintptr_t
+
+   Unsigned integer type capable of holding a void pointer.
+
+.. cpp:type:: iptr = std::intptr_t
+   
+   Signed integer type capable of holding a void pointer.
+
+.. cpp:type:: f32 = float
+
+   A 32-bit floating point number.
+
+.. cpp:type:: f64 = double
+
+   A 64-bit floating point number.
+
+.. cpp:type:: off = off_t
+   
+   File size and offset capable integer type.
+
+.. cpp:type:: uchar = unsigned char
+
+   Shorthand.
+
+.. cpp:function:: std::filesystem::path operator ""_path(const char* s, usize len)
+
+   User-defined literal for filesystem paths.

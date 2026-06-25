@@ -54,11 +54,11 @@ url = "https://codeberg.org/wreedb"
     url = "/"
     weight = 10
   [[menu.main]]
-    name = "LibGod"
-    url = "/projects/libgod"
+    name = "Essence"
+    url = "/projects/essence/"
   [[menu.main]]
-    name = "God"
-    url = "/projects/god/"
+    name = "LibGod"
+    url = "/projects/libgod/"
   [[menu.main]]
     name = "Confidant"
     url = "/projects/confidant/"

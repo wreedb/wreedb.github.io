@@ -1,0 +1,60 @@
+Uni/Passwd
+==========
+
+Interface to the ``passwd`` struct from ``<pwd.h>``.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/passwd.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+
+.. cpp:class:: uni::password
+
+   Wrapper for the Unix ``passwd`` C struct.
+
+
+   .. cpp:function:: password::password()
+
+      Constructor which queries the process invoker's user id.
+
+   .. cpp:function:: password::password(uid_t i)
+
+      Constructor accepting a user id.
+
+   .. cpp:function:: password::password(const std::string& pname)
+
+      Constructor accepting a username.
+
+   .. cpp:function:: uid_t uid() const noexcept
+
+      Get the user id.
+   
+   .. cpp:function:: gid_t gid() const noexcept
+
+      Get the group id.
+
+   .. cpp:function:: std::string name() const
+
+      Get the user's username.
+
+   .. cpp:function:: std::string pass() const
+
+      Get the user password, typically ``x``, as the real password is often handled by ``shadow``.
+
+   .. cpp:function:: std::string gecos() const
+
+      Get the ``gecos`` (AKA the comment or real name) of the entry.
+
+   .. cpp:function:: std::filesystem::path directory() const
+
+      Get the directory of the entry.
+
+   .. cpp:function:: std::string shell() const
+
+      Get the entry's shell.
+
+   .. cpp:function:: std::string str() const
+
+      Get a string representation of the ``passwd``, in the format returned by ``getent``

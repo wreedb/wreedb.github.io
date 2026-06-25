@@ -1,0 +1,214 @@
+Str
+===
+
+String manipulation functions
+
+.. cpp:namespace-push:: essence
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/str.hpp>`` header.
+
+.. cpp:var:: inline static constexpr std::string whitespace
+
+   A string containing all common whitespace; space, newline,
+   carriage return, horizontal tab, vertical tab and formfeed.
+
+.. cpp:function:: std::string& str::ltrim(std::string& s)
+
+   Trim leading whitespace from a string in-place.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string input = " \r\n\tFoo";
+
+      str::ltrim(input);
+
+      // input now holds "Foo"
+
+.. cpp:function:: std::string& str::rtrim(std::string& s)
+
+   Trim trailing whitespace from a string in-place.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string input = "Foo\r\n\t ";
+
+      str::ltrim(input);
+
+      // input now holds "Foo"
+
+.. cpp:function:: std::string& str::trim(std::string& s)
+
+   Trim trailing and leading whitespace from a string in-place.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string input = "\t\r\n Hello\t\r\n ";
+      str::trim(input);
+      // input becomes 'Hello'
+
+.. cpp:function:: std::string str::cltrim(std::string_view s)
+
+   Trim leading whitespace from a string (copying).
+
+.. cpp:function:: std::string str::crtrim(std::string_view s)
+
+   Trim trailing whitespace from a string (copying).
+
+.. cpp:function:: std::string str::ctrim(std::string_view s)
+
+   Trim trailing and leading whitespace from a string (copying).
+
+.. cpp:function:: std::vector<std::string> str::split(const std::string& s, char delim = ' ')
+
+   Split a string on occurences of a character delimiter.
+
+   .. rubric:: Example
+   
+   .. code-blocK:: cpp
+
+      std::string path = "/usr/local/bin:/usr/bin:/bin";
+      auto parts = str::split(path, ':');
+      // becomes { "/usr/local/bin", "/usr/bin", "/bin" }
+
+.. cpp:function:: std::vector<std::string> str::split(const std::string& s, std::string delim = " ")
+
+   Split a string on occurences of a string delimiter.
+
+   .. rubric:: Example
+   
+   .. code-blocK:: cpp
+
+      std::string path = "/usr/local/bin . /usr/bin . /bin";
+      auto parts = str::split(path, " . ");
+      // becomes { "/usr/local/bin", "/usr/bin", "/bin" }
+
+.. cpp:function:: std::string str::join(const std::vector<std::string>& strs, char delim = ' ')
+
+   Join a vector string delimited by a character.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::vector<std::string> paths {
+          "/usr/local/bin",
+          "/usr/bin",
+          "/bin"
+      };
+
+      auto path = str::join(paths, ':');
+      // "/usr/local/bin:/usr/bin:/bin"
+
+.. cpp:function:: std::string str::join(const std::vector<std::string>& strs, std::string delim = " ")
+
+   Join a vector string delimited by another string.
+   
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::vector<std::string> paths {
+          "/usr/local/bin",
+          "/usr/bin",
+          "/bin"
+      };
+
+      auto path = str::join(paths, " . ");
+      // "/usr/local/bin . /usr/bin . /bin"
+
+.. cpp:function:: template<typename T = i32> \
+                  std::optional<T> str::number(const std::string& in) noexcept
+
+   Parse an integral or floating point number from a string
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string input = "100.00";
+
+      auto i = str::number<i32>(input);
+      auto f = str::number<f64>(input);
+
+      // *i holds 100
+      // *f holds 100.00
+
+.. cpp:function:: std::string& str::substitute(std::string& in, std::string_view from, std::string_view to)
+
+   Subsitute occurrences of a substring to another substring (in-place).
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string input = "A ring of strings";
+
+      str::substitute(input, "ring", "rut");
+
+      // input now holds "A rut of struts"
+
+.. cpp:function:: std::string& str::substitute(std::string& in, char from, char to)
+
+   Subsitute occurrences of a character to another character (in-place).
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string input = "A ring of strings";
+
+      str::substitute(input, 'i', 'o');
+
+      // input now holds "A rong of strongs"
+
+.. cpp:function:: std::string str::csubstitute(std::string_view in, std::string_view from, std::string_view to)
+
+   Substitute occurrences of a substring to another substring (copying).
+
+.. cpp:function:: std::string str::csubstitute(std::string_view in, char from, char to)
+
+   Substitute occurences of a character to another character (copying).
+
+.. cpp:function:: std::string& str::lower(std::string& in)
+
+   Convert upper-case characters in a string to lower-case (in-place).
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string input = "THIS IS a StRiNg";
+
+      str::lower(input);
+
+      // input now holds "this is a string"
+
+.. cpp:function:: std::string str::clower(std::string_view in)
+
+   Convert upper-case characters in a string to lower-case (copying).
+
+.. cpp:function:: std::string& str::upper(std::string& in)
+
+   Convert lower-case characters in a string to upper-case (in-place).
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      std::string input = "this is a StRiNg";
+
+      str::upper(input);
+
+      // input now holds "THIS IS A STRING";
+
+.. cpp:function:: std::string str::cupper(std::string_view in)
+
+   Convert lower-case characters in a string to upper-case (copying).

@@ -1,0 +1,130 @@
+Uni/Term
+========
+
+Interface to the ``termios`` struct.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/term.hpp>`` header.
+
+   The declarations are within the ``essence::uni`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: uni
+
+.. cpp:function:: struct termios term::currenttermios()
+
+   Get the current termios settings.
+
+.. cpp:var:: inline const termios term::originaltermios
+
+   The termios settings captured at application start, for restoration.
+
+.. cpp:struct:: term::area
+
+   The width and height of a terminal.
+
+   .. cpp:member:: i32 width
+
+   .. cpp:member:: i32 height
+
+.. cpp:enum-class:: term::echo: bool
+
+   .. cpp:enumerator:: on = true
+
+   .. cpp:enumerator:: off = false
+
+.. cpp:enum-class:: term::inputbuffer
+
+   .. cpp:enumerator:: canon
+
+   .. cpp:enumerator:: immediate
+
+.. cpp:enum-class:: term::screenbuffer
+
+   .. cpp:enumerator:: normal
+
+   .. cpp:enumerator:: alternate
+
+.. cpp:enum-class:: term::cursor: bool
+
+   .. cpp:enumerator:: show = true
+
+   .. cpp:enumerator:: hide = false
+
+.. cpp:enum-class:: term::autowrap: bool
+
+   .. cpp:enumerator:: on = true
+
+   .. cpp:enumerator:: off = false
+
+.. cpp:concept:: template<typename T> term::setable
+
+   A type that can be set in the termios struct.
+
+   **Valid Expression**
+
+   - ``T``, when ``T`` is a :cpp:expr:`term::echo`
+   - ``T``, when ``T`` is a :cpp:expr:`term::inputbuffer`
+   - ``T``, when ``T`` is a :cpp:expr:`term::screenbuffer`
+   - ``T``, when ``T`` is a :cpp:expr:`term::cursor`
+   - ``T``, when ``T`` is a :cpp:expr:`term::autowrap`
+
+.. cpp:namespace-pop::
+
+.. cpp::class:: termio
+
+   Wrapper around the ``termios`` C struct.
+
+   .. cpp:function:: termio::termio()
+
+   .. cpp:function:: template<term::setable... Args> \
+                     termio& set(Args&&... args)
+
+      Apply a :cpp:expr:`term::setable` to the current termios.
+
+   .. cpp:function:: void restore()
+
+      Restore the original termios from application start.
+
+   .. cpp:function:: void refresh()
+
+      Re-obtain the current termios settings.
+
+   .. cpp:function:: term::area size() const
+
+      Query the terminal dimensions.
+
+   .. cpp:function:: i32 width() const
+   
+      Get just the terminal width.
+
+   .. cpp:function:: i32 height() const
+
+      Get just the terminal height.
+
+   .. cpp:function:: termios& ref()
+
+      Get a mutable reference to the underlying ``termios`` struct.
+   
+   .. cpp:function:: const termios& cref() const
+
+      Get a constant reference to the underlying ``termios`` struct.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      termio tio;
+
+      tio.set(term::echo::off, term::cursor::hide);
+
+      auto dimensions = tio.size();
+
+      // do something with the benefit of a hidden cursor and no echo,
+      // for example: a terminal width-aware progress bar.
+
+      // Not strictly necessary as the original termios settings
+      // are restored upon destruction, but the manual control
+      // for something like termios is very useful.
+      tio.restore();

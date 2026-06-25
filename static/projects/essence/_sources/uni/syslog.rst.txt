@@ -1,0 +1,199 @@
+Uni/Syslog
+==========
+
+Interface to Unix ``syslog`` functionality.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/syslog.hpp>`` header.
+   
+   The declarations are within the ``uni`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: uni
+
+.. cpp:enum-class:: logopt: i32
+
+   Options used for the ``syslog.open()`` call.
+
+   .. cpp:enumerator:: none = 0
+
+      No additional behaviour above default.
+
+   .. cpp:enumerator:: pid = LOG_PID
+
+      Display the PID alongside the process identity in the
+      log message, e.g.: ``<hostname> <program-name>[<PID>]: <message>``.
+
+   .. cpp:enumerator:: console = LOG_CONS
+
+      Log to the console if there are errors sending the message.
+
+   .. cpp:enumerator:: no_delay = LOG_NDELAY
+
+      Don't delay opening.
+
+   .. cpp:enumerator:: delay_open = LOG_ODELAY
+
+      Delay open until first ``syslog()`` call (or :cpp:expr:`uni::syslog.send()`).
+
+      This is default behaviour.
+
+   .. cpp:enumerator:: no_wait = LOG_NOWAIT
+
+      Don't wait for console forks, **DEPRECATED**.
+
+   .. cpp:enumerator:: perror = LOG_PERROR
+
+      Log to ``stderr`` as well.
+
+.. cpp:enum-class:: facility: i32
+
+   The various logging facility identifiers.
+
+   .. cpp:enumerator:: kernel = LOG_KERN
+
+      Kernel messages.
+
+   .. cpp:enumerator:: user = LOG_USER
+
+      Misc. user-level messages.
+
+   .. cpp:enumerator:: mail = LOG_MAIL
+   
+      Mail system messages.
+
+   .. cpp:enumerator:: news = LOG_NEWS
+
+      Network news subsystem messages.
+   
+   .. cpp:enumerator:: uucp = LOG_UUCP
+
+      UUCP subsystem messages
+
+   .. cpp:enumerator:: daemon = LOG_DAEMON
+
+      System daemon messages.
+
+   .. cpp:enumerator:: auth = LOG_AUTH
+
+      Security and authorization messages.
+
+   .. cpp:enumerator:: cron = LOG_CRON
+
+      `Cron daemon <https://en.wikipedia.org/wiki/Cron>`__ messages.
+
+   .. cpp:enumerator:: printer = LOG_LPR
+
+      Line printer subsystem messages.
+
+   .. cpp:enumerator:: local0 = LOG_LOCAL0
+
+      Reserved for local use.
+   
+   .. cpp:enumerator:: local1 = LOG_LOCAL1
+      
+      Reserved for local use.
+   
+   .. cpp:enumerator:: local2 = LOG_LOCAL2
+   
+      Reserved for local use.
+
+   .. cpp:enumerator:: local3 = LOG_LOCAL3
+   
+      Reserved for local use.
+   
+   .. cpp:enumerator:: local4 = LOG_LOCAL4
+   
+      Reserved for local use.
+   
+   .. cpp:enumerator:: local5 = LOG_LOCAL5
+   
+      Reserved for local use.
+   
+   .. cpp:enumerator:: local6 = LOG_LOCAL6
+   
+      Reserved for local use.
+
+   .. cpp:enumerator:: local7 = LOG_LOCAL7
+   
+      Reserved for local use.
+
+
+.. cpp:enum-class:: severity: i32
+
+   The various log severity levels, listed from highest severity level
+   (``emergency``) to the lowest (``debug``).
+
+   .. cpp:enumerator:: emergency = LOG_EMERG
+
+      System is unusable.
+
+   .. cpp:enumerator:: alert = LOG_ALERT
+
+      Action must be taken immediately.
+
+   .. cpp:enumerator:: critical = LOG_CRIT
+
+      Critical conditions.
+
+   .. cpp:enumerator:: warning = LOG_WARNING
+
+      Warning conditions.
+
+   .. cpp:enumerator:: error = LOG_ERR
+
+      Error conditions.
+
+   .. cpp:enumerator:: notice = LOG_NOTICE
+
+      Normal but significant condition.
+
+   .. cpp:enumerator:: info = LOG_INFO
+
+      Informational.
+
+   .. cpp:enumerator:: debug = LOG_DEBUG
+
+      For debugging and tracing.
+
+.. cpp:var:: detail::syslog_t syslog
+
+   The ``detail::syslog_t`` is an implementation detail, and all interaction
+   is intended to go throught the global instantiation of the object.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      using namespace essence;
+
+      uni::syslog.open("program-name", uni::logopt::pid, uni::facility::user);
+      uni::syslog.send(uni::severity::info, "Hello from my program!");
+
+      // not strictly necessary, as the object closes the syslog on scope exit
+      uni::syslog.close();
+
+.. cpp:class:: detail::syslog_t
+
+   .. cpp:function:: i32 mask(severity sv)
+
+      Set the minimum severity to expose to the syslog. In practice,
+      this means that any messages which are *lesser* than ``sv``
+      will be filtered out and not sent to the syslog.
+
+   .. cpp:function:: void open(const char* ident, logopt opt, facility fac)
+
+      Open the syslog for sending messages, with options ``opt``
+      and through the facility ``fac``.
+
+   .. cpp:function:: template<typename... Args> \
+                     void send(severity sv, std::string_view msg, Args&&... args)
+
+      Send a message with severity ``sv`` to the syslog, with ``std::format`` arguments
+      ``args`` applied.
+
+   .. cpp:function:: void close()
+
+      Close the syslog. Generally not needed, as the object closes the
+      syslog on destruction. 

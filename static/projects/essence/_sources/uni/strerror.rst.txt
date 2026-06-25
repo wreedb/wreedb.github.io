@@ -1,0 +1,45 @@
+Uni/Strerror
+============
+
+Thread/memory safe wrapper for ``strerror``.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/strerror.hpp>`` header.
+
+   They are found within the ``essence::uni`` namespace.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:function:: std::string uni::strerror(i32 no)
+
+   Calls the thread-safe variant of ``strerror`` for the error number ``no``.
+
+.. cpp:function:: std::string uni::strerror()
+
+   Calls the thread-safe variant of ``strerror`` for the current ``errno``.
+
+
+.. cpp:namespace-push:: uni
+
+.. cpp:class:: exception: public std::exception
+
+   Exception leveraging the ``errno`` and ``strerror`` facilities.
+
+   .. cpp:function:: exception::exception()
+
+      Constructor using the value of ``errno``.
+
+   .. cpp:function:: exception::exception(i32 n)
+
+      Constructor using the error number ``n``.
+
+   .. cpp:function:: exception::exception(i32 n, std::string_view msg)
+
+      Constructor using error number ``n``, with additional message ``msg``.
+
+   .. cpp:function:: template<typename... Args> \
+                     exception::exception(i32 n, std::string_view msg, Args&&... args)
+      
+      Constructor using error number ``n``, with additional message ``msg``
+      with :cpp:expr:`std::format` arguments ``args`` applied.

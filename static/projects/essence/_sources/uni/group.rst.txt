@@ -1,0 +1,58 @@
+Uni/Group
+=========
+
+Interface to the ``group`` struct from ``<grp.h>``.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/grp.hpp>`` header.
+
+   They are found within the ``essence::uni`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: uni
+
+.. cpp:class:: group
+
+   Wrapper for the Unix ``group`` C struct.
+
+   .. cpp:function:: group::group()
+
+      Constructor which queries the process invoker's group id.
+
+   .. cpp:function:: group::group(gid_t i)
+
+      Constructor accepting a group id.
+
+   .. cpp:function:: group::group(const std::string& gname)
+
+      Constructor accepting a group name.
+
+   .. cpp:function:: gid_t id() const noexcept
+
+      Get the group id.
+
+   .. cpp:function:: std::string name() const
+
+      Get the group name.
+
+   .. cpp:function:: std::string password() const
+
+      Get the group password, typically ``x``, as the real password is often handled by ``shadow``.
+
+   .. cpp:function:: const std::vector<std::string>& members() const
+
+      Get the members of the group as a vector of strings.
+
+   .. cpp:function:: std::string str() const
+
+      Get a string representation of the group, in the format returned by ``getent``
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      uni::group g;
+
+      // Comparable output to that of the `getent group` command 
+      io::printn("{}", g.str());

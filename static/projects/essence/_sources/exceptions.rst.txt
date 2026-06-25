@@ -1,0 +1,31 @@
+Exceptions
+==========
+
+Standard C++ exceptions with :cpp:expr:`std::format` argument constructors.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/exceptions.hpp>`` header.
+
+.. cpp:namespace-push:: essence
+
+.. cpp:class:: runtime_error: public std::runtime_error
+
+   .. cpp:function:: template<typename... Args> \
+                     runtime_error::runtime_error(std::string_view message, Args&&... args)
+
+      Constructor accepting :cpp:expr:`std::format` arguments.
+
+.. cpp:class:: invalid_arg: public std::invalid_argument
+
+   .. cpp:function:: template<typename... Args> \
+                     invalid_arg::invalid_arg(std::string_view message, Args&&... args)
+
+      Constructor accepting :cpp:expr:`std::format` arguments.
+
+.. cpp:class:: logic_error: public std::logic_error
+
+   .. cpp:function:: template<typename... Args> \
+                     logic_error::logic_error(std::string_view message, Args&&... args)
+
+      Constructor accepting :cpp:expr:`std::format` arguments.

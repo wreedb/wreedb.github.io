@@ -1,0 +1,156 @@
+Uni/Stat
+========
+
+Wrapper for the Unix ``stat`` C struct.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/stat.hpp>`` header.
+   The declarations are found within the ``essence::uni`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: uni
+
+.. cpp:enum-class:: filetype: i32
+
+   .. cpp:enumerator:: regular = S_IFREG
+
+   .. cpp:enumerator:: symlink = S_IFLNK
+
+   .. cpp:enumerator:: directory = S_IFDIR
+
+   .. cpp:enumerator:: socket = S_IFSOCK
+
+   .. cpp:enumerator:: character = S_IFCHR
+
+   .. cpp:enumerator:: block = S_IFBLK
+
+   .. cpp:enumerator:: fifo = S_IFIFO
+
+   .. cpp:enumerator:: unknown = 65535
+
+.. cpp:function:: filetype detect_file(mode_t m)
+
+   Detect the type of a file given its' mode.
+
+.. cpp:function:: std::string filetype_string(filetype t)
+
+   Get a string representation of the filetype ``t``.
+
+.. cpp:struct:: permission
+
+   Represents the three access permission bits for a file.
+
+   .. cpp:member:: bool read { false }
+
+   .. cpp:member:: bool write { false }
+
+   .. cpp:member:: bool exec { false }
+
+
+.. cpp:class:: permissions
+
+   Represents permissions for the owner, group and others along
+   with the setuid, setgid and sticky bits.
+
+   .. cpp:member:: permission owner
+   
+   .. cpp:member:: permission group
+
+   .. cpp:member:: permission other
+
+   .. cpp:member:: bool setuid { false }
+   
+   .. cpp:member:: bool setgid { false }
+   
+   .. cpp:member:: bool sticky { false }
+
+   .. cpp:function:: std::string octal() const
+
+      Return an octal string representation of the permissions.
+
+
+.. cpp:struct:: filetime
+
+   Represents the time points associated with a file.
+
+   .. cpp:member:: std::chrono::time_point<std::chrono::file_clock> access
+
+   .. cpp:member:: std::chrono::time_point<std::chrono::file_clock> modify
+   
+   .. cpp:member:: std::chrono::time_point<std::chrono::file_clock> change
+
+
+.. cpp:struct:: owners
+
+   Represents the owning user and group of a file.
+
+   .. cpp:member:: gid_t gid
+
+   .. cpp:member:: uid_t uid
+
+   .. cpp:member:: std::string group
+
+   .. cpp:member:: std::string user
+
+
+.. cpp:class:: status
+
+   Wrapper around the ``stat`` C struct.
+
+   .. cpp:function:: status::status(std::filesystem::path, bool follow = false)
+
+      Constructor accepting a filesystem path, and a boolean determining
+      whether or not to follow a potential symlink.
+
+   .. cpp:function:: status::status(struct stat raw_stat)
+
+      Constructor accepting a pre-populated ``stat`` struct 
+
+   .. cpp:function:: const struct stat& raw() const
+
+      Getter for the underlying ``stat`` struct.
+
+   .. cpp:function:: const permissions& perms() const
+
+      Getter for the file permissions.
+
+   .. cpp:function:: const filetype& type() const
+
+      Getter for the file type.
+
+   .. cpp:function:: const filetime& times() const
+
+      Getter for the file times.
+
+   .. cpp:function:: const struct owners& owners() const
+
+      Getter for the file owners.
+
+   .. cpp:function:: uid_t uid() const
+
+      Getter for the user id.
+
+   .. cpp:function:: gid_t gid() const
+
+      Getter for the group id.
+
+   .. cpp:function:: dev_t device() const
+
+   .. cpp:function:: dev_t special_device() const
+
+   .. cpp:function:: u32 special_device_major() const
+
+   .. cpp:function:: u32 special_device_minor() const
+
+   .. cpp:function:: usize size() const
+
+   .. cpp:function:: blkcnt_t blocks() const
+
+   .. cpp:function:: blksize_t blocksize() const
+
+   .. cpp:function:: std::string basename() const
+
+   .. cpp:function:: std::string stem() const
+
+   .. cpp:function:: std::string typestr() const
