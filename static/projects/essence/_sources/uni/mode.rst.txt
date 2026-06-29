@@ -1,0 +1,104 @@
+Uni/Mode
+========
+
+Intuitive interface for ``mode_t``.
+
+.. admonition:: Info
+
+   To use declarations from this page, include the ``<essence/uni/mode.hpp>`` header.
+
+   They are found in the ``essence::uni`` namespace.
+
+.. cpp:namespace-push:: essence
+.. cpp:namespace-push:: uni
+
+.. cpp:class:: permission
+
+   A set of permissions for a single entity, group, owner or others.
+
+   .. cpp:member:: bool read = false
+
+      Whether the file/dir is readable by the entity.
+
+   .. cpp:member:: bool write = false
+
+      Whether the file/dir is writable by the entity.
+
+   .. cpp:member:: bool execute = false
+
+      Whether the file/dir is executable by the entity.
+
+   .. cpp:function:: permission::permission(bool r, bool w, bool x)
+      
+      Constructor accepting a boolean for each of the three bits.
+
+   .. cpp:function:: permission::permission(bool a)
+
+      Constructor accepting a single boolean for all three bits.
+
+   .. cpp:function:: permission::permission()
+
+      Base constructor which retains false for all three bits.
+
+.. cpp:class:: mode
+
+   A wrapper around ``mode_t``.
+
+   .. cpp:member:: permission owner
+
+      The permissions for the files' owner.
+   
+   .. cpp:member:: permission group
+
+      The permissions for the files' group.
+   
+   .. cpp:member:: permission other
+
+      The permissions for those who are not the owner or a member of the files' group.
+
+   .. cpp:member:: bool sticky = false
+
+      Whether or not the :emphasis:`sticky` bit is set.
+
+   .. cpp:member:: bool setuid = false
+
+      Whether or not the file is :emphasis:`setuid`.
+   
+   .. cpp:member:: bool setgid = false
+
+      Whether or not the file is :emphasis:`setgid`.
+
+   .. cpp:function:: void update()
+
+      Update the underlying ``mode_t`` to reflect the current configuration.
+
+   .. cpp:function:: operator mode_t()
+
+      Implicit conversion to a ``mode_t`` for use with C functions.
+
+   .. cpp:function:: std::string octal() const
+
+      Obtain an octal representation of the mode.
+
+   .. rubric:: Example
+
+   .. code-block:: cpp
+
+      uni::mode m;
+      m.owner.read = true;
+      m.owner.write = true;
+      m.owner.execute = true;
+
+      m.group.read = true;
+      m.group.write = true;
+      m.group.execute = true;
+      
+      m.group.read = true;
+      m.group.write = true;
+      m.group.execute = true;
+
+      m.sticky = true;
+      m.setuid = true;
+      m.setgid = true;
+
+      uni::chmod("foo.txt", m);

@@ -9,34 +9,44 @@ Environment variable access and manipulation functions and facilities.
 
 .. cpp:namespace-push:: essence
 
-.. cpp:function:: std::string env::get(const char* key, const char* fallback = "")
+.. cpp:function:: std::string env::get(std::string_view key, std::string_view fallback = "")
 
    Get the value of an environment variable by name, with a fallback value
    when the variable is not set.
 
-.. cpp:function:: bool env::set(const char* key, const char* value, bool clobber = false)
+   Parameters may also be ``const std::string&`` or ``const char*``.
 
-   Set the environment variable :cpp:expr:`key` to :cpp:expr:`value`. If
-   clobber is :cpp:expr:`true`, overwrite an existing value.
+.. cpp:function:: bool env::set(std::string_view key, std::string_view value, bool clobber = false)
 
-.. cpp:function:: bool env::unset(const char* key)
+   Set the environment variable ``key`` to ``value``. If
+   clobber is ``true``, overwrite an existing value.
+   
+   Parameters may also be ``const std::string&`` or ``const char*``.
+
+.. cpp:function:: bool env::unset(std::string_view key)
 
    Unset an environment variable by name. Returns true upon success, false otherwise.
+   
+   Parameter ``key`` may also be ``const std::string&`` or ``const char*``.
 
 .. cpp:function:: std::vector<std::string> env::vec(char* const* envs = environ)
 
-   Construct a :cpp:expr:`std::vector` from the a null-terminated environment array.
+   Construct a ``std::vector`` from the a null-terminated environment array.
    Each member of the result is the entire pair, including the ``=``.
+
+   Uses the value of `environ <https://man7.org/linux/man-pages/man7/environ.7.html>`__ unless explicitly passed a value.
 
 .. cpp:function:: std::unordered_map<std::string, std::string> env::map(char* const* envs = environ)
 
    Construct a :cpp:expr:`std::unordered_map` from the null-terminated environment array.
+   
+   Uses the value of `environ <https://man7.org/linux/man-pages/man7/environ.7.html>`__ unless explicitly passed a value.
 
 .. cpp:var:: detail::environment_t environment
 
    Global proxy object instance for convenient but safe environment access
-   and manipulation. Provides null-safe access to the POSIX :cpp:expr:`getenv`,
-   :cpp:expr:`setenv`, :cpp:expr:`unsetenv` family of functions.
+   and manipulation. Provides null-safe access to the POSIX ``getenv``,
+   ``setenv``, ``unsetenv`` family of functions.
 
    :cpp:expr:`detail::environment_t` is an implementation detail, all interaction
    should be go through this object.
@@ -45,9 +55,7 @@ Environment variable access and manipulation functions and facilities.
 
    .. code-block:: cpp
       
-      using namespace essence;
       std::string path = environment["PATH"];
-
       std::string shell = environment.get("SHELL", "/bin/sh");
       
       environment.set("SOME_THING", "foo");
@@ -58,21 +66,30 @@ Environment variable access and manipulation functions and facilities.
 
 .. cpp:class:: detail::environment_t
    
-   .. cpp:function:: std::string operator[](const char* key)
+   .. cpp:function:: std::string operator[](std::string_view key)
 
-      Get the value of :cpp:expr:`key` in the environment, or an
+      Get the value of ``key`` in the environment, or an
       empty string if unset.
 
-   .. cpp:function:: std::string get(const char* key, const char* fallback = "")
+      Parameter ``key`` may also be a ``const std::string&`` or ``const char*``
 
-      Get the value of :cpp:expr:`key` in the environment, or the
-      value of :cpp:expr:`fallback` if unset.
+   .. cpp:function:: std::string get(std::string_view key, std::string_view fallback = "")
 
-   .. cpp:function:: void set(const char* key, const char* value, bool clobber = false)
+      Get the value of ``key`` in the environment, or the
+      value of ``fallback`` if unset.
 
-      Set the environment variable :cpp:expr:`key` to :cpp:expr:`value`,
-      overwriting an existing value if :cpp:expr:`clobber` is true.
+      Parameter ``key`` may also be a ``const std::string&`` or ``const char*``
+
+   .. cpp:function:: void set(std::string_view key, std::string_view value, bool clobber = false)
+
+      Set the environment variable ``key`` to ``value``,
+      overwriting an existing value if ``clobber`` is true.
+
+      Parameters ``key`` and ``value`` may also be ``const std::string&`` or ``const char*``
+
    
-   .. cpp:function:: void unset(const char* key)
+   .. cpp:function:: void unset(std::string_view key)
 
-      Unset the environment variable :cpp:expr:`key`.
+      Unset the environment variable ``key``.
+
+      Parameter ``key`` may also be a ``const std::string&`` or ``const char*``.

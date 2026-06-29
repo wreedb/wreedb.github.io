@@ -10,9 +10,9 @@ Internationalization and Localization functions leveraging `GNU Gettext <https:/
 .. cpp:namespace-push:: essence
 
 .. cpp:function:: template<typename... Args> \
-                  std::string _(const char* msgid, Args&&... args)
+                  std::string _(std::string_view msgid, Args&&... args)
 
-   GNU Gettext wrapper accepting :cpp:expr:`std::format` arguments.
+   GNU Gettext wrapper accepting ``std::format`` arguments.
 
    .. rubric:: Example
 
@@ -22,9 +22,9 @@ Internationalization and Localization functions leveraging `GNU Gettext <https:/
       std::string my_message = _("Hello {}!", name);
 
 .. cpp:function:: template<typename... Args> \
-                  std::string _n(u64 n, const char* singular, const char* plural, Args&&... args)
+                  std::string _n(u64 n, std::string_view singular, std::string_view plural, Args&&... args)
 
-   GNU NGettext wrapper accepting :cpp:expr:`std::format` arguments.
+   GNU NGettext wrapper accepting ``std::format`` arguments.
 
    .. rubric:: Example
 

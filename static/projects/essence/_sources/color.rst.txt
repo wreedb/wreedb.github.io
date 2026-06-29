@@ -91,15 +91,15 @@ Color
 
 .. cpp:concept:: template<typename T> Appendable
 
-   A type that can be appended to a `message` instance.
+   A type that can be appended to a :cpp:expr:`message` instance.
 
    **Valid Expressions**
 
-   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`std::string`
-   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`std::string_view`
-   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`const char*`
-   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`sequence`
-   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`char`
+   - ``T``, when ``T`` is a ``std::string``
+   - ``T``, when ``T`` is a ``std::string_view``
+   - ``T``, when ``T`` is a ``const char*``
+   - ``T``, when ``T`` is a :cpp:expr:`sequence`
+   - ``T``, when ``T`` is a ``char``
 
 .. cpp:concept:: template<typename T> StringLike
    
@@ -107,12 +107,12 @@ Color
 
    **Valid Expressions**
 
-   - :cpp:expr:`T`, when :cpp:expr:`T` is convertible to an :cpp:expr:`std::string_view`
-   - :cpp:expr:`T`, when :cpp:expr:`T` is a :cpp:expr:`char`
+   - ``T``, when ``T`` is convertible to an ``std::string_view``
+   - ``T``, when ``T`` is a ``char``
 
 .. cpp:class:: message
    
-   A wrapped `std::string` facilitating easy colorization and formatting.
+   A wrapped ``std::string`` facilitating easy colorization and formatting.
 
    .. rubric:: Example
 
@@ -135,9 +135,10 @@ Color
 
    .. cpp:function:: message::message(std::string s)
 
-      Construct a message from a `std::string`. The constructor may also be
-      called with a :cpp:expr:`const char*`, :cpp:expr:`std::string_view`,
-      :cpp:expr:`const std::string&` or a :cpp:expr:`sequence`.
+      Construct a message from a ``std::string``.
+
+      The constructor may also be called with a ``const char*``,
+      ``std::string_view``, ``const std::string&`` or a :cpp:expr:`sequence`.
 
    .. cpp:function:: template<Appendable T> \
                      message& append(T& t)
@@ -166,12 +167,12 @@ Color
 
    .. cpp:function:: message& clear()
 
-      Empty the contents of the underlying :cpp:expr:`std::string`.
+      Empty the contents of the underlying ``std::string``.
 
    .. cpp:function:: message& strip()
 
-      Remove all ansi escape sequences from the underlying :cpp:expr:`std::string` using
-      the `ansi::strip` function and `ansi::escape_rx` regex.
+      Remove all ansi escape sequences from the underlying ``std::string`` using
+      the :cpp:expr:`ansi::strip` function and :cpp:expr:`ansi::escape_rx` regex.
 
    .. cpp:function:: message& reset()
 
@@ -204,7 +205,7 @@ Color
 
 .. cpp:function:: message& operator+=(message& lhs, std::string rhs)
 
-   Addition-equal overload to append a :cpp:expr:`std::string` to a message.
+   Addition-assignment overload to append a :cpp:expr:`std::string` to a message.
 
 .. cpp:function:: std::string& operator|(std::string& lhs, sequence rhs)
 

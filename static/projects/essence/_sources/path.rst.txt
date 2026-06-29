@@ -9,11 +9,11 @@ File path retrieval and manipulation functions.
 
 .. cpp:namespace-push:: essence
 
-.. cpp:function:: std::optional<std::string> path::which(const std::string& name)
+.. cpp:function:: std::optional<std::string> path::which(std::string_view name)
 
    Search the ``PATH`` environment variable directories for executable ``name``.
 
-   Parameter ``name`` may also be a :cpp:expr:`const char*`.
+   Parameter ``name`` may also be a ``const std::string&`` or ``const char*``.
 
    .. rubric:: Example
 
@@ -25,11 +25,11 @@ File path retrieval and manipulation functions.
       // *result_a holds: "/usr/bin/gcc"
       // result_b holds: std::nullopt
 
-.. cpp:function:: std::string path::base(const std::string& name)
+.. cpp:function:: std::string path::base(std::string_view name)
 
    Return the basename of ``name``.
    
-   Parameter ``name`` may also be a :cpp:expr:`const char*`.
+   Parameter ``name`` may also be a ``const std::string&`` or ``const char*``.
    
    .. rubric:: Example
 
@@ -39,11 +39,11 @@ File path retrieval and manipulation functions.
       auto result = path::base(compiler);
       // result holds: "gcc"
 
-.. cpp:function:: std::string path::dir(const std::string& name)
+.. cpp:function:: std::string path::dir(std::string_view name)
 
    Return the directory name of ``name``.
 
-   Parameter ``name`` may also be a :cpp:expr:`const char*`.
+   Parameter ``name`` may also be a ``const std::string&`` or ``const char*``.
 
    .. rubric:: Example
 

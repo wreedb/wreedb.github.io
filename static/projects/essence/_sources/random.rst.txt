@@ -13,9 +13,17 @@ Random number generation facilities.
 
    The systems' default random device.
 
-.. cpp:var:: static thread_local std::mt19937 gen = std::mt19937 { device() }
+.. cpp:var:: static thread_local std::mt19937 twister = std::mt19937 { device() }
 
    A thread local Mersenne Twister pseudorandom number genrator.
+
+.. cpp:var:: static thread_local std::philox4x32 philox = std::philox4x32 { device() }
+
+   A thread local philox counter-based pseudorandom number generator.
+
+.. cpp:var:: static thread_local std::default_random_engine def = std::default_random_engine { device() }
+
+   A thread local (implementation defined) pseudorandom number generator.
 
 
 .. cpp:function:: template<typename T = i32> \
@@ -24,11 +32,15 @@ Random number generation facilities.
    Generate a random number between ``min`` and ``max``.
    ``T`` must be an integral or floating point type.
 
+   Uses the :cpp:expr:`twister` generator.
+
 .. cpp:function:: template<typename T = i32> \
                   T rng(T max) noexcept
 
    Generate a random number between 0 and ``max``.
    ``T`` must be an integral or floating point type.
+   
+   Uses the :cpp:expr:`twister` generator.
 
 
 .. code-block:: cpp

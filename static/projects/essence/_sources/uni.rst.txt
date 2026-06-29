@@ -11,6 +11,7 @@ Memory/thread safe and ergonomic wrappers around standard Unix C functions and s
    :maxdepth: 1
    :hidden:
 
+   uni/mode
    uni/dirent
    uni/fnmatch
    uni/group
@@ -26,6 +27,12 @@ Memory/thread safe and ergonomic wrappers around standard Unix C functions and s
 .. grid:: 1 1 2 2
    :padding: 0
    :gutter: 2
+
+   .. grid-item-card:: mode
+      :link: uni/mode
+      :link-type: doc
+
+      Intuitive interface for a ``mode_t`` type.
 
    .. grid-item-card:: dirent
       :link: uni/dirent

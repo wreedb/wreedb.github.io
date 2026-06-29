@@ -37,39 +37,6 @@ Wrapper for the Unix ``stat`` C struct.
 
    Get a string representation of the filetype ``t``.
 
-.. cpp:struct:: permission
-
-   Represents the three access permission bits for a file.
-
-   .. cpp:member:: bool read { false }
-
-   .. cpp:member:: bool write { false }
-
-   .. cpp:member:: bool exec { false }
-
-
-.. cpp:class:: permissions
-
-   Represents permissions for the owner, group and others along
-   with the setuid, setgid and sticky bits.
-
-   .. cpp:member:: permission owner
-   
-   .. cpp:member:: permission group
-
-   .. cpp:member:: permission other
-
-   .. cpp:member:: bool setuid { false }
-   
-   .. cpp:member:: bool setgid { false }
-   
-   .. cpp:member:: bool sticky { false }
-
-   .. cpp:function:: std::string octal() const
-
-      Return an octal string representation of the permissions.
-
-
 .. cpp:struct:: filetime
 
    Represents the time points associated with a file.
@@ -93,6 +60,11 @@ Wrapper for the Unix ``stat`` C struct.
 
    .. cpp:member:: std::string user
 
+.. cpp:function:: bool chmod(std::string_view file, const mode& m)
+
+   Applies :cpp:expr:`mode` ``m`` to ``file``.
+
+   Parameter ``file`` may also be a ``const std::string&`` or ``const char*``.
 
 .. cpp:class:: status
 
@@ -111,7 +83,7 @@ Wrapper for the Unix ``stat`` C struct.
 
       Getter for the underlying ``stat`` struct.
 
-   .. cpp:function:: const permissions& perms() const
+   .. cpp:function:: const mode& filemode() const
 
       Getter for the file permissions.
 

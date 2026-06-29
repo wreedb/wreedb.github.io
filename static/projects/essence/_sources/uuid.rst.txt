@@ -9,35 +9,42 @@ A version 4 `UUID <https://www.rfc-editor.org/info/rfc9562/#name-uuid-version-4>
 
 .. note:: Performance
 
-   Generates 50,000,000 UUID's over 100 iterations in an average of 1.387 seconds, or roughly 36 million per second.
+   Generates 100,000,000 UUID's over 100 iterations in an average of 1.15 seconds, or roughly 887 million per second.
 
 .. cpp:namespace-push:: essence
 
 .. cpp:class:: uuid
 
-   Container class for a version 4 UUID. Specialization available for
-   :cpp:expr:`std::hash` and :cpp:expr:`std::formatter`.
-
+   Container class for a version 4 UUID. Specialization available for :cpp:expr:`std::hash` and :cpp:expr:`std::formatter`.
+   
    .. cpp:function:: uuid::uuid()
 
       Default constructor, generates immediately.
 
-   .. cpp:function:: std::string_view view() const noexcept
-
-      Get a view of the UUID string.
-
    .. cpp:function:: std::string string() const
 
-      Get a copy of the UUID string.
+      Get a string representation of the UUID.
+
+   .. cpp:function:: std::string_view view() const noexcept
+   
+      Get a :cpp:expr:`std::string_view` of the UUID.
 
    .. cpp:function:: const std::string& cref() const
 
       Get a constant reference to the UUID string.
-
-   .. cpp::function:: constexpr operator std::string_view() const noexcept
       
-      Implicit conversion operator to a ``std::string_view``.
+   .. cpp:function:: operator std::string_view() const noexcept
+
+      Implicit conversion operator to a :cpp:expr:`std::string_view`.
+      
+   .. cpp:function:: u64 low() const noexcept
+
+      Get the underlying lower bits integer.
+
+   .. cpp:function:: u64 high() const noexcept
+   
+      Get the underlying higher bits integer.
 
    .. cpp:function:: friend std::ostream& operator<<(std::ostream& os, const uuid& self)
-
+   
       Stream overload for :cpp:expr:`std::cout` and the like.

@@ -133,7 +133,7 @@ Essence API Reference
       :link: ./uuid
       :link-type: doc
 
-      Generates 36 million (version 4) UUIDs per second!
+      Generates 887 million (version 4) UUIDs per second!
 
    .. grid-item-card:: XDG/Basedir
       :link: ./xdg/basedir

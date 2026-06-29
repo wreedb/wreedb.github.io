@@ -8,8 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>I18N &#8212; Essence 0.6.0
- documentation</title>
+    <title>I18N &#8212; Essence 0.7.0 documentation</title>
   
   
   
@@ -41,7 +40,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="_static/documentation_options.js?v=8fa8b3e9"></script>
+    <script src="_static/documentation_options.js?v=fe7df9b0"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -124,8 +123,7 @@
   
   
   
-    <p class="title logo__title">Essence 0.6.0
- documentation</p>
+    <p class="title logo__title">Essence 0.7.0 documentation</p>
   
 </a></div>
     
@@ -568,9 +566,9 @@
 <p>To use declarations from this page, include the <code class="docutils literal notranslate"><span class="pre">&lt;essence/i18n.hpp&gt;</span></code> header.</p>
 </div>
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4IDpEN7essence1_ENSt6stringEPKcDpRR4Args">
-<span id="_CPPv3IDpEN7essence1_EPKcDpRR4Args"></span><span id="_CPPv2IDpEN7essence1_EPKcDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">msgid</span></span>, <a class="reference internal" href="#_CPPv4IDpEN7essence1_ENSt6stringEPKcDpRR4Args" title="essence::_::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN7essence1_ENSt6stringEPKcDpRR4Args" title="Link to this definition">#</a><br /></dt>
-<dd><p>GNU Gettext wrapper accepting <span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">format</span></span> arguments.</p>
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN7essence1_ENSt6stringENSt11string_viewEDpRR4Args">
+<span id="_CPPv3IDpEN7essence1_ENSt11string_viewEDpRR4Args"></span><span id="_CPPv2IDpEN7essence1_ENSt11string_viewEDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">msgid</span></span>, <a class="reference internal" href="#_CPPv4IDpEN7essence1_ENSt6stringENSt11string_viewEDpRR4Args" title="essence::_::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN7essence1_ENSt6stringENSt11string_viewEDpRR4Args" title="Link to this definition">#</a><br /></dt>
+<dd><p>GNU Gettext wrapper accepting <code class="docutils literal notranslate"><span class="pre">std::format</span></code> arguments.</p>
 <p class="rubric">Example</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Will&quot;</span><span class="p">;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">my_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_</span><span class="p">(</span><span class="s">&quot;Hello {}!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">);</span>
@@ -579,9 +577,9 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4IDpEN7essence2_nENSt6stringE3u64PKcPKcDpRR4Args">
-<span id="_CPPv3IDpEN7essence2_nE3u64PKcPKcDpRR4Args"></span><span id="_CPPv2IDpEN7essence2_nE3u64PKcPKcDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_n</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv4N7essence3u64E" title="essence::u64"><span class="n"><span class="pre">u64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">singular</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">plural</span></span>, <a class="reference internal" href="#_CPPv4IDpEN7essence2_nENSt6stringE3u64PKcPKcDpRR4Args" title="essence::_n::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN7essence2_nENSt6stringE3u64PKcPKcDpRR4Args" title="Link to this definition">#</a><br /></dt>
-<dd><p>GNU NGettext wrapper accepting <span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">format</span></span> arguments.</p>
+<dt class="sig sig-object cpp" id="_CPPv4IDpEN7essence2_nENSt6stringE3u64NSt11string_viewENSt11string_viewEDpRR4Args">
+<span id="_CPPv3IDpEN7essence2_nE3u64NSt11string_viewENSt11string_viewEDpRR4Args"></span><span id="_CPPv2IDpEN7essence2_nE3u64NSt11string_viewENSt11string_viewEDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_n</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="types.html#_CPPv4N7essence3u64E" title="essence::u64"><span class="n"><span class="pre">u64</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">singular</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">plural</span></span>, <a class="reference internal" href="#_CPPv4IDpEN7essence2_nENSt6stringE3u64NSt11string_viewENSt11string_viewEDpRR4Args" title="essence::_n::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN7essence2_nENSt6stringE3u64NSt11string_viewENSt11string_viewEDpRR4Args" title="Link to this definition">#</a><br /></dt>
+<dd><p>GNU NGettext wrapper accepting <code class="docutils literal notranslate"><span class="pre">std::format</span></code> arguments.</p>
 <p class="rubric">Example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">program_name</span> <span class="o">=</span> <span class="s2">&quot;file-processor&quot;</span><span class="p">;</span>
 <span class="n">u64</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
@@ -639,8 +637,8 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4IDpEN7essence1_ENSt6stringEPKcDpRR4Args"><code class="docutils literal notranslate"><span class="pre">_()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4IDpEN7essence2_nENSt6stringE3u64PKcPKcDpRR4Args"><code class="docutils literal notranslate"><span class="pre">_n()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4IDpEN7essence1_ENSt6stringENSt11string_viewEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">_()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4IDpEN7essence2_nENSt6stringE3u64NSt11string_viewENSt11string_viewEDpRR4Args"><code class="docutils literal notranslate"><span class="pre">_n()</span></code></a></li>
 </ul>
   </nav></div>
 
