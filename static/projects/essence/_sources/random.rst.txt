@@ -39,7 +39,7 @@ Random number generation facilities.
 
    Generate a random number between 0 and ``max``.
    ``T`` must be an integral or floating point type.
-   
+
    Uses the :cpp:expr:`twister` generator.
 
 

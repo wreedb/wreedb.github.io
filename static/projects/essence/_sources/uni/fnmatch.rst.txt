@@ -17,11 +17,11 @@ Interface to the ``fnmatch`` C function.
    Options passed to ``fnmatch``.
 
    .. cpp:enumerator:: fnm::none = 0
-   
+
    .. cpp:enumerator:: fnm::pathname = FNM_PATHNAME
-   
+
    .. cpp:enumerator:: fnm::period = FNM_PERIOD
-   
+
    .. cpp:enumerator:: fnm::no_escape = FNM_NOESCAPE
 
    .. cpp:enumerator:: fnm::case_fold = FNM_CASEFOLD
@@ -30,11 +30,9 @@ Interface to the ``fnmatch`` C function.
 
    .. cpp:enumerator:: fnm::leading_dir = FNM_LEADING_DIR
 
-.. cpp:function:: bool fnmatch(const std::string& pattern, const std::string& name, fnm flags)
+.. cpp:function:: bool fnmatch(std::string_view pattern, std::string_view name, fnm flags)
 
    Return true if ``pattern`` would match the file ``name``.
-
-   Parameters ``pattern`` and ``name`` may also be :cpp:expr:`const char*`.
 
    .. rubric:: Example
 
@@ -43,7 +41,7 @@ Interface to the ``fnmatch`` C function.
       #include <essence/io.hpp>
       #include <essence/uni/dirent.hpp>
       #include <essence/uni/fnmatch.hpp>
-      
+
       using namespace essence;
 
       std::string pat { "*.cpp" };

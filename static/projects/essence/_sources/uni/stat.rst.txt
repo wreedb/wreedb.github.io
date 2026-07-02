@@ -44,7 +44,7 @@ Wrapper for the Unix ``stat`` C struct.
    .. cpp:member:: std::chrono::time_point<std::chrono::file_clock> access
 
    .. cpp:member:: std::chrono::time_point<std::chrono::file_clock> modify
-   
+
    .. cpp:member:: std::chrono::time_point<std::chrono::file_clock> change
 
 
@@ -64,7 +64,7 @@ Wrapper for the Unix ``stat`` C struct.
 
    Applies :cpp:expr:`mode` ``m`` to ``file``.
 
-   Parameter ``file`` may also be a ``const std::string&`` or ``const char*``.
+   Parameter ``file`` may also be a ``std::string_view`` or ``const char*``.
 
 .. cpp:class:: status
 
@@ -77,7 +77,7 @@ Wrapper for the Unix ``stat`` C struct.
 
    .. cpp:function:: status::status(struct stat raw_stat)
 
-      Constructor accepting a pre-populated ``stat`` struct 
+      Constructor accepting a pre-populated ``stat`` struct
 
    .. cpp:function:: const struct stat& raw() const
 
@@ -126,3 +126,112 @@ Wrapper for the Unix ``stat`` C struct.
    .. cpp:function:: std::string stem() const
 
    .. cpp:function:: std::string typestr() const
+
+.. cpp:enum-class:: stx: u16
+
+   .. cpp:enumerator:: none = 0
+
+   .. cpp:enumerator:: size = STATX_SIZE
+
+   .. cpp:enumerator:: all = STATX_ALL
+
+   .. cpp:enumerator:: atime = STATX_ATIME
+
+   .. cpp:enumerator:: basic = STATX_BASIC_STATS
+
+   .. cpp:enumerator:: mtime = STATX_MTIME
+
+   .. cpp:enumerator:: ctime = STATX_CTIME
+
+   .. cpp:enumerator:: btime = STATX_BTIME
+
+   .. cpp:enumerator:: blocks = STATX_BLOCKS
+
+   .. cpp:enumerator:: group = STATX_GID
+
+   .. cpp:enumerator:: user = STATX_UID
+
+   .. cpp:enumerator:: ino = STATX_INO
+
+   .. cpp:enumerator:: mode = STATX_MODE
+
+   .. cpp:enumerator:: type = STATX_TYPE
+
+   .. cpp:enumerator:: nlink = STATX_NLINK
+
+.. cpp:class:: statux
+
+   Wrapper around ``statx`` for doing selective ``stat`` retrieval.
+
+   .. cpp:function:: statux::statux(struct statx x)
+
+      Constructor using a pre-populated ``statx`` struct.
+
+   .. cpp:function:: statux::statux(std::string_view path, stx mask = stx::basic)
+
+      Constructor accepting a path and mask bit-set.
+
+   .. cpp:function:: std::chrono::time_point<std::chrono::file_clock> atime() const
+
+      The time of the files' last access.
+
+   .. cpp:function:: std::chrono::time_point<std::chrono::file_clock> ctime() const
+
+      The time of the files' last access change (to its' metadata).
+
+   .. cpp:function:: std::chrono::time_point<std::chrono::file_clock> mtime() const
+
+      The time of the files' last modification (of its' contents).
+
+   .. cpp:function:: std::chrono::time_point<std::chrono::file_clock> btime() const
+
+      The time of the files' birth/creation.
+
+   .. cpp:function:: const class owners& owners() const
+
+      Information about the files' ownership.
+
+   .. cpp:function:: const class mode& filemode() const
+
+      Information about the files' permissions.
+
+   .. cpp:function:: ino_t ino() const
+
+      The files' index node number.
+
+   .. cpp:function:: nlink_t nlink() const
+
+      The number of hard links pointing to the file.
+
+   .. cpp:function:: enum filetype type() const
+
+      The file type as a :cpp:expr:`filetype` member.
+
+   .. cpp:function:: userid uid() const
+
+      The UID of the file's owner.
+
+   .. cpp:function:: groupid gid() const
+
+      The GID of the file's group.
+
+   .. cpp:function:: dev_t rdev() const
+
+      If the file is a block or character special, this holds the
+      device ID of said device.
+
+   .. cpp:function:: dev_t dev() const
+
+      The ID of the device containing the file.
+
+   .. cpp:function:: usize size() const
+
+      The file size in bytes.
+
+   .. cpp:function:: u64 blocks() const
+
+      The number of 512-byte blocks the file occupies.
+
+   .. cpp:function:: u32 blocksize() const
+
+      The preferred block size for filesystem I/O.

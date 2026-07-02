@@ -12,7 +12,7 @@ Wrapper for ``scandir`` from ``<dirent.h>``.
 .. cpp:namespace-push:: essence
 .. cpp:namespace-push:: uni
 
-.. cpp:function:: std::vector<std::string> scandir(const std::string& dir)
+.. cpp:function:: std::vector<std::string> scandir(std::string_view dir)
 
    Return the file and directory entries in ``dir`` as a vector of strings.
 

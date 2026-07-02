@@ -11,12 +11,12 @@ A rudimentary URL class
 
 .. cpp:class:: url
 
-   A simple URL abstraction. Specialization available for :cpp:expr:`std::formatter`.
+   A simple URL abstraction. Specialization available for :cpp:expr:`std::formatter` and :cpp:expr:`std::hash`.
 
-   .. cpp:function:: url::url(const std::string& raw)
+   .. cpp:function:: url::url(std::string_view raw)
 
       Default constructor accepting a raw url string.
-   
+
    .. cpp:function:: std::string full() const
 
       Get the full url.

@@ -29,7 +29,7 @@ Intuitive interface for ``mode_t``.
       Whether the file/dir is executable by the entity.
 
    .. cpp:function:: permission::permission(bool r, bool w, bool x)
-      
+
       Constructor accepting a boolean for each of the three bits.
 
    .. cpp:function:: permission::permission(bool a)
@@ -47,11 +47,11 @@ Intuitive interface for ``mode_t``.
    .. cpp:member:: permission owner
 
       The permissions for the files' owner.
-   
+
    .. cpp:member:: permission group
 
       The permissions for the files' group.
-   
+
    .. cpp:member:: permission other
 
       The permissions for those who are not the owner or a member of the files' group.
@@ -63,7 +63,7 @@ Intuitive interface for ``mode_t``.
    .. cpp:member:: bool setuid = false
 
       Whether or not the file is :emphasis:`setuid`.
-   
+
    .. cpp:member:: bool setgid = false
 
       Whether or not the file is :emphasis:`setgid`.
@@ -92,7 +92,7 @@ Intuitive interface for ``mode_t``.
       m.group.read = true;
       m.group.write = true;
       m.group.execute = true;
-      
+
       m.group.read = true;
       m.group.write = true;
       m.group.execute = true;

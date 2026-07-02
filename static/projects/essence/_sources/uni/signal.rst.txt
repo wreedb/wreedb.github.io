@@ -14,107 +14,107 @@ Interface for Unix signal handling.
    .. cpp:enumerator:: hangup = SIGHUP
 
       Hangup.
-   
+
    .. cpp:enumerator:: interrupt = SIGINT
 
       Terminal interrupt signal.
-   
+
    .. cpp:enumerator:: quit = SIGQUIT
 
       Terminal quit signal.
-   
+
    .. cpp:enumerator:: illegal = SIGILL
 
       Illegal instruction encountered.
-   
+
    .. cpp:enumerator:: trap = SIGTRAP
 
       Trace/breakpoint trap.
-   
+
    .. cpp:enumerator:: abrt = SIGABRT
 
       Abort the process.
-   
+
    .. cpp:enumerator:: bus = SIGBUS
 
       Access to an undefined portion of a memory object.
-   
+
    .. cpp:enumerator:: fpe = SIGFPE
 
       Erroneous arithmetic operation.
-   
+
    .. cpp:enumerator:: kill = SIGKILL
 
       Kill, cannot be caught or ignored.
-   
+
    .. cpp:enumerator:: usr_one = SIGUSR1
 
       User-defined signal 1.
-   
+
    .. cpp:enumerator:: segv = SIGSEGV
 
       Invalid memory reference.
-   
+
    .. cpp:enumerator:: usr_two = SIGUSR2
 
       User-defined signal 2.
-   
+
    .. cpp:enumerator:: pipe = SIGPIPE
 
       Write on a pipe with no one to read it.
-   
+
    .. cpp:enumerator:: alrm = SIGALRM
 
       Alarm clock.
-   
+
    .. cpp:enumerator:: term = SIGTERM
 
       Termination signal.
-   
+
    .. cpp:enumerator:: chld = SIGCHLD
 
       Child process terminated.
-   
+
    .. cpp:enumerator:: cont = SIGCONT
 
       Continue executing if stopped.
-   
+
    .. cpp:enumerator:: stop = SIGSTOP
 
       Stop executing, cannot be caught or ignored.
-   
+
    .. cpp:enumerator:: tstp = SIGTSTP
 
       Terminal stop signal.
-   
+
    .. cpp:enumerator:: ttin = SIGTTIN
 
       Background process attempting read.
-   
+
    .. cpp:enumerator:: ttou = SIGTTOU
 
       Background process attempting write.
-   
+
    .. cpp:enumerator:: urg = SIGURG
 
       High bandwidth data is available at a socket.
-   
+
    .. cpp:enumerator:: xcpu = SIGXCPU
 
       CPU time limit exceeded.
-   
+
    .. cpp:enumerator:: xfsz = SIGXFSZ
 
       File size limit exceeded.
-   
+
    .. cpp:enumerator:: vtalrm = SIGVTALRM
 
       Virtual timer expired.
-   
+
    .. cpp:enumerator:: winch = SIGWINCH
 
       Terminal window size changed.
-   
+
    .. cpp:enumerator:: sys = SIGSYS
 
       Bad system call.
@@ -133,7 +133,7 @@ Interface for Unix signal handling.
 
 
 .. cpp:class:: signal
-   
+
    A wrapper for a signal handler.
 
    .. cpp:type:: handler = std::function<void(i32)>
@@ -180,6 +180,6 @@ Interface for Unix signal handling.
       {
          io::printn("Hello, I'm catching signal {}", uni::signal_str(sig));
       };
-      
+
       uni::signal sigint(uni::signals::interrupt, handle_sig);
       sigint.setup();

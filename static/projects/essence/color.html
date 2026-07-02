@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Color &#8212; Essence 0.7.0 documentation</title>
+    <title>Color &#8212; Essence 0.8.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="_static/documentation_options.js?v=486e5634"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -123,7 +123,7 @@
   
   
   
-    <p class="title logo__title">Essence 0.7.0 documentation</p>
+    <p class="title logo__title">Essence 0.8.0 documentation</p>
   
 </a></div>
     
@@ -632,24 +632,16 @@
 </tbody>
 </table>
 </div>
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N7essence4ansi9escape_rxE">
-<span id="_CPPv3N7essence4ansi9escape_rxE"></span><span id="_CPPv2N7essence4ansi9escape_rxE"></span><span id="essence::ansi::escape_rx__std::regex"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">regex</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">escape_rx</span></span></span><a class="headerlink" href="#_CPPv4N7essence4ansi9escape_rxE" title="Link to this definition">#</a><br /></dt>
-<dd><p>A regex useful for capturing standard ansi escape sequences.</p>
-</dd></dl>
-
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4ansi5stripERNSt6stringE">
 <span id="_CPPv3N7essence4ansi5stripERNSt6stringE"></span><span id="_CPPv2N7essence4ansi5stripERNSt6stringE"></span><span id="essence::ansi::strip__ssR"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">strip</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">in</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4ansi5stripERNSt6stringE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Strip ansi escape sequences from a string (in-place).</p>
-<p>Utilizes the <span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="#_CPPv4N7essence4ansi9escape_rxE" title="essence::ansi::escape_rx"><span class="n">escape_rx</span></a></span> regex to perform the strip.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4ansi6cstripENSt11string_viewE">
 <span id="_CPPv3N7essence4ansi6cstripENSt11string_viewE"></span><span id="_CPPv2N7essence4ansi6cstripENSt11string_viewE"></span><span id="essence::ansi::cstrip__std::string_view"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cstrip</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">in</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4ansi6cstripENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Strip ansi escape sequences from a string (copying).</p>
-<p>Utilizes the <span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="#_CPPv4N7essence4ansi9escape_rxE" title="essence::ansi::escape_rx"><span class="n">escape_rx</span></a></span> regex to perform the strip.</p>
 </dd></dl>
 
 <dl class="cpp concept">
@@ -742,7 +734,7 @@ also be called with a constant <code class="docutils literal notranslate"><span 
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4ansi7message5stripEv">
 <span id="_CPPv3N7essence4ansi7message5stripEv"></span><span id="_CPPv2N7essence4ansi7message5stripEv"></span><span id="essence::ansi::message::strip"></span><a class="reference internal" href="#_CPPv4N7essence4ansi7messageE" title="essence::ansi::message"><span class="n"><span class="pre">message</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">strip</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4ansi7message5stripEv" title="Link to this definition">#</a><br /></dt>
 <dd><p>Remove all ansi escape sequences from the underlying <code class="docutils literal notranslate"><span class="pre">std::string</span></code> using
-the <span class="cpp-expr sig sig-inline cpp"><span class="n">ansi</span><span class="p">::</span><a class="reference internal" href="#_CPPv4N7essence4ansi5stripERNSt6stringE" title="essence::ansi::strip"><span class="n">strip</span></a></span> function and <span class="cpp-expr sig sig-inline cpp"><span class="n">ansi</span><span class="p">::</span><a class="reference internal" href="#_CPPv4N7essence4ansi9escape_rxE" title="essence::ansi::escape_rx"><span class="n">escape_rx</span></a></span> regex.</p>
+the <span class="cpp-expr sig sig-inline cpp"><span class="n">ansi</span><span class="p">::</span><a class="reference internal" href="#_CPPv4N7essence4ansi5stripERNSt6stringE" title="essence::ansi::strip"><span class="n">strip</span></a></span> function.</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -887,7 +879,6 @@ the <span class="cpp-expr sig sig-inline cpp"><span class="n">ansi</span><span c
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4ansi8sequenceE"><code class="docutils literal notranslate"><span class="pre">sequence</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4ansi9escape_rxE"><code class="docutils literal notranslate"><span class="pre">escape_rx</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4ansi5stripERNSt6stringE"><code class="docutils literal notranslate"><span class="pre">strip()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4ansi6cstripENSt11string_viewE"><code class="docutils literal notranslate"><span class="pre">cstrip()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN7essence4ansi10AppendableE"><code class="docutils literal notranslate"><span class="pre">Appendable</span></code></a></li>

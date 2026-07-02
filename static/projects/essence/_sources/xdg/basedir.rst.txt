@@ -22,37 +22,37 @@ An implementation of the `FreeDesktop Basedir specification <https://specificati
 .. cpp:function:: std::filesystem::path xdg::get::config()
 
    Get the user's configuration directory.
-   
+
    Default: ``$HOME/.config``
 
 .. cpp:function:: std::filesystem::path xdg::get::cache()
 
    Get the user's cache directory.
-   
+
    Default: ``$HOME/.cache``
 
 .. cpp:function:: std::filesystem::path xdg::get::data()
 
    Get the user's data directory.
-   
+
    Default: ``$HOME/.local/share``
 
 .. cpp:function:: std::filesystem::path xdg::get::state()
 
    Get the user's state directory.
-   
+
    Default: ``$HOME/.local/state``
 
 .. cpp:function:: std::filesystem::path xdg::get::runtime()
 
    Get the user's runtime directory.
-   
+
    Default: ``/run/user/<user id>``
 
 .. cpp:function:: std::vector<std::filesystem::path> xdg::get::configs()
 
    Get the system's configuration directories.
-   
+
    Default: ``/etc/local/xdg, /etc/xdg`` or the legacy option
    of ``/usr/local/etc/xdg, /etc/xdg`` if it exists and ``/etc/local``
    does not.
@@ -60,7 +60,7 @@ An implementation of the `FreeDesktop Basedir specification <https://specificati
 .. cpp:function:: std::vector<std::filesystem::path> xdg::get::datas()
 
    Get the system's data directories.
-   
+
    Default: ``/usr/local/share, /usr/share``
 
 

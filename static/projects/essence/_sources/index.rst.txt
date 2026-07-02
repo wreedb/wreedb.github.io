@@ -102,7 +102,7 @@ Essence API Reference
    .. grid-item-card:: Process
       :link: ./process
       :link-type: doc
-      
+
       Ergonomic and powerful process creation, configuration and pipeline orchestration.
 
    .. grid-item-card:: Random

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>UUID &#8212; Essence 0.7.0 documentation</title>
+    <title>UUID &#8212; Essence 0.8.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="_static/documentation_options.js?v=486e5634"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -123,7 +123,7 @@
   
   
   
-    <p class="title logo__title">Essence 0.7.0 documentation</p>
+    <p class="title logo__title">Essence 0.8.0 documentation</p>
   
 </a></div>
     
@@ -573,7 +573,7 @@
 <dl class="cpp class">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4uuidE">
 <span id="_CPPv3N7essence4uuidE"></span><span id="_CPPv2N7essence4uuidE"></span><span id="essence::uuid"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uuid</span></span></span><a class="headerlink" href="#_CPPv4N7essence4uuidE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Container class for a version 4 UUID. Specialization available for <span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">hash</span></span> and <span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">formatter</span></span>.</p>
+<dd><p>Container class for a version 4 UUID. Specialization available for <code class="docutils literal notranslate"><span class="pre">std::hash</span></code> and <code class="docutils literal notranslate"><span class="pre">std::formatter</span></code>.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4uuid4uuid4uuidEv">
 <span id="_CPPv3N7essence4uuid4uuid4uuidEv"></span><span id="_CPPv2N7essence4uuid4uuid4uuidEv"></span><span id="essence::uuid::uuid::uuid"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence4uuid4uuid4uuidEv" title="essence::uuid::uuid::uuid"><span class="n"><span class="pre">uuid</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">uuid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4uuid4uuid4uuidEv" title="Link to this definition">#</a><br /></dt>
@@ -587,21 +587,9 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK7essence4uuid4viewEv">
-<span id="_CPPv3NK7essence4uuid4viewEv"></span><span id="_CPPv2NK7essence4uuid4viewEv"></span><span id="essence::uuid::viewC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">view</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7essence4uuid4viewEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Get a <span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">string_view</span></span> of the UUID.</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK7essence4uuid4crefEv">
-<span id="_CPPv3NK7essence4uuid4crefEv"></span><span id="_CPPv2NK7essence4uuid4crefEv"></span><span id="essence::uuid::crefC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">cref</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence4uuid4crefEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Get a constant reference to the UUID string.</p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4NK7essence4uuidcvNSt11string_viewEEv">
-<span id="_CPPv3NK7essence4uuidcvNSt11string_viewEEv"></span><span id="_CPPv2NK7essence4uuidcvNSt11string_viewEEv"></span><span id="essence::uuid::castto-std::string_view-operatorC"></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7essence4uuidcvNSt11string_viewEEv" title="Link to this definition">#</a><br /></dt>
-<dd><p>Implicit conversion operator to a <span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">string_view</span></span>.</p>
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence4uuidcvNSt6stringEEv">
+<span id="_CPPv3NK7essence4uuidcvNSt6stringEEv"></span><span id="_CPPv2NK7essence4uuidcvNSt6stringEEv"></span><span id="essence::uuid::castto-ss-operatorC"></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence4uuidcvNSt6stringEEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Implicit conversion operator to a <code class="docutils literal notranslate"><span class="pre">std::string</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -619,7 +607,7 @@
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4uuidlsERNSt7ostreamERK4uuid">
 <span id="_CPPv3N7essence4uuidlsERNSt7ostreamERK4uuid"></span><span id="_CPPv2N7essence4uuidlsERNSt7ostreamERK4uuid"></span><span id="essence::uuid::lshift-operator__osR.uuidCR"></span><span class="k"><span class="pre">friend</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;&lt;</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ostream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">os</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence4uuidE" title="essence::uuid"><span class="n"><span class="pre">uuid</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">self</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4uuidlsERNSt7ostreamERK4uuid" title="Link to this definition">#</a><br /></dt>
-<dd><p>Stream overload for <span class="cpp-expr sig sig-inline cpp"><span class="n">std</span><span class="p">::</span><span class="n">cout</span></span> and the like.</p>
+<dd><p>Stream overload for <code class="docutils literal notranslate"><span class="pre">std::cout</span></code> and the like.</p>
 </dd></dl>
 
 </dd></dl>
@@ -676,9 +664,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4uuidE"><code class="docutils literal notranslate"><span class="pre">uuid</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4uuid4uuid4uuidEv"><code class="docutils literal notranslate"><span class="pre">uuid::uuid()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence4uuid6stringEv"><code class="docutils literal notranslate"><span class="pre">uuid::string()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence4uuid4viewEv"><code class="docutils literal notranslate"><span class="pre">uuid::view()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence4uuid4crefEv"><code class="docutils literal notranslate"><span class="pre">uuid::cref()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence4uuidcvNSt11string_viewEEv"><code class="docutils literal notranslate"><span class="pre">uuid::operator</span> <span class="pre">std::string_view()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence4uuidcvNSt6stringEEv"><code class="docutils literal notranslate"><span class="pre">uuid::operator</span> <span class="pre">std::string()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence4uuid3lowEv"><code class="docutils literal notranslate"><span class="pre">uuid::low()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence4uuid4highEv"><code class="docutils literal notranslate"><span class="pre">uuid::high()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4uuidlsERNSt7ostreamERK4uuid"><code class="docutils literal notranslate"><span class="pre">uuid::operator&lt;&lt;()</span></code></a></li>

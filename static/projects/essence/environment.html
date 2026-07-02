@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Environment &#8212; Essence 0.7.0 documentation</title>
+    <title>Environment &#8212; Essence 0.8.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="_static/documentation_options.js?v=486e5634"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -123,7 +123,7 @@
   
   
   
-    <p class="title logo__title">Essence 0.7.0 documentation</p>
+    <p class="title logo__title">Essence 0.8.0 documentation</p>
   
 </a></div>
     
@@ -570,7 +570,6 @@
 <span id="_CPPv3N7essence3env3getENSt11string_viewENSt11string_viewE"></span><span id="_CPPv2N7essence3env3getENSt11string_viewENSt11string_viewE"></span><span id="essence::env::get__std::string_view.std::string_view"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fallback</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3env3getENSt11string_viewENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get the value of an environment variable by name, with a fallback value
 when the variable is not set.</p>
-<p>Parameters may also be <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -578,14 +577,12 @@ when the variable is not set.</p>
 <span id="_CPPv3N7essence3env3setENSt11string_viewENSt11string_viewEb"></span><span id="_CPPv2N7essence3env3setENSt11string_viewENSt11string_viewEb"></span><span id="essence::env::set__std::string_view.std::string_view.b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">clobber</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3env3setENSt11string_viewENSt11string_viewEb" title="Link to this definition">#</a><br /></dt>
 <dd><p>Set the environment variable <code class="docutils literal notranslate"><span class="pre">key</span></code> to <code class="docutils literal notranslate"><span class="pre">value</span></code>. If
 clobber is <code class="docutils literal notranslate"><span class="pre">true</span></code>, overwrite an existing value.</p>
-<p>Parameters may also be <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence3env5unsetENSt11string_viewE">
 <span id="_CPPv3N7essence3env5unsetENSt11string_viewE"></span><span id="_CPPv2N7essence3env5unsetENSt11string_viewE"></span><span id="essence::env::unset__std::string_view"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">unset</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3env5unsetENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Unset an environment variable by name. Returns true upon success, false otherwise.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">key</span></code> may also be <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -631,7 +628,6 @@ should be go through this object.</p>
 <span id="_CPPv3N7essence6detail13environment_tixENSt11string_viewE"></span><span id="_CPPv2N7essence6detail13environment_tixENSt11string_viewE"></span><span id="essence::detail::environment_t::subscript-operator__std::string_view"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">[]</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6detail13environment_tixENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get the value of <code class="docutils literal notranslate"><span class="pre">key</span></code> in the environment, or an
 empty string if unset.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">key</span></code> may also be a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code></p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -639,7 +635,6 @@ empty string if unset.</p>
 <span id="_CPPv3N7essence6detail13environment_t3getENSt11string_viewENSt11string_viewE"></span><span id="_CPPv2N7essence6detail13environment_t3getENSt11string_viewENSt11string_viewE"></span><span id="essence::detail::environment_t::get__std::string_view.std::string_view"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fallback</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6detail13environment_t3getENSt11string_viewENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Get the value of <code class="docutils literal notranslate"><span class="pre">key</span></code> in the environment, or the
 value of <code class="docutils literal notranslate"><span class="pre">fallback</span></code> if unset.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">key</span></code> may also be a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code></p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -647,14 +642,12 @@ value of <code class="docutils literal notranslate"><span class="pre">fallback</
 <span id="_CPPv3N7essence6detail13environment_t3setENSt11string_viewENSt11string_viewEb"></span><span id="_CPPv2N7essence6detail13environment_t3setENSt11string_viewENSt11string_viewEb"></span><span id="essence::detail::environment_t::set__std::string_view.std::string_view.b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">clobber</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6detail13environment_t3setENSt11string_viewENSt11string_viewEb" title="Link to this definition">#</a><br /></dt>
 <dd><p>Set the environment variable <code class="docutils literal notranslate"><span class="pre">key</span></code> to <code class="docutils literal notranslate"><span class="pre">value</span></code>,
 overwriting an existing value if <code class="docutils literal notranslate"><span class="pre">clobber</span></code> is true.</p>
-<p>Parameters <code class="docutils literal notranslate"><span class="pre">key</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> may also be <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code></p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence6detail13environment_t5unsetENSt11string_viewE">
 <span id="_CPPv3N7essence6detail13environment_t5unsetENSt11string_viewE"></span><span id="_CPPv2N7essence6detail13environment_t5unsetENSt11string_viewE"></span><span id="essence::detail::environment_t::unset__std::string_view"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">unset</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence6detail13environment_t5unsetENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Unset the environment variable <code class="docutils literal notranslate"><span class="pre">key</span></code>.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">key</span></code> may also be a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
 </dd></dl>
 
 </dd></dl>

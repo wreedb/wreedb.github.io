@@ -24,7 +24,7 @@ Concepts and concept utilizing functions.
 
       template<typename T>
       concept stringlike = anyof<T, std::string, std::string_view, const char*, char>;
-   
+
 .. cpp:function:: template<typename T, typename... Args> \
                   bool matches(const T& value, const Args&... args)
 
@@ -37,7 +37,7 @@ Concepts and concept utilizing functions.
    .. code-block:: cpp
 
       if (foo == 1 || foo == 2 || foo == 3 || foo == 4) ;
-   
+
       // The above may be collaped using the `matches` function like so:
       if (matches(foo, 1, 2, 3, 4)) ;
 

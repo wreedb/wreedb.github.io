@@ -179,7 +179,7 @@ Unix process creation and configuration.
    .. cpp:function:: static ioport::output()
 
       Static constructor using ``STDOUT_FILENO``.
-   
+
    .. cpp:function:: static ioport::error()
 
       Static constructor using ``STDERR_FILENO``.
@@ -205,7 +205,7 @@ Unix process creation and configuration.
       Implicit conversion to bool.
 
 .. cpp:class:: ioconfig
-   
+
    Represents the three IO ports used by a process.
 
    .. cpp:member:: ioport in = ioport::input()
@@ -213,9 +213,9 @@ Unix process creation and configuration.
       The input port, defaulting to ``stdin``.
 
    .. cpp:member:: ioport out = ioport::output()
-      
+
       The output port, defaulting to ``stdout``.
-   
+
    .. cpp:member:: ioport err = ioport::error()
 
       The error port, defaulting to ``stderr``.
@@ -227,7 +227,7 @@ Unix process creation and configuration.
    .. cpp:function:: explicit ioconfig::ioconfig(ioport pIn, ioport pOut, ioport pErr)
 
       Constructor accepting all three port arguments.
-   
+
    .. cpp:function:: explicit ioconfig::ioconfig(ioport pOutErr)
 
       Constructor accepting a single port for output and error, retaining default input.

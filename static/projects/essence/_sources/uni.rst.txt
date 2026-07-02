@@ -23,7 +23,7 @@ Memory/thread safe and ergonomic wrappers around standard Unix C functions and s
    uni/term
    uni/unistd
 
-   
+
 .. grid:: 1 1 2 2
    :padding: 0
    :gutter: 2
@@ -45,21 +45,21 @@ Memory/thread safe and ergonomic wrappers around standard Unix C functions and s
       :link-type: doc
 
       The ``fnmatch`` function, for testing shell glob patterns against filenames
-   
+
 
    .. grid-item-card:: group
       :link: uni/group
       :link-type: doc
 
       The Unix ``group`` struct, with some extra quality-of-life added.
-   
+
 
    .. grid-item-card:: passwd
       :link: uni/passwd
       :link-type: doc
 
       The Unix ``passwd`` struct, with some quality-of-life added.
-   
+
 
    .. grid-item-card:: signal
       :link: uni/signal
@@ -67,14 +67,14 @@ Memory/thread safe and ergonomic wrappers around standard Unix C functions and s
 
       An interface for easy signal handling and setup, using function objects
       as handlers.
-   
+
 
    .. grid-item-card:: stat
       :link: uni/stat
       :link-type: doc
 
       Thoroughly written interface to ``stat`` and ``lstat``.
-   
+
 
    .. grid-item-card:: strerror
       :link: uni/strerror
@@ -82,21 +82,21 @@ Memory/thread safe and ergonomic wrappers around standard Unix C functions and s
 
       Easy wrapper around the thread-safe (reentrant) variant of ``strerror``, as
       well as an exception class leveraging it.
-   
+
 
    .. grid-item-card:: syslog
       :link: uni/syslog
       :link-type: doc
 
       Singleton interface for interacting with ``syslog``.
-   
+
 
    .. grid-item-card:: term
       :link: uni/term
       :link-type: doc
 
       Clean abstraction over the ``termios`` struct, with easy restoration of original settings.
-   
+
 
    .. grid-item-card:: unistd
       :link: uni/unistd

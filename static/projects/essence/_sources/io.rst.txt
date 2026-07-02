@@ -36,7 +36,7 @@ Input/output related functions for printing, flushing, writing, reading and scan
 .. code-block:: cpp
 
    auto some_integer = io::scan<i32>(stdin);
-   
+
    if (not some_integer)
    {
       // hanlde the error
@@ -96,7 +96,7 @@ Input/output related functions for printing, flushing, writing, reading and scan
 
    Print a string to ``stdout`` with a newline after applying the format
    arguments ``args``.
-   
+
    .. rubric:: Example
 
    .. code-block:: cpp
@@ -117,11 +117,9 @@ Input/output related functions for printing, flushing, writing, reading and scan
    arguments ``args``.
 
 .. cpp:function:: std::string io::file::to_string(std::string_view path)
-   
+
    Read a file from disk to a new string. On failure to read
    ``path``, it will return an empty string.
-   
-   Parameter ``path`` may also be a ``const std::string&`` or ``const char*``.
 
 .. cpp:function:: void io::file::to_string(std::string_view path, std::string& out)
 
@@ -129,15 +127,11 @@ Input/output related functions for printing, flushing, writing, reading and scan
 
    On failure, the string will be unchanged.
 
-   Parameter ``path`` may also be a ``const std::string&`` or ``const char*``.
-
 .. cpp:function:: std::vector<std::string> io::file::lines(std::string_view path) noexcept
 
    Read a file from disk into a new vector of strings, one entry for each line.
 
    The returned vector will be empty on failure to read ``path``.
-
-   Parameter ``path`` may also be a ``const std::string&`` or ``const char*``.
 
    .. rubric:: Example
 
@@ -152,7 +146,7 @@ Input/output related functions for printing, flushing, writing, reading and scan
       }
 
       // output:
-      // 
+      //
       // 1 | this is line one
       // 2 | this is line two
       // ...
@@ -162,5 +156,3 @@ Input/output related functions for printing, flushing, writing, reading and scan
    Read a file from disk into the mutable string vector ``out``.
 
    On failure to read ``path``, ``out`` will be unchanged.
-
-   Parameter ``path`` may also be a ``const std::string&`` or ``const char*``.

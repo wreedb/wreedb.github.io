@@ -35,23 +35,23 @@ Thread and memory safe wrappers to various ``<unistd.h>`` functions.
       The file can be written to by the invoking user.
 
    .. cpp:enumerator:: exec = X_OK
-      
+
       The file is executable by the invoking user.
 
    .. cpp:enumerator:: rw = R_OK|W_OK
-      
+
       The file can be read and written to by the invoking user.
 
    .. cpp:enumerator:: rwx = R_OK|W_OK|X_OK
-      
+
       The file can be read, written to and executed by the invoking user.
 
    .. cpp:enumerator:: all = F_OK|R_OK|W_OK|X_OK
-      
+
       The file exists, can be read, written to and executed by the invoking user.
 
 
-.. cpp:function:: bool access(const std::string& path, ok flags = ok::exists)
+.. cpp:function:: bool access(std::string_view path, ok flags = ok::exists)
 
    Check ``flags`` against the file at ``path``
 
@@ -79,13 +79,13 @@ Thread and memory safe wrappers to various ``<unistd.h>`` functions.
 
    Returns an empty string upon failure.
 
-.. cpp:function:: bool chdir(const std::string& path)
-   
+.. cpp:function:: bool chdir(std::string_view path)
+
    Change the current working directory of the calling process to ``path``.
 
    Returns ``true`` upon success, ``false`` otherwise.
 
-.. cpp:function:: bool chown(const std::string& path, userid u, groupid g)
+.. cpp:function:: bool chown(std::string_view path, userid u, groupid g)
 
    Change the ownership of ``path`` the the user ``u`` and group ``g``.
 
@@ -151,19 +151,19 @@ Thread and memory safe wrappers to various ``<unistd.h>`` functions.
 
    Returns an empty string if ``fd`` is not associated with a TTY.
 
-.. cpp:function:: bool unlink(const std::string& path)
+.. cpp:function:: bool unlink(std::string_view path)
 
    Remove (unlink) the file at ``path``.
 
    Returns ``false`` upon failure to unlink, ``true`` upon success.
 
-.. cpp:function:: bool symlink(const std::string& from, const std::string& to)
+.. cpp:function:: bool symlink(std::string_view from, std::string_view to)
 
    Create a symbolic link of ``from`` to destination ``to``.
 
    Returns ``false`` upon failure, ``true`` upon success.
 
-.. cpp:function:: std::string readlink(const std::string& path)
+.. cpp:function:: std::string readlink(std::string_view path)
 
    Return the destination of the symbolic link at ``path``.
 

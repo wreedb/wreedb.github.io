@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Uni/Stat &#8212; Essence 0.7.0 documentation</title>
+    <title>Uni/Stat &#8212; Essence 0.8.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../_static/documentation_options.js?v=486e5634"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -123,7 +123,7 @@
   
   
   
-    <p class="title logo__title">Essence 0.7.0 documentation</p>
+    <p class="title logo__title">Essence 0.8.0 documentation</p>
   
 </a></div>
     
@@ -677,7 +677,7 @@ The declarations are found within the <code class="docutils literal notranslate"
 <dt class="sig sig-object cpp" id="_CPPv4N7essence3uni5chmodENSt11string_viewERK4mode">
 <span id="_CPPv3N7essence3uni5chmodENSt11string_viewERK4mode"></span><span id="_CPPv2N7essence3uni5chmodENSt11string_viewERK4mode"></span><span id="essence::uni::chmod__std::string_view.modeCR"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chmod</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">file</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="mode.html#_CPPv4N7essence3uni4modeE" title="essence::uni::mode"><span class="n"><span class="pre">mode</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni5chmodENSt11string_viewERK4mode" title="Link to this definition">#</a><br /></dt>
 <dd><p>Applies <span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="mode.html#_CPPv4N7essence3uni4modeE" title="essence::uni::mode"><span class="n">mode</span></a></span> <code class="docutils literal notranslate"><span class="pre">m</span></code> to <code class="docutils literal notranslate"><span class="pre">file</span></code>.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">file</span></code> may also be a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
+<p>Parameter <code class="docutils literal notranslate"><span class="pre">file</span></code> may also be a <code class="docutils literal notranslate"><span class="pre">std::string_view</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp class">
@@ -791,6 +791,201 @@ whether or not to follow a potential symlink.</p>
 
 </dd></dl>
 
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stxE">
+<span id="_CPPv3N7essence3uni3stxE"></span><span id="_CPPv2N7essence3uni3stxE"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stx</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../types.html#_CPPv4N7essence3u16E" title="essence::u16"><span class="n"><span class="pre">u16</span></span></a><a class="headerlink" href="#_CPPv4N7essence3uni3stxE" title="Link to this definition">#</a><br /></dt>
+<dd><dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx4noneE">
+<span id="_CPPv3N7essence3uni3stx4noneE"></span><span id="_CPPv2N7essence3uni3stx4noneE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">none</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx4noneE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx4sizeE">
+<span id="_CPPv3N7essence3uni3stx4sizeE"></span><span id="_CPPv2N7essence3uni3stx4sizeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_SIZE</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx4sizeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx3allE">
+<span id="_CPPv3N7essence3uni3stx3allE"></span><span id="_CPPv2N7essence3uni3stx3allE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">all</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_ALL</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx3allE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx5atimeE">
+<span id="_CPPv3N7essence3uni3stx5atimeE"></span><span id="_CPPv2N7essence3uni3stx5atimeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atime</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_ATIME</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx5atimeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx5basicE">
+<span id="_CPPv3N7essence3uni3stx5basicE"></span><span id="_CPPv2N7essence3uni3stx5basicE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">basic</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_BASIC_STATS</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx5basicE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx5mtimeE">
+<span id="_CPPv3N7essence3uni3stx5mtimeE"></span><span id="_CPPv2N7essence3uni3stx5mtimeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mtime</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_MTIME</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx5mtimeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx5ctimeE">
+<span id="_CPPv3N7essence3uni3stx5ctimeE"></span><span id="_CPPv2N7essence3uni3stx5ctimeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ctime</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_CTIME</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx5ctimeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx5btimeE">
+<span id="_CPPv3N7essence3uni3stx5btimeE"></span><span id="_CPPv2N7essence3uni3stx5btimeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">btime</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_BTIME</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx5btimeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx6blocksE">
+<span id="_CPPv3N7essence3uni3stx6blocksE"></span><span id="_CPPv2N7essence3uni3stx6blocksE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blocks</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_BLOCKS</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx6blocksE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx5groupE">
+<span id="_CPPv3N7essence3uni3stx5groupE"></span><span id="_CPPv2N7essence3uni3stx5groupE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">group</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_GID</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx5groupE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx4userE">
+<span id="_CPPv3N7essence3uni3stx4userE"></span><span id="_CPPv2N7essence3uni3stx4userE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">user</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_UID</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx4userE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx3inoE">
+<span id="_CPPv3N7essence3uni3stx3inoE"></span><span id="_CPPv2N7essence3uni3stx3inoE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ino</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_INO</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx3inoE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx4modeE">
+<span id="_CPPv3N7essence3uni3stx4modeE"></span><span id="_CPPv2N7essence3uni3stx4modeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_MODE</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx4modeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx4typeE">
+<span id="_CPPv3N7essence3uni3stx4typeE"></span><span id="_CPPv2N7essence3uni3stx4typeE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_TYPE</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx4typeE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni3stx5nlinkE">
+<span id="_CPPv3N7essence3uni3stx5nlinkE"></span><span id="_CPPv2N7essence3uni3stx5nlinkE"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nlink</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">STATX_NLINK</span></span><a class="headerlink" href="#_CPPv4N7essence3uni3stx5nlinkE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6statuxE">
+<span id="_CPPv3N7essence3uni6statuxE"></span><span id="_CPPv2N7essence3uni6statuxE"></span><span id="essence::uni::statux"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">statux</span></span></span><a class="headerlink" href="#_CPPv4N7essence3uni6statuxE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wrapper around <code class="docutils literal notranslate"><span class="pre">statx</span></code> for doing selective <code class="docutils literal notranslate"><span class="pre">stat</span></code> retrieval.</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6statux6statux6statuxE5statx">
+<span id="_CPPv3N7essence3uni6statux6statux6statuxE5statx"></span><span id="_CPPv2N7essence3uni6statux6statux6statuxE5statx"></span><span id="essence::uni::statux::statux::statux__statx"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence3uni6statux6statux6statuxE5statx" title="essence::uni::statux::statux::statux"><span class="n"><span class="pre">statux</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">statux</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="n"><span class="pre">statx</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6statux6statux6statuxE5statx" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor using a pre-populated <code class="docutils literal notranslate"><span class="pre">statx</span></code> struct.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni6statux6statux6statuxENSt11string_viewE3stx">
+<span id="_CPPv3N7essence3uni6statux6statux6statuxENSt11string_viewE3stx"></span><span id="_CPPv2N7essence3uni6statux6statux6statuxENSt11string_viewE3stx"></span><span id="essence::uni::statux::statux::statux__std::string_view.stx"></span><span class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N7essence3uni6statux6statux6statuxENSt11string_viewE3stx" title="essence::uni::statux::statux::statux"><span class="n"><span class="pre">statux</span></span></a><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">statux</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">path</span></span>, <a class="reference internal" href="#_CPPv4N7essence3uni3stxE" title="essence::uni::stx"><span class="n"><span class="pre">stx</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">mask</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence3uni3stxE" title="essence::uni::stx"><span class="n"><span class="pre">stx</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7essence3uni3stx5basicE" title="essence::uni::stx::basic"><span class="n"><span class="pre">basic</span></span></a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni6statux6statux6statuxENSt11string_viewE3stx" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor accepting a path and mask bit-set.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux5atimeEv">
+<span id="_CPPv3NK7essence3uni6statux5atimeEv"></span><span id="_CPPv2NK7essence3uni6statux5atimeEv"></span><span id="essence::uni::statux::atimeC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">file_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">atime</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux5atimeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The time of the files’ last access.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux5ctimeEv">
+<span id="_CPPv3NK7essence3uni6statux5ctimeEv"></span><span id="_CPPv2NK7essence3uni6statux5ctimeEv"></span><span id="essence::uni::statux::ctimeC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">file_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ctime</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux5ctimeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The time of the files’ last access change (to its’ metadata).</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux5mtimeEv">
+<span id="_CPPv3NK7essence3uni6statux5mtimeEv"></span><span id="_CPPv2NK7essence3uni6statux5mtimeEv"></span><span id="essence::uni::statux::mtimeC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">file_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mtime</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux5mtimeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The time of the files’ last modification (of its’ contents).</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux5btimeEv">
+<span id="_CPPv3NK7essence3uni6statux5btimeEv"></span><span id="_CPPv2NK7essence3uni6statux5btimeEv"></span><span id="essence::uni::statux::btimeC"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">time_point</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">file_clock</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">btime</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux5btimeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The time of the files’ birth/creation.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux6ownersEv">
+<span id="_CPPv3NK7essence3uni6statux6ownersEv"></span><span id="_CPPv2NK7essence3uni6statux6ownersEv"></span><span id="essence::uni::statux::ownersC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4NK7essence3uni6statux6ownersEv" title="essence::uni::statux::owners"><span class="n"><span class="pre">owners</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">owners</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux6ownersEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Information about the files’ ownership.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux8filemodeEv">
+<span id="_CPPv3NK7essence3uni6statux8filemodeEv"></span><span id="_CPPv2NK7essence3uni6statux8filemodeEv"></span><span id="essence::uni::statux::filemodeC"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><a class="reference internal" href="mode.html#_CPPv4N7essence3uni4modeE" title="essence::uni::mode"><span class="n"><span class="pre">mode</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">filemode</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux8filemodeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Information about the files’ permissions.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux3inoEv">
+<span id="_CPPv3NK7essence3uni6statux3inoEv"></span><span id="_CPPv2NK7essence3uni6statux3inoEv"></span><span id="essence::uni::statux::inoC"></span><span class="n"><span class="pre">ino_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ino</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux3inoEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The files’ index node number.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux5nlinkEv">
+<span id="_CPPv3NK7essence3uni6statux5nlinkEv"></span><span id="_CPPv2NK7essence3uni6statux5nlinkEv"></span><span id="essence::uni::statux::nlinkC"></span><span class="n"><span class="pre">nlink_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nlink</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux5nlinkEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The number of hard links pointing to the file.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux4typeEv">
+<span id="_CPPv3NK7essence3uni6statux4typeEv"></span><span id="_CPPv2NK7essence3uni6statux4typeEv"></span><span id="essence::uni::statux::typeC"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7essence3uni8filetypeE" title="essence::uni::filetype"><span class="n"><span class="pre">filetype</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux4typeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The file type as a <span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="#_CPPv4N7essence3uni8filetypeE" title="essence::uni::filetype"><span class="n">filetype</span></a></span> member.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux3uidEv">
+<span id="_CPPv3NK7essence3uni6statux3uidEv"></span><span id="_CPPv2NK7essence3uni6statux3uidEv"></span><span id="essence::uni::statux::uidC"></span><a class="reference internal" href="unistd.html#_CPPv4N7essence3uni6useridE" title="essence::uni::userid"><span class="n"><span class="pre">userid</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">uid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux3uidEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The UID of the file’s owner.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux3gidEv">
+<span id="_CPPv3NK7essence3uni6statux3gidEv"></span><span id="_CPPv2NK7essence3uni6statux3gidEv"></span><span id="essence::uni::statux::gidC"></span><a class="reference internal" href="unistd.html#_CPPv4N7essence3uni7groupidE" title="essence::uni::groupid"><span class="n"><span class="pre">groupid</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gid</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux3gidEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The GID of the file’s group.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux4rdevEv">
+<span id="_CPPv3NK7essence3uni6statux4rdevEv"></span><span id="_CPPv2NK7essence3uni6statux4rdevEv"></span><span id="essence::uni::statux::rdevC"></span><span class="n"><span class="pre">dev_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">rdev</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux4rdevEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>If the file is a block or character special, this holds the
+device ID of said device.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux3devEv">
+<span id="_CPPv3NK7essence3uni6statux3devEv"></span><span id="_CPPv2NK7essence3uni6statux3devEv"></span><span id="essence::uni::statux::devC"></span><span class="n"><span class="pre">dev_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dev</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux3devEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The ID of the device containing the file.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux4sizeEv">
+<span id="_CPPv3NK7essence3uni6statux4sizeEv"></span><span id="_CPPv2NK7essence3uni6statux4sizeEv"></span><span id="essence::uni::statux::sizeC"></span><a class="reference internal" href="../types.html#_CPPv4N7essence5usizeE" title="essence::usize"><span class="n"><span class="pre">usize</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux4sizeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The file size in bytes.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux6blocksEv">
+<span id="_CPPv3NK7essence3uni6statux6blocksEv"></span><span id="_CPPv2NK7essence3uni6statux6blocksEv"></span><span id="essence::uni::statux::blocksC"></span><a class="reference internal" href="../types.html#_CPPv4N7essence3u64E" title="essence::u64"><span class="n"><span class="pre">u64</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blocks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux6blocksEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The number of 512-byte blocks the file occupies.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7essence3uni6statux9blocksizeEv">
+<span id="_CPPv3NK7essence3uni6statux9blocksizeEv"></span><span id="_CPPv2NK7essence3uni6statux9blocksizeEv"></span><span id="essence::uni::statux::blocksizeC"></span><a class="reference internal" href="../types.html#_CPPv4N7essence3u32E" title="essence::u32"><span class="n"><span class="pre">u32</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blocksize</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7essence3uni6statux9blocksizeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>The preferred block size for filesystem I/O.</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
@@ -887,6 +1082,45 @@ whether or not to follow a potential symlink.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status8basenameEv"><code class="docutils literal notranslate"><span class="pre">status::basename()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status4stemEv"><code class="docutils literal notranslate"><span class="pre">status::stem()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6status7typestrEv"><code class="docutils literal notranslate"><span class="pre">status::typestr()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stxE"><code class="docutils literal notranslate"><span class="pre">stx</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx4noneE"><code class="docutils literal notranslate"><span class="pre">stx::none</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx4sizeE"><code class="docutils literal notranslate"><span class="pre">stx::size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx3allE"><code class="docutils literal notranslate"><span class="pre">stx::all</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx5atimeE"><code class="docutils literal notranslate"><span class="pre">stx::atime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx5basicE"><code class="docutils literal notranslate"><span class="pre">stx::basic</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx5mtimeE"><code class="docutils literal notranslate"><span class="pre">stx::mtime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx5ctimeE"><code class="docutils literal notranslate"><span class="pre">stx::ctime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx5btimeE"><code class="docutils literal notranslate"><span class="pre">stx::btime</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx6blocksE"><code class="docutils literal notranslate"><span class="pre">stx::blocks</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx5groupE"><code class="docutils literal notranslate"><span class="pre">stx::group</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx4userE"><code class="docutils literal notranslate"><span class="pre">stx::user</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx3inoE"><code class="docutils literal notranslate"><span class="pre">stx::ino</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx4modeE"><code class="docutils literal notranslate"><span class="pre">stx::mode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx4typeE"><code class="docutils literal notranslate"><span class="pre">stx::type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3stx5nlinkE"><code class="docutils literal notranslate"><span class="pre">stx::nlink</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6statuxE"><code class="docutils literal notranslate"><span class="pre">statux</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6statux6statux6statuxE5statx"><code class="docutils literal notranslate"><span class="pre">statux::statux()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni6statux6statux6statuxENSt11string_viewE3stx"><code class="docutils literal notranslate"><span class="pre">statux::statux()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux5atimeEv"><code class="docutils literal notranslate"><span class="pre">statux::atime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux5ctimeEv"><code class="docutils literal notranslate"><span class="pre">statux::ctime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux5mtimeEv"><code class="docutils literal notranslate"><span class="pre">statux::mtime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux5btimeEv"><code class="docutils literal notranslate"><span class="pre">statux::btime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux6ownersEv"><code class="docutils literal notranslate"><span class="pre">statux::owners()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux8filemodeEv"><code class="docutils literal notranslate"><span class="pre">statux::filemode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux3inoEv"><code class="docutils literal notranslate"><span class="pre">statux::ino()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux5nlinkEv"><code class="docutils literal notranslate"><span class="pre">statux::nlink()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux4typeEv"><code class="docutils literal notranslate"><span class="pre">statux::type()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux3uidEv"><code class="docutils literal notranslate"><span class="pre">statux::uid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux3gidEv"><code class="docutils literal notranslate"><span class="pre">statux::gid()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux4rdevEv"><code class="docutils literal notranslate"><span class="pre">statux::rdev()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux3devEv"><code class="docutils literal notranslate"><span class="pre">statux::dev()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux4sizeEv"><code class="docutils literal notranslate"><span class="pre">statux::size()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux6blocksEv"><code class="docutils literal notranslate"><span class="pre">statux::blocks()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7essence3uni6statux9blocksizeEv"><code class="docutils literal notranslate"><span class="pre">statux::blocksize()</span></code></a></li>
 </ul>
 </li>
 </ul>

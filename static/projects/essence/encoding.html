@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Encoding &#8212; Essence 0.7.0 documentation</title>
+    <title>Encoding &#8212; Essence 0.8.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="_static/documentation_options.js?v=486e5634"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -123,7 +123,7 @@
   
   
   
-    <p class="title logo__title">Essence 0.7.0 documentation</p>
+    <p class="title logo__title">Essence 0.8.0 documentation</p>
   
 </a></div>
     
@@ -569,8 +569,7 @@ codepoint counting facilities.</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence8encoding5countENSt11string_viewE">
 <span id="_CPPv3N7essence8encoding5countENSt11string_viewE"></span><span id="_CPPv2N7essence8encoding5countENSt11string_viewE"></span><span id="essence::encoding::count__std::string_view"></span><a class="reference internal" href="types.html#_CPPv4N7essence5usizeE" title="essence::usize"><span class="n"><span class="pre">usize</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">count</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8encoding5countENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Count the UTF-8 codepoints in a string. May also be called
-with a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code></p>
+<dd><p>Count the UTF-8 codepoints in a string.</p>
 <p class="rubric">Example</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">micro</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;µ&quot;</span><span class="w"> </span><span class="p">};</span>
 
@@ -583,8 +582,7 @@ with a <code class="docutils literal notranslate"><span class="pre">const</span>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence8encoding8validateENSt11string_viewE">
 <span id="_CPPv3N7essence8encoding8validateENSt11string_viewE"></span><span id="_CPPv2N7essence8encoding8validateENSt11string_viewE"></span><span id="essence::encoding::validate__std::string_view"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">validate</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">s</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence8encoding8validateENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
-<dd><p>Determine UTF-8 validity of a string. May also be called
-with a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code></p>
+<dd><p>Determine UTF-8 validity of a string.</p>
 </dd></dl>
 
 </section>

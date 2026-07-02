@@ -12,8 +12,7 @@ codepoint counting facilities.
 
 .. cpp:function:: usize encoding::count(std::string_view s)
 
-   Count the UTF-8 codepoints in a string. May also be called
-   with a ``const char*`` or ``const std::string&``
+   Count the UTF-8 codepoints in a string.
 
    .. rubric:: Example
 
@@ -26,5 +25,4 @@ codepoint counting facilities.
 
 .. cpp:function:: bool encoding::validate(std::string_view s)
 
-   Determine UTF-8 validity of a string. May also be called
-   with a ``const char*`` or ``const std::string&``
+   Determine UTF-8 validity of a string.

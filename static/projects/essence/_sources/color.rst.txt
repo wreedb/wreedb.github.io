@@ -44,7 +44,7 @@ Color
    * - :cpp:any:`underline`
      - :cpp:any:`reset::underline`
      - Underline the text
-   
+
    * - :cpp:any:`blink`
      - :cpp:any:`reset::blink`
      - Periodically blink between hidden and visible
@@ -60,7 +60,7 @@ Color
    * - ``fg::<color>``
      - :cpp:any:`fg::reset`
      - Colorize foreground text, where ``<color>`` is one of black, red, green, yellow, blue, magenta, cyan or white
-   
+
    * - ``bg::<color>``
      - :cpp:any:`bg::reset`
      - Colorize background of cells, where ``<color>`` is one of black, red, green, yellow, blue, magenta, cyan or white
@@ -68,26 +68,18 @@ Color
    * - ``fg::bright::<color>``
      - :cpp:any:`fg::reset`
      - Colorize foreground text with a bright variant of ``<color>``, where ``<color>`` is one of black, red, green, yellow, blue, magenta, cyan or white
-   
+
    * - ``bg::bright::<color>``
      - :cpp:any:`bg::reset`
      - Colorize background of cells with a bright variant of ``<color>``, where ``<color>`` is one of black, red, green, yellow, blue, magenta, cyan or white
-
-.. cpp:var:: std::regex escape_rx
-
-   A regex useful for capturing standard ansi escape sequences.
 
 .. cpp:function:: void strip(std::string& in)
 
    Strip ansi escape sequences from a string (in-place).
 
-   Utilizes the :cpp:expr:`escape_rx` regex to perform the strip.
-
 .. cpp:function:: std::string cstrip(std::string_view in)
 
    Strip ansi escape sequences from a string (copying).
-   
-   Utilizes the :cpp:expr:`escape_rx` regex to perform the strip.
 
 .. cpp:concept:: template<typename T> Appendable
 
@@ -102,7 +94,7 @@ Color
    - ``T``, when ``T`` is a ``char``
 
 .. cpp:concept:: template<typename T> StringLike
-   
+
    A string-like type.
 
    **Valid Expressions**
@@ -111,7 +103,7 @@ Color
    - ``T``, when ``T`` is a ``char``
 
 .. cpp:class:: message
-   
+
    A wrapped ``std::string`` facilitating easy colorization and formatting.
 
    .. rubric:: Example
@@ -142,7 +134,7 @@ Color
 
    .. cpp:function:: template<Appendable T> \
                      message& append(T& t)
-      
+
       Append an :cpp:expr:`Appendable` type to a :cpp:expr:`message`. May
       also be called with a constant ``T`` reference.
 
@@ -172,7 +164,7 @@ Color
    .. cpp:function:: message& strip()
 
       Remove all ansi escape sequences from the underlying ``std::string`` using
-      the :cpp:expr:`ansi::strip` function and :cpp:expr:`ansi::escape_rx` regex.
+      the :cpp:expr:`ansi::strip` function.
 
    .. cpp:function:: message& reset()
 
@@ -188,7 +180,7 @@ Color
 
    .. cpp:function:: template<Appendable T> \
                      friend message operator+(const message& lhs, T rhs)
-      
+
       Addition operator for :cpp:expr:`Appendable` types.
 
    .. cpp:function:: friend message operator+(message& lhs, message& rhs)
@@ -232,5 +224,5 @@ Color
    Bitwise-or overload to construct a string from an ``rvalue`` string and a :cpp:expr:`sequence`.
 
 .. cpp:function:: std::string  operator|(std::string&& lhs, const char* rhs)
-   
+
    Bitwise-or overload to construct a string from an ``rvalue`` string and a :cpp:expr:`const char*`.

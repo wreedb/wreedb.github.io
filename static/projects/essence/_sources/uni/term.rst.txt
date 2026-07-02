@@ -96,7 +96,7 @@ Interface to the ``termios`` struct.
       Query the terminal dimensions.
 
    .. cpp:function:: i32 width() const
-   
+
       Get just the terminal width.
 
    .. cpp:function:: i32 height() const
@@ -106,7 +106,7 @@ Interface to the ``termios`` struct.
    .. cpp:function:: termios& ref()
 
       Get a mutable reference to the underlying ``termios`` struct.
-   
+
    .. cpp:function:: const termios& cref() const
 
       Get a constant reference to the underlying ``termios`` struct.

@@ -40,6 +40,6 @@ Thread/memory safe wrapper for ``strerror``.
 
    .. cpp:function:: template<typename... Args> \
                      exception::exception(i32 n, std::string_view msg, Args&&... args)
-      
+
       Constructor using error number ``n``, with additional message ``msg``
       with :cpp:expr:`std::format` arguments ``args`` applied.

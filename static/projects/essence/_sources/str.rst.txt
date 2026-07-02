@@ -9,10 +9,15 @@ String manipulation functions
 
    To use declarations from this page, include the ``<essence/str.hpp>`` header.
 
-.. cpp:var:: inline static constexpr std::string whitespace
+.. cpp:var:: inline static constexpr std::string_view whitespace
 
    A string containing all common whitespace; space, newline,
    carriage return, horizontal tab, vertical tab and formfeed.
+
+.. cpp:function:: template<typename... Args> \
+                  std::string str::fmt(std::string_view tmpl, Args&&... args)
+
+   Wrapper around ``std::format`` ensuring that ``std::dynamic_format`` is used.
 
 .. cpp:function:: std::string& str::ltrim(std::string& s)
 
@@ -66,24 +71,24 @@ String manipulation functions
 
    Trim trailing and leading whitespace from a string (copying).
 
-.. cpp:function:: std::vector<std::string> str::split(const std::string& s, char delim = ' ')
+.. cpp:function:: std::vector<std::string> str::split(std::string_view s, char delim = ' ')
 
    Split a string on occurences of a character delimiter.
 
    .. rubric:: Example
-   
+
    .. code-blocK:: cpp
 
       std::string path = "/usr/local/bin:/usr/bin:/bin";
       auto parts = str::split(path, ':');
       // becomes { "/usr/local/bin", "/usr/bin", "/bin" }
 
-.. cpp:function:: std::vector<std::string> str::split(const std::string& s, std::string delim = " ")
+.. cpp:function:: std::vector<std::string> str::split(std::string_view s, std::string delim = " ")
 
    Split a string on occurences of a string delimiter.
 
    .. rubric:: Example
-   
+
    .. code-blocK:: cpp
 
       std::string path = "/usr/local/bin . /usr/bin . /bin";
@@ -110,7 +115,7 @@ String manipulation functions
 .. cpp:function:: std::string str::join(const std::vector<std::string>& strs, std::string delim = " ")
 
    Join a vector string delimited by another string.
-   
+
    .. rubric:: Example
 
    .. code-block:: cpp
@@ -125,7 +130,7 @@ String manipulation functions
       // "/usr/local/bin . /usr/bin . /bin"
 
 .. cpp:function:: template<typename T = i32> \
-                  std::optional<T> str::number(const std::string& in) noexcept
+                  std::optional<T> str::number(std::string_view in) noexcept
 
    Parse an integral or floating point number from a string
 

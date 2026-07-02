@@ -23,14 +23,14 @@ Interface to the ``passwd`` struct from ``<pwd.h>``.
 
       Constructor accepting a user id.
 
-   .. cpp:function:: password::password(const std::string& pname)
+   .. cpp:function:: password::password(std::string_view pname)
 
       Constructor accepting a username.
 
    .. cpp:function:: uid_t uid() const noexcept
 
       Get the user id.
-   
+
    .. cpp:function:: gid_t gid() const noexcept
 
       Get the group id.

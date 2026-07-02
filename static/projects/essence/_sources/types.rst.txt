@@ -62,7 +62,7 @@ Type aliases for the sake of sanity.
    Unsigned integer type capable of holding a void pointer.
 
 .. cpp:type:: iptr = std::intptr_t
-   
+
    Signed integer type capable of holding a void pointer.
 
 .. cpp:type:: f32 = float
@@ -74,7 +74,7 @@ Type aliases for the sake of sanity.
    A 64-bit floating point number.
 
 .. cpp:type:: off = off_t
-   
+
    File size and offset capable integer type.
 
 .. cpp:type:: uchar = unsigned char

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Path &#8212; Essence 0.7.0 documentation</title>
+    <title>Path &#8212; Essence 0.8.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="_static/documentation_options.js?v=486e5634"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -123,7 +123,7 @@
   
   
   
-    <p class="title logo__title">Essence 0.7.0 documentation</p>
+    <p class="title logo__title">Essence 0.8.0 documentation</p>
   
 </a></div>
     
@@ -566,10 +566,18 @@
 <p>To use declarations from this page, include the <code class="docutils literal notranslate"><span class="pre">&lt;essence/path.hpp&gt;</span></code> header.</p>
 </div>
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7essence4tempEv">
+<span id="_CPPv3N7essence4tempEv"></span><span id="_CPPv2N7essence4tempEv"></span><span id="essence::temp"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">temp</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4tempEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the path to the systems’ canonical temporary directory.</p>
+<p>Reads the environment for the value of <code class="docutils literal notranslate"><span class="pre">TMPDIR</span></code> if set, otherwise
+falling back to <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> if it exists. If neither work, an exception
+is thrown.</p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4path5whichENSt11string_viewE">
 <span id="_CPPv3N7essence4path5whichENSt11string_viewE"></span><span id="_CPPv2N7essence4path5whichENSt11string_viewE"></span><span id="essence::path::which__std::string_view"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">optional</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">which</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4path5whichENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Search the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> environment variable directories for executable <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> may also be a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
 <p class="rubric">Example</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="n">result_a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="o">::</span><span class="n">which</span><span class="p">(</span><span class="s">&quot;gcc&quot;</span><span class="p">);</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">result_b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="o">::</span><span class="n">which</span><span class="p">(</span><span class="s">&quot;some-non-existent-executable&quot;</span><span class="p">);</span>
@@ -584,7 +592,6 @@
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4path4baseENSt11string_viewE">
 <span id="_CPPv3N7essence4path4baseENSt11string_viewE"></span><span id="_CPPv2N7essence4path4baseENSt11string_viewE"></span><span id="essence::path::base__std::string_view"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">base</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4path4baseENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Return the basename of <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> may also be a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
 <p class="rubric">Example</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">compiler</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;/usr/bin/gcc&quot;</span><span class="w"> </span><span class="p">};</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="o">::</span><span class="n">base</span><span class="p">(</span><span class="n">compiler</span><span class="p">);</span>
@@ -597,7 +604,6 @@
 <dt class="sig sig-object cpp" id="_CPPv4N7essence4path3dirENSt11string_viewE">
 <span id="_CPPv3N7essence4path3dirENSt11string_viewE"></span><span id="_CPPv2N7essence4path3dirENSt11string_viewE"></span><span id="essence::path::dir__std::string_view"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">dir</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence4path3dirENSt11string_viewE" title="Link to this definition">#</a><br /></dt>
 <dd><p>Return the directory name of <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<p>Parameter <code class="docutils literal notranslate"><span class="pre">name</span></code> may also be a <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">std::string&amp;</span></code> or <code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">char*</span></code>.</p>
 <p class="rubric">Example</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">compiler</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;/usr/bin/gcc&quot;</span><span class="w"> </span><span class="p">};</span>
 <span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="o">::</span><span class="n">dir</span><span class="p">(</span><span class="n">compiler</span><span class="p">);</span>
@@ -698,6 +704,7 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4tempEv"><code class="docutils literal notranslate"><span class="pre">temp()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4path5whichENSt11string_viewE"><code class="docutils literal notranslate"><span class="pre">which()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4path4baseENSt11string_viewE"><code class="docutils literal notranslate"><span class="pre">base()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence4path3dirENSt11string_viewE"><code class="docutils literal notranslate"><span class="pre">dir()</span></code></a></li>

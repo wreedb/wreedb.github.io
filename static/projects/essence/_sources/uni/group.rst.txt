@@ -24,7 +24,7 @@ Interface to the ``group`` struct from ``<grp.h>``.
 
       Constructor accepting a group id.
 
-   .. cpp:function:: group::group(const std::string& gname)
+   .. cpp:function:: group::group(std::string_view gname)
 
       Constructor accepting a group name.
 
@@ -54,5 +54,5 @@ Interface to the ``group`` struct from ``<grp.h>``.
 
       uni::group g;
 
-      // Comparable output to that of the `getent group` command 
+      // Comparable output to that of the `getent group` command
       io::printn("{}", g.str());

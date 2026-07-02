@@ -9,11 +9,18 @@ File path retrieval and manipulation functions.
 
 .. cpp:namespace-push:: essence
 
+
+.. cpp:function:: std::string temp()
+
+   Get the path to the systems' canonical temporary directory.
+
+   Reads the environment for the value of ``TMPDIR`` if set, otherwise
+   falling back to ``/tmp`` if it exists. If neither work, an exception
+   is thrown.
+
 .. cpp:function:: std::optional<std::string> path::which(std::string_view name)
 
    Search the ``PATH`` environment variable directories for executable ``name``.
-
-   Parameter ``name`` may also be a ``const std::string&`` or ``const char*``.
 
    .. rubric:: Example
 
@@ -28,9 +35,7 @@ File path retrieval and manipulation functions.
 .. cpp:function:: std::string path::base(std::string_view name)
 
    Return the basename of ``name``.
-   
-   Parameter ``name`` may also be a ``const std::string&`` or ``const char*``.
-   
+
    .. rubric:: Example
 
    .. code-block:: cpp
@@ -42,8 +47,6 @@ File path retrieval and manipulation functions.
 .. cpp:function:: std::string path::dir(std::string_view name)
 
    Return the directory name of ``name``.
-
-   Parameter ``name`` may also be a ``const std::string&`` or ``const char*``.
 
    .. rubric:: Example
 
@@ -77,7 +80,7 @@ File path retrieval and manipulation functions.
 .. cpp:function:: std::string& path::unexpandhome(std::string& path)
 
    Reduce the users' home directory to tilde (``~``), in-place.
-   
+
    .. rubric:: Example
 
    .. code-block:: cpp

@@ -12,7 +12,7 @@ A flexible error result type.
 .. cpp:class:: error
 
    A flexible error type, great for use with :cpp:expr:`std::expected`.
-   
+
    .. cpp:function:: error::error(std::string msg, i32 n = 1)
 
    .. cpp:function:: template<typename... Args> \

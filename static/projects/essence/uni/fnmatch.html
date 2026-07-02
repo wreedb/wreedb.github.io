@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Uni/Fnmatch &#8212; Essence 0.7.0 documentation</title>
+    <title>Uni/Fnmatch &#8212; Essence 0.8.0 documentation</title>
   
   
   
@@ -40,7 +40,7 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=a95f357e85573c9b56d5" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=a95f357e85573c9b56d5" />
 
-    <script src="../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../_static/documentation_options.js?v=486e5634"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -123,7 +123,7 @@
   
   
   
-    <p class="title logo__title">Essence 0.7.0 documentation</p>
+    <p class="title logo__title">Essence 0.8.0 documentation</p>
   
 </a></div>
     
@@ -611,10 +611,9 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni7fnmatchERKNSt6stringERKNSt6stringE3fnm">
-<span id="_CPPv3N7essence3uni7fnmatchERKNSt6stringERKNSt6stringE3fnm"></span><span id="_CPPv2N7essence3uni7fnmatchERKNSt6stringERKNSt6stringE3fnm"></span><span id="essence::uni::fnmatch__ssCR.ssCR.fnm"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fnmatch</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">pattern</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">name</span></span>, <a class="reference internal" href="#_CPPv4N7essence3uni3fnmE" title="essence::uni::fnm"><span class="n"><span class="pre">fnm</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">flags</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni7fnmatchERKNSt6stringERKNSt6stringE3fnm" title="Link to this definition">#</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N7essence3uni7fnmatchENSt11string_viewENSt11string_viewE3fnm">
+<span id="_CPPv3N7essence3uni7fnmatchENSt11string_viewENSt11string_viewE3fnm"></span><span id="_CPPv2N7essence3uni7fnmatchENSt11string_viewENSt11string_viewE3fnm"></span><span id="essence::uni::fnmatch__std::string_view.std::string_view.fnm"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">fnmatch</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pattern</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">name</span></span>, <a class="reference internal" href="#_CPPv4N7essence3uni3fnmE" title="essence::uni::fnm"><span class="n"><span class="pre">fnm</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">flags</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7essence3uni7fnmatchENSt11string_viewENSt11string_viewE3fnm" title="Link to this definition">#</a><br /></dt>
 <dd><p>Return true if <code class="docutils literal notranslate"><span class="pre">pattern</span></code> would match the file <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
-<p>Parameters <code class="docutils literal notranslate"><span class="pre">pattern</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> may also be <span class="cpp-expr sig sig-inline cpp"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="p">*</span></span>.</p>
 <p class="rubric">Example</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;essence/io.hpp&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;essence/uni/dirent.hpp&gt;</span>
@@ -695,7 +694,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni3fnm3fnm11leading_dirE"><code class="docutils literal notranslate"><span class="pre">fnm::leading_dir</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni7fnmatchERKNSt6stringERKNSt6stringE3fnm"><code class="docutils literal notranslate"><span class="pre">fnmatch()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7essence3uni7fnmatchENSt11string_viewENSt11string_viewE3fnm"><code class="docutils literal notranslate"><span class="pre">fnmatch()</span></code></a></li>
 </ul>
   </nav></div>
 

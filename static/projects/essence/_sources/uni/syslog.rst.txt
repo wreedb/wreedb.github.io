@@ -6,7 +6,7 @@ Interface to Unix ``syslog`` functionality.
 .. admonition:: Info
 
    To use declarations from this page, include the ``<essence/uni/syslog.hpp>`` header.
-   
+
    The declarations are within the ``uni`` namespace.
 
 .. cpp:namespace-push:: essence
@@ -60,13 +60,13 @@ Interface to Unix ``syslog`` functionality.
       Misc. user-level messages.
 
    .. cpp:enumerator:: mail = LOG_MAIL
-   
+
       Mail system messages.
 
    .. cpp:enumerator:: news = LOG_NEWS
 
       Network news subsystem messages.
-   
+
    .. cpp:enumerator:: uucp = LOG_UUCP
 
       UUCP subsystem messages
@@ -90,33 +90,33 @@ Interface to Unix ``syslog`` functionality.
    .. cpp:enumerator:: local0 = LOG_LOCAL0
 
       Reserved for local use.
-   
+
    .. cpp:enumerator:: local1 = LOG_LOCAL1
-      
+
       Reserved for local use.
-   
+
    .. cpp:enumerator:: local2 = LOG_LOCAL2
-   
+
       Reserved for local use.
 
    .. cpp:enumerator:: local3 = LOG_LOCAL3
-   
+
       Reserved for local use.
-   
+
    .. cpp:enumerator:: local4 = LOG_LOCAL4
-   
+
       Reserved for local use.
-   
+
    .. cpp:enumerator:: local5 = LOG_LOCAL5
-   
+
       Reserved for local use.
-   
+
    .. cpp:enumerator:: local6 = LOG_LOCAL6
-   
+
       Reserved for local use.
 
    .. cpp:enumerator:: local7 = LOG_LOCAL7
-   
+
       Reserved for local use.
 
 
@@ -196,4 +196,4 @@ Interface to Unix ``syslog`` functionality.
    .. cpp:function:: void close()
 
       Close the syslog. Generally not needed, as the object closes the
-      syslog on destruction. 
+      syslog on destruction.
